@@ -16,6 +16,24 @@
       "revId": "e197222d44edf5c1113e42b51a4e43f0f70ea508",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a75045a5_bc6c81c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-09-13T12:34:00Z",
+      "side": 1,
+      "message": "This is true, the base64 and zip options for downloading the patch are still hard-coded in Gerrit. We can consider to make them configurable and to move them into the this plugin as well. But this I would leave for later, it\u0027s already difficult enough to split off the other download commands and I would like to move forward with smallest possible steps which provide some value.",
+      "parentUuid": "a75045a5_dc6dcdc3",
+      "revId": "e197222d44edf5c1113e42b51a4e43f0f70ea508",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

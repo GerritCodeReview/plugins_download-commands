@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a75045a5_dc6dcdc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-09-13T12:13:06Z",
+      "side": 1,
+      "message": "The other part that is hard coded and should be externalized is patch download, currently implemented in Change Screen2 as two different options: base64 \u0026 zip. For example some sites may want to support additional patch download formats, like non encoded one. (Or nor provide zip at all).",
+      "revId": "e197222d44edf5c1113e42b51a4e43f0f70ea508",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

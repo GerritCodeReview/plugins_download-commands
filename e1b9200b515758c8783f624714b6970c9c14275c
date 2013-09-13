@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "874d0112_db86336a",
+        "filename": "BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-09-13T11:33:13Z",
+      "side": 1,
+      "message": "untabify",
+      "revId": "e1b9200b515758c8783f624714b6970c9c14275c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

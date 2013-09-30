@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "844dff11_5bcb035f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2013-09-30T08:32:00Z",
+      "side": 1,
+      "message": "This should be replaced with Gerrit\u0027s own Nullable implementation.",
+      "revId": "25d224a6378b649e1393a842a4597216238e095d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

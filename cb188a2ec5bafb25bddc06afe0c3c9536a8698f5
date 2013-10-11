@@ -1,0 +1,653 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ea0f05b_3c41d149",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Importing this type would have been easier to read.",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 101
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_dc254dba",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CherryPickCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Importing this type would have been easier to read.",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 101
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_fc2289af",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Importing this type would have been easier to read.",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 101
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_9c2fc596",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/FormatPatchCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Importing this type would have been easier to read.",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 101
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_7d3757f3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Missing AOSP header.",
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_bc2c01a2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Please use imports.",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 91
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_7c60b9db",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 18,
+        "startChar": 6,
+        "endLine": 18,
+        "endChar": 81
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_1d3c13d3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 83
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_3d41cf49",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "unnecessary blank line",
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_fd2287af",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/PullCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import is your friend",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 101
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_1c55f5fc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RepoCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "it seems you disliked import?",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 83
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_9d2fc396",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RepoCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "What was wrong with \"repo-download\"?",
+      "range": {
+        "startLine": 36,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 106
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_5d5b7b32",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousGitScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_bd2cffa1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousGitScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_7d60b7db",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousGitScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Git?\n\nIts not an acronym. git-scm.com uses Git. JGit uses Git. Its more a name than a TLA.",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_1d55f3fc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousHttpScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_3d5a2f2c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousHttpScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_fc4b695d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_9c482563",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_dd4eab70",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "All of this could happen in the constructor and populate an authUrl field instead of canonicalWebUrl. Then we aren\u0027t repeating this on each request.",
+      "range": {
+        "startLine": 61,
+        "startChar": 6,
+        "endLine": 71,
+        "endChar": 34
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_bc45e14b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/RepoScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_fd4b675d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/RepoScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "return \"repo download \" + project;",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 24
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_1d8e5383",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "Unnecessary field if sshdAddress is used consistently.",
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_9d482363",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "This is never true. Above ensureSlash() ensured it is at least \"/\".",
+      "range": {
+        "startLine": 40,
+        "startChar": 38,
+        "endLine": 40,
+        "endChar": 56
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_5c84dd64",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_5d84db64",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "import",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 82
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_7c899979",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "ensureSlash is unnecessary here if the constructor did its job correctly.",
+      "range": {
+        "startLine": 69,
+        "startChar": 13,
+        "endLine": 69,
+        "endChar": 37
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be93f416_7d899779",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "return sshdAddress + project;",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea0f05b_1c8e5583",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-11T23:05:06Z",
+      "side": 1,
+      "message": "sshdAddress",
+      "range": {
+        "startLine": 76,
+        "startChar": 28,
+        "endLine": 76,
+        "endChar": 42
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

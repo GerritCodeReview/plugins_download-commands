@@ -14,8 +14,11 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.DEFAULT_DOWNLOADS;
+
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
+import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
 import com.google.gerrit.server.config.DownloadConfig;
 
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousGitScheme;
@@ -24,16 +27,14 @@ import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
 public abstract class GitDownloadCommand extends DownloadCommand {
-  private final com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand cmd;
+  private final AccountGeneralPreferences.DownloadCommand cmd;
   private final boolean commandAllowed;
 
   GitDownloadCommand(
-      DownloadConfig downloadConfig,
-      com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand cmd) {
+      DownloadConfig downloadConfig, AccountGeneralPreferences.DownloadCommand cmd) {
     this.cmd = cmd;
     this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd)
-        || downloadConfig.getDownloadCommands().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.DEFAULT_DOWNLOADS);
+        || downloadConfig.getDownloadCommands().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override
@@ -51,7 +52,6 @@ public abstract class GitDownloadCommand extends DownloadCommand {
       }
       upperHyphen.append(Character.toUpperCase(words[i].charAt(0))).append(
           words[i].substring(1).toLowerCase());
-
     }
     return upperHyphen.toString();
   }

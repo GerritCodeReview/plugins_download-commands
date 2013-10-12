@@ -12,8 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 package com.googlesource.gerrit.plugins.download.scheme;
+
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS;
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.HTTP;
 
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
@@ -37,10 +39,8 @@ public class HttpScheme extends DownloadScheme {
       DownloadConfig downloadConfig) {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
     this.canonicalWebUrl = provider != null ? provider.get() : null;
-    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.HTTP)
-        || downloadConfig.getDownloadSchemes().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP)
+        || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override

@@ -14,6 +14,9 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.ANON_GIT;
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS;
+
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -31,10 +34,8 @@ public class AnonymousGitScheme extends DownloadScheme {
       DownloadConfig downloadConfig) {
     this.gitDaemonUrl =
         ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
-    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.ANON_GIT)
-        || downloadConfig.getDownloadSchemes().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_GIT)
+        || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override

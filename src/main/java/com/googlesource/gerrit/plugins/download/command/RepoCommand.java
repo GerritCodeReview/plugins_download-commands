@@ -14,6 +14,8 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.REPO_DOWNLOAD;
+
 import com.google.common.base.CaseFormat;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
@@ -27,14 +29,12 @@ public class RepoCommand extends DownloadCommand {
 
   @Inject
   RepoCommand(DownloadConfig downloadConfig) {
-    this.commandAllowed = downloadConfig.getDownloadCommands().contains(
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.REPO_DOWNLOAD);
+    this.commandAllowed = downloadConfig.getDownloadCommands().contains(REPO_DOWNLOAD);
   }
 
   @Override
   public String getName() {
-    return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_HYPHEN,
-        com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.REPO_DOWNLOAD.name());
+    return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_HYPHEN, REPO_DOWNLOAD.name());
   }
 
   @Override

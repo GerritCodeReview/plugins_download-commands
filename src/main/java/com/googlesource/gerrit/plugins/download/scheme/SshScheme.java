@@ -17,56 +17,48 @@ package com.googlesource.gerrit.plugins.download.scheme;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.SSH;
 
+import com.google.common.base.Strings;
 import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.extensions.config.DownloadScheme;
+import com.google.gerrit.server.AnonymousUser;
+import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 
 import java.util.List;
 
 @Listen
 public class SshScheme extends DownloadScheme {
-  private final String sshUrl;
   private final String sshdAddress;
+  private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
 
   @Inject
-  SshScheme(@SshAdvertisedAddresses List<String> sshAddresses,
+  SshScheme(@SshAdvertisedAddresses List<String> sshAddresses, Provider<CurrentUser> userProvider,
       DownloadConfig downloadConfig) {
-    this.sshUrl =
-        !sshAddresses.isEmpty() ? ensureSlash(sshAddresses.get(0)) : null;
-    if (sshUrl != null) {
-      String sshAddr = sshUrl;
-      StringBuilder r = new StringBuilder();
-      r.append("ssh://${username}@");
-      if (sshAddr.startsWith("*:") || "".equals(sshAddr)) {
-        r.append("${hostname}");
-      }
-      if (sshAddr.startsWith("*")) {
-        sshAddr = sshAddr.substring(1);
-      }
-      r.append(sshAddr);
-      sshdAddress = r.toString();
-    } else {
-      sshdAddress = null;
-    }
+    this.sshdAddress = Strings.emptyToNull(!sshAddresses.isEmpty() ? sshAddresses.get(0) : null);
+    this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override
   public String getName() {
-    return "SSH";
+    return "ssh";
   }
 
   @Override
   public String getUrl(String project) {
-    if (!isEnabled()) {
+    if (!isEnabled() || userProvider.get() instanceof AnonymousUser) {
       return null;
     }
 
     StringBuilder r = new StringBuilder();
+    r.append("ssh://");
+    r.append(userProvider.get().getUserName());
+    r.append("@");
     r.append(ensureSlash(sshdAddress));
     r.append(project);
     return r.toString();
@@ -74,7 +66,12 @@ public class SshScheme extends DownloadScheme {
 
   @Override
   public boolean isEnabled() {
-    return schemeAllowed && sshUrl != null;
+    return schemeAllowed && sshdAddress != null;
+  }
+
+  @Override
+  public boolean isAuthRequired() {
+    return true;
   }
 
   private static String ensureSlash(String in) {

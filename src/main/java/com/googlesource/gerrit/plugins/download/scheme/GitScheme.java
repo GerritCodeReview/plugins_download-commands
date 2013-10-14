@@ -24,13 +24,13 @@ import com.google.inject.Inject;
 
 import org.eclipse.jgit.lib.Config;
 
-public class AnonymousGitScheme extends DownloadScheme {
+public class GitScheme extends DownloadScheme {
 
   private final String gitDaemonUrl;
   private final boolean schemeAllowed;
 
   @Inject
-  public AnonymousGitScheme(@GerritServerConfig Config cfg,
+  public GitScheme(@GerritServerConfig Config cfg,
       DownloadConfig downloadConfig) {
     this.gitDaemonUrl =
         ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
@@ -40,7 +40,7 @@ public class AnonymousGitScheme extends DownloadScheme {
 
   @Override
   public String getName() {
-    return "Anonymous GIT";
+    return "git";
   }
 
   @Override
@@ -54,6 +54,11 @@ public class AnonymousGitScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && gitDaemonUrl != null;
+  }
+
+  @Override
+  public boolean isAuthRequired() {
+    return false;
   }
 
   private static String ensureSlash(String in) {

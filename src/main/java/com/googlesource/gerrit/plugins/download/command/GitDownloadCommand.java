@@ -21,8 +21,8 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
 import com.google.gerrit.server.config.DownloadConfig;
 
-import com.googlesource.gerrit.plugins.download.scheme.AnonymousGitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
+import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
@@ -57,7 +57,8 @@ public abstract class GitDownloadCommand extends DownloadCommand {
   }
 
   @Override
-  public final String getCommand(DownloadScheme scheme, String project) {
+  public final String getCommand(DownloadScheme scheme, String project,
+      String ref) {
     if (!commandAllowed) {
       return null;
     }
@@ -65,12 +66,16 @@ public abstract class GitDownloadCommand extends DownloadCommand {
     if (scheme instanceof SshScheme
         || scheme instanceof HttpScheme
         || scheme instanceof AnonymousHttpScheme
-        || scheme instanceof AnonymousGitScheme) {
-      return getCommand(scheme.getUrl(project));
+        || scheme instanceof GitScheme) {
+      String url = scheme.getUrl(project);
+      if (url != null) {
+        return getCommand(url, ref);
+      } else
+        return null;
     } else {
       return null;
     }
   }
 
-  public abstract String getCommand(String url);
+  public abstract String getCommand(String url, String ref);
 }

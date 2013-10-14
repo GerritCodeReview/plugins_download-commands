@@ -21,11 +21,10 @@ import com.google.inject.AbstractModule;
 
 import com.googlesource.gerrit.plugins.download.command.CheckoutCommand;
 import com.googlesource.gerrit.plugins.download.command.CherryPickCommand;
-import com.googlesource.gerrit.plugins.download.command.CloneCommand;
 import com.googlesource.gerrit.plugins.download.command.FormatPatchCommand;
 import com.googlesource.gerrit.plugins.download.command.PullCommand;
 import com.googlesource.gerrit.plugins.download.command.RepoCommand;
-import com.googlesource.gerrit.plugins.download.scheme.AnonymousGitScheme;
+import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
@@ -35,12 +34,11 @@ class Module extends AbstractModule {
   @Override
   protected void configure() {
     DynamicSet.bind(binder(), DownloadScheme.class).to(AnonymousHttpScheme.class);
-    DynamicSet.bind(binder(), DownloadScheme.class).to(AnonymousGitScheme.class);
+    DynamicSet.bind(binder(), DownloadScheme.class).to(GitScheme.class);
     DynamicSet.bind(binder(), DownloadScheme.class).to(HttpScheme.class);
     DynamicSet.bind(binder(), DownloadScheme.class).to(RepoScheme.class);
     DynamicSet.bind(binder(), DownloadScheme.class).to(SshScheme.class);
 
-    DynamicSet.bind(binder(), DownloadCommand.class).to(CloneCommand.class);
     DynamicSet.bind(binder(), DownloadCommand.class).to(CheckoutCommand.class);
     DynamicSet.bind(binder(), DownloadCommand.class).to(CherryPickCommand.class);
     DynamicSet.bind(binder(), DownloadCommand.class).to(FormatPatchCommand.class);

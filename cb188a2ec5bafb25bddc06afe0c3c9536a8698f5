@@ -464,6 +464,30 @@
     },
     {
       "key": {
+        "uuid": "fe6accd7_97480463",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RepoCommand.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in:\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "be93f416_9d2fc396",
+      "range": {
+        "startLine": 36,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 106
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be93f416_5d5b7b32",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousGitScheme.java",
         "patchSetId": 8
@@ -557,6 +581,30 @@
       "writtenOn": "2013-10-11T23:05:06Z",
       "side": 1,
       "message": "Git?\n\nIts not an acronym. git-scm.com uses Git. JGit uses Git. Its more a name than a TLA.",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe6accd7_b745084c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousGitScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in:\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "be93f416_7d60b7db",
       "range": {
         "startLine": 42,
         "startChar": 22,
@@ -820,6 +868,30 @@
     },
     {
       "key": {
+        "uuid": "fe6accd7_5784ac64",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/RepoScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "be93f416_fd4b675d",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 24
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be93f416_1d8e5383",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
         "patchSetId": 8
@@ -837,6 +909,24 @@
     },
     {
       "key": {
+        "uuid": "fe6accd7_7789b079",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "be93f416_1d8e5383",
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be93f416_9d482363",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
         "patchSetId": 8
@@ -848,6 +938,30 @@
       "writtenOn": "2013-10-11T23:05:06Z",
       "side": 1,
       "message": "This is never true. Above ensureSlash() ensured it is at least \"/\".",
+      "range": {
+        "startLine": 40,
+        "startChar": 38,
+        "endLine": 40,
+        "endChar": 56
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e66c012_98483563",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "be93f416_9d482363",
       "range": {
         "startLine": 40,
         "startChar": 38,
@@ -965,6 +1079,30 @@
     },
     {
       "key": {
+        "uuid": "fe6accd7_178e3483",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "9ea0f05b_7c899979",
+      "range": {
+        "startLine": 69,
+        "startChar": 13,
+        "endLine": 69,
+        "endChar": 37
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be93f416_7d899779",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
         "patchSetId": 8
@@ -988,6 +1126,30 @@
     },
     {
       "key": {
+        "uuid": "1e66c012_b845f94b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "not applicable anymore",
+      "parentUuid": "be93f416_7d899779",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ea0f05b_1c8e5583",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
         "patchSetId": 8
@@ -999,6 +1161,30 @@
       "writtenOn": "2013-10-11T23:05:06Z",
       "side": 1,
       "message": "sshdAddress",
+      "range": {
+        "startLine": 76,
+        "startChar": 28,
+        "endLine": 76,
+        "endChar": 42
+      },
+      "revId": "cb188a2ec5bafb25bddc06afe0c3c9536a8698f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe6accd7_379338aa",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2013-10-14T14:42:07Z",
+      "side": 1,
+      "message": "Done in\n  https://gerrit-review.googlesource.com/50851",
+      "parentUuid": "9ea0f05b_1c8e5583",
       "range": {
         "startLine": 76,
         "startChar": 28,

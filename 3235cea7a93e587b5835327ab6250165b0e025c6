@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe6accd7_f794e08f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-14T15:34:16Z",
+      "side": 1,
+      "message": "userProvider.get().isIdentifiedUser()",
+      "revId": "3235cea7a93e587b5835327ab6250165b0e025c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe6accd7_d7975c92",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2013-10-14T15:34:16Z",
+      "side": 1,
+      "message": "userProvider.get().isIdentifiedUser()",
+      "revId": "3235cea7a93e587b5835327ab6250165b0e025c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

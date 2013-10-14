@@ -32,20 +32,17 @@ public class RepoScheme extends DownloadScheme {
   }
 
   @Override
-  public String getName() {
-    return "REPO";
-  }
-
-  @Override
   public String getUrl(String project) {
-    final StringBuilder r = new StringBuilder();
-    r.append("repo download ");
-    r.append(project);
-    return r.toString();
+    return "repo download " + project;
   }
 
   @Override
   public boolean isEnabled() {
     return schemeAllowed;
+  }
+
+  @Override
+  public boolean isAuthRequired() {
+    return false;
   }
 }

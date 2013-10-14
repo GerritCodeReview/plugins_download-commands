@@ -44,11 +44,6 @@ public class AnonymousHttpScheme extends DownloadScheme {
   }
 
   @Override
-  public String getName() {
-    return "Anonymous HTTP";
-  }
-
-  @Override
   public String getUrl(String project) {
     if (!isEnabled()) {
       return null;
@@ -69,6 +64,11 @@ public class AnonymousHttpScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && (gitHttpUrl != null || canonicalWebUrl != null);
+  }
+
+  @Override
+  public boolean isAuthRequired() {
+    return false;
   }
 
   private static String ensureSlash(String in) {

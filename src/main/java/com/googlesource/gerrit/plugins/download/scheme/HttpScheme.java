@@ -19,6 +19,7 @@ import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.Downlo
 
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
+import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -31,26 +32,24 @@ public class HttpScheme extends DownloadScheme {
 
   private final String gitHttpUrl;
   private final String canonicalWebUrl;
+  private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
 
   @Inject
   public HttpScheme(@GerritServerConfig Config cfg,
-      @CanonicalWebUrl @Nullable Provider<String> provider,
+      @CanonicalWebUrl @Nullable Provider<String> urlProvider,
+      Provider<CurrentUser> userProvider,
       DownloadConfig downloadConfig) {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
-    this.canonicalWebUrl = provider != null ? provider.get() : null;
+    this.canonicalWebUrl = urlProvider != null ? urlProvider.get() : null;
+    this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override
-  public String getName() {
-    return "HTTP";
-  }
-
-  @Override
   public String getUrl(String project) {
-    if (!isEnabled()) {
+    if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {
       return null;
     }
 
@@ -66,7 +65,8 @@ public class HttpScheme extends DownloadScheme {
       }
       String host = base.substring(p + 3, s);
       r.append(base.substring(0, p + 3));
-      r.append("${username}@");
+      r.append(userProvider.get().getUserName());
+      r.append("@");
       r.append(host);
       r.append(base.substring(s));
     } else {
@@ -79,6 +79,11 @@ public class HttpScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && (gitHttpUrl != null || canonicalWebUrl != null);
+  }
+
+  @Override
+  public boolean isAuthRequired() {
+    return true;
   }
 
   private static String ensureSlash(String in) {

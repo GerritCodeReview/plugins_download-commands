@@ -21,43 +21,23 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
 import com.google.gerrit.server.config.DownloadConfig;
 
-import com.googlesource.gerrit.plugins.download.scheme.AnonymousGitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
+import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
 public abstract class GitDownloadCommand extends DownloadCommand {
-  private final AccountGeneralPreferences.DownloadCommand cmd;
   private final boolean commandAllowed;
 
   GitDownloadCommand(
       DownloadConfig downloadConfig, AccountGeneralPreferences.DownloadCommand cmd) {
-    this.cmd = cmd;
     this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd)
         || downloadConfig.getDownloadCommands().contains(DEFAULT_DOWNLOADS);
   }
 
   @Override
-  public String getName() {
-    return upperUnderscoreToUpperHyphen(cmd.name());
-  }
-
-  /** Converts UPPER_UNDERSCORE to Upper-Hyphen */
-  private static String upperUnderscoreToUpperHyphen(String upperUnderscore) {
-    StringBuilder upperHyphen = new StringBuilder(upperUnderscore.length());
-    String[] words = upperUnderscore.split("_");
-    for (int i = 0, l = words.length; i < l; ++i) {
-      if (i > 0) {
-        upperHyphen.append("-");
-      }
-      upperHyphen.append(Character.toUpperCase(words[i].charAt(0))).append(
-          words[i].substring(1).toLowerCase());
-    }
-    return upperHyphen.toString();
-  }
-
-  @Override
-  public final String getCommand(DownloadScheme scheme, String project) {
+  public final String getCommand(DownloadScheme scheme, String project,
+      String ref) {
     if (!commandAllowed) {
       return null;
     }
@@ -65,12 +45,16 @@ public abstract class GitDownloadCommand extends DownloadCommand {
     if (scheme instanceof SshScheme
         || scheme instanceof HttpScheme
         || scheme instanceof AnonymousHttpScheme
-        || scheme instanceof AnonymousGitScheme) {
-      return getCommand(scheme.getUrl(project));
+        || scheme instanceof GitScheme) {
+      String url = scheme.getUrl(project);
+      if (url != null) {
+        return getCommand(url, ref);
+      } else
+        return null;
     } else {
       return null;
     }
   }
 
-  public abstract String getCommand(String url);
+  public abstract String getCommand(String url, String ref);
 }

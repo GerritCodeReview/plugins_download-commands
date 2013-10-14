@@ -39,9 +39,6 @@ Command to fetch and checkout a patch set.
 Command to fetch a patch set and cherry-pick it onto the current
 commit.
 
-* `Clone`:
-Command to clone a project.
-
 * `Format-Patch`:
 Command to fetch a patch set and feed it into the `format-patch`
 command.

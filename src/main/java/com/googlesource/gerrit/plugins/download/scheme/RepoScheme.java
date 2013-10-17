@@ -33,7 +33,7 @@ public class RepoScheme extends DownloadScheme {
 
   @Override
   public String getUrl(String project) {
-    return "repo download " + project;
+    return project;
   }
 
   @Override

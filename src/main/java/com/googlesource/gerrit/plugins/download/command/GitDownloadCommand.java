@@ -21,10 +21,11 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
 import com.google.gerrit.server.config.DownloadConfig;
 
-import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
-import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
-import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
-import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
+import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
+
+import org.eclipse.jgit.transport.URIish;
+
+import java.net.URISyntaxException;
 
 abstract class GitDownloadCommand extends DownloadCommand {
   private final boolean commandAllowed;
@@ -40,7 +41,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
       String ref) {
     if (commandAllowed && isRecognizedScheme(scheme)) {
       String url = scheme.getUrl(project);
-      if (url != null) {
+      if (url != null && isValidUrl(url)) {
         return getCommand(url, ref);
       }
     }
@@ -48,10 +49,16 @@ abstract class GitDownloadCommand extends DownloadCommand {
   }
 
   private static boolean isRecognizedScheme(DownloadScheme scheme) {
-    return scheme instanceof SshScheme
-        || scheme instanceof HttpScheme
-        || scheme instanceof AnonymousHttpScheme
-        || scheme instanceof GitScheme;
+    return !(scheme instanceof RepoScheme);
+  }
+
+  private static boolean isValidUrl(String url) {
+    try {
+      new URIish(url);
+      return true;
+    } catch (URISyntaxException e) {
+      return false;
+    }
   }
 
   abstract String getCommand(String url, String ref);

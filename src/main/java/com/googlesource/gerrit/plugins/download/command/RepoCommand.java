@@ -33,10 +33,9 @@ public class RepoCommand extends DownloadCommand {
 
   @Override
   public String getCommand(DownloadScheme scheme, String project, String ref) {
-    if (!commandAllowed || !(scheme instanceof RepoScheme)) {
-      return null;
+    if (commandAllowed && scheme instanceof RepoScheme) {
+      return scheme.getUrl(project) + " " + ref;
     }
-
-    return scheme.getUrl(project) + " " + ref;
+    return null;
   }
 }

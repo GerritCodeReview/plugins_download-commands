@@ -22,6 +22,30 @@
       "revId": "d5252e4f260552154c78c6bc82ea386c292f29c8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e07a053_90f0140f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-10-17T18:13:11Z",
+      "side": 1,
+      "message": "Yes, another plugin supplied scheme. Its replaced in the next change. :-)",
+      "parentUuid": "3e2b84c4_69eae523",
+      "range": {
+        "startLine": 50,
+        "startChar": 25,
+        "endLine": 50,
+        "endChar": 43
+      },
+      "revId": "d5252e4f260552154c78c6bc82ea386c292f29c8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

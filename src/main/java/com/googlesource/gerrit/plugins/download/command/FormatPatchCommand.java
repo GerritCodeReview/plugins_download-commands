@@ -16,19 +16,17 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.FORMAT_PATCH;
 
-import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
-@Listen
-public class FormatPatchCommand extends GitDownloadCommand {
+class FormatPatchCommand extends GitDownloadCommand {
   @Inject
   FormatPatchCommand(DownloadConfig downloadConfig) {
     super(downloadConfig, FORMAT_PATCH);
   }
 
   @Override
-  public String getCommand(String url, String ref) {
+  String getCommand(String url, String ref) {
     return "git fetch " + url + " " + ref + " && git format-patch -1 --stdout FETCH_HEAD";
   }
 }

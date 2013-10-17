@@ -18,7 +18,6 @@ import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.Downlo
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.SSH;
 
 import com.google.gerrit.common.Nullable;
-import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
@@ -31,7 +30,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-@Listen
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
   private final Provider<CurrentUser> userProvider;

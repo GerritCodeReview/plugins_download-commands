@@ -16,19 +16,17 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.PULL;
 
-import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
-@Listen
-public class PullCommand extends GitDownloadCommand {
+class PullCommand extends GitDownloadCommand {
   @Inject
   PullCommand(DownloadConfig downloadConfig) {
     super(downloadConfig, PULL);
   }
 
   @Override
-  public String getCommand(String url, String ref) {
+  String getCommand(String url, String ref) {
     return "git pull " + url + " " + ref;
   }
 }

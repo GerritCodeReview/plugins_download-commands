@@ -34,7 +34,23 @@ public class RepoCommand extends DownloadCommand {
   @Override
   public String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed && scheme instanceof RepoScheme) {
-      return scheme.getUrl(project) + " " + ref;
+      String id = trim(ref);
+      if (id != null) {
+        return "repo download " + scheme.getUrl(project) + " " + id;
+      }
+    }
+    return null;
+  }
+
+  private static String trim(String ref) {
+    if (ref.startsWith("refs/changes/")) {
+      int s1 = ref.lastIndexOf('/');
+      if (s1 > 0) {
+        int s2 = ref.lastIndexOf('/', s1 - 1);
+        if (s2 > 0) {
+          return ref.substring(s2 + 1);
+        }
+      }
     }
     return null;
   }

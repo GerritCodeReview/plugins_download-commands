@@ -14,45 +14,15 @@
 
 package com.googlesource.gerrit.plugins.download;
 
-import com.google.gerrit.extensions.annotations.Exports;
-import com.google.gerrit.extensions.config.DownloadCommand;
-import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.inject.AbstractModule;
 
-import com.googlesource.gerrit.plugins.download.command.CheckoutCommand;
-import com.googlesource.gerrit.plugins.download.command.CherryPickCommand;
-import com.googlesource.gerrit.plugins.download.command.FormatPatchCommand;
-import com.googlesource.gerrit.plugins.download.command.PullCommand;
-import com.googlesource.gerrit.plugins.download.command.RepoCommand;
-import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
-import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
-import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
-import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
-import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
+import com.googlesource.gerrit.plugins.download.command.DownloadCommandsModule;
+import com.googlesource.gerrit.plugins.download.scheme.SchemeModule;
 
 class Module extends AbstractModule {
   @Override
   protected void configure() {
-    bind(DownloadScheme.class).annotatedWith(Exports.named("anonymous http"))
-        .to(AnonymousHttpScheme.class);
-    bind(DownloadScheme.class).annotatedWith(Exports.named("git"))
-        .to(GitScheme.class);
-    bind(DownloadScheme.class).annotatedWith(Exports.named("http"))
-        .to(HttpScheme.class);
-    bind(DownloadScheme.class).annotatedWith(Exports.named("repo"))
-        .to(RepoScheme.class);
-    bind(DownloadScheme.class).annotatedWith(Exports.named("ssh"))
-        .to(SshScheme.class);
-
-    bind(DownloadCommand.class).annotatedWith(Exports.named("Checkout"))
-        .to(CheckoutCommand.class);
-    bind(DownloadCommand.class).annotatedWith(Exports.named("Cherry-Pick"))
-        .to(CherryPickCommand.class);
-    bind(DownloadCommand.class).annotatedWith(Exports.named("Format-Patch"))
-        .to(FormatPatchCommand.class);
-    bind(DownloadCommand.class).annotatedWith(Exports.named("Pull"))
-        .to(PullCommand.class);
-    bind(DownloadCommand.class).annotatedWith(Exports.named("Repo-Download"))
-        .to(RepoCommand.class);
+    install(new DownloadCommandsModule());
+    install(new SchemeModule());
   }
 }

@@ -16,19 +16,17 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.CHECKOUT;
 
-import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
-@Listen
-public class CheckoutCommand extends GitDownloadCommand {
+class CheckoutCommand extends GitDownloadCommand {
   @Inject
   CheckoutCommand(DownloadConfig downloadConfig) {
     super(downloadConfig, CHECKOUT);
   }
 
   @Override
-  public String getCommand(String url, String ref) {
+  String getCommand(String url, String ref) {
     return "git fetch " + url + " " + ref + " && git checkout FETCH_HEAD";
   }
 }

@@ -23,7 +23,7 @@ import com.google.inject.Inject;
 
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 
-public class RepoCommand extends DownloadCommand {
+class RepoCommand extends DownloadCommand {
   private final boolean commandAllowed;
 
   @Inject

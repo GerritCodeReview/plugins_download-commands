@@ -16,19 +16,17 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.CHERRY_PICK;
 
-import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
-@Listen
-public class CherryPickCommand extends GitDownloadCommand {
+class CherryPickCommand extends GitDownloadCommand {
   @Inject
   CherryPickCommand(DownloadConfig downloadConfig) {
     super(downloadConfig, CHERRY_PICK);
   }
 
   @Override
-  public String getCommand(String url, String ref) {
+  String getCommand(String url, String ref) {
     return "git fetch " + url + " " + ref + " && git cherry-pick FETCH_HEAD";
   }
 }

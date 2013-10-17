@@ -26,7 +26,7 @@ import com.googlesource.gerrit.plugins.download.scheme.GitScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
-public abstract class GitDownloadCommand extends DownloadCommand {
+abstract class GitDownloadCommand extends DownloadCommand {
   private final boolean commandAllowed;
 
   GitDownloadCommand(
@@ -56,5 +56,5 @@ public abstract class GitDownloadCommand extends DownloadCommand {
     }
   }
 
-  public abstract String getCommand(String url, String ref);
+  abstract String getCommand(String url, String ref);
 }

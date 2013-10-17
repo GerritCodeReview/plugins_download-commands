@@ -38,22 +38,20 @@ abstract class GitDownloadCommand extends DownloadCommand {
   @Override
   public final String getCommand(DownloadScheme scheme, String project,
       String ref) {
-    if (!commandAllowed) {
-      return null;
-    }
-
-    if (scheme instanceof SshScheme
-        || scheme instanceof HttpScheme
-        || scheme instanceof AnonymousHttpScheme
-        || scheme instanceof GitScheme) {
+    if (commandAllowed && isRecognizedScheme(scheme)) {
       String url = scheme.getUrl(project);
       if (url != null) {
         return getCommand(url, ref);
-      } else
-        return null;
-    } else {
-      return null;
+      }
     }
+    return null;
+  }
+
+  private static boolean isRecognizedScheme(DownloadScheme scheme) {
+    return scheme instanceof SshScheme
+        || scheme instanceof HttpScheme
+        || scheme instanceof AnonymousHttpScheme
+        || scheme instanceof GitScheme;
   }
 
   abstract String getCommand(String url, String ref);

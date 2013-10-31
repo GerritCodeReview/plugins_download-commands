@@ -86,6 +86,11 @@ public class HttpScheme extends DownloadScheme {
     return true;
   }
 
+  @Override
+  public boolean isAuthSupported() {
+    return true;
+  }
+
   private static String ensureSlash(String in) {
     if (in != null && !in.endsWith("/")) {
       return in + "/";

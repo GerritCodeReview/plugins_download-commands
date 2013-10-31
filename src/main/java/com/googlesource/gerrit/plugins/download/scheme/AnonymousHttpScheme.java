@@ -71,6 +71,11 @@ public class AnonymousHttpScheme extends DownloadScheme {
     return false;
   }
 
+  @Override
+  public boolean isAuthSupported() {
+    return false;
+  }
+
   private static String ensureSlash(String in) {
     if (in != null && !in.endsWith("/")) {
       return in + "/";

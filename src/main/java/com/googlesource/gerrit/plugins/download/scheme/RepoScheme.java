@@ -45,4 +45,9 @@ public class RepoScheme extends DownloadScheme {
   public boolean isAuthRequired() {
     return false;
   }
+
+  @Override
+  public boolean isAuthSupported() {
+    return true;
+  }
 }

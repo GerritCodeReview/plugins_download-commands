@@ -72,6 +72,7 @@ public class HttpScheme extends DownloadScheme {
     } else {
       return null;
     }
+    r.append("/p/");
     r.append(project);
     return r.toString();
   }

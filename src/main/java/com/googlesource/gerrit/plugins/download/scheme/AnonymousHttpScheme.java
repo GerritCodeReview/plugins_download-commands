@@ -57,6 +57,7 @@ public class AnonymousHttpScheme extends DownloadScheme {
     } else {
       throw new IllegalStateException("No HTTP URL");
     }
+    r.append("/p/");
     r.append(project);
     return r.toString();
   }

@@ -14,8 +14,6 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.REPO_DOWNLOAD;
-
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
@@ -23,17 +21,15 @@ import com.google.inject.Inject;
 
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 
-class RepoCommand extends DownloadCommand {
-  private final boolean commandAllowed;
+public class RepoCommand extends DownloadCommand {
 
   @Inject
   RepoCommand(DownloadConfig downloadConfig) {
-    this.commandAllowed = downloadConfig.getDownloadCommands().contains(REPO_DOWNLOAD);
   }
 
   @Override
   public String getCommand(DownloadScheme scheme, String project, String ref) {
-    if (commandAllowed && scheme instanceof RepoScheme) {
+    if (scheme instanceof RepoScheme) {
       String id = trim(ref);
       if (id != null) {
         return "repo download " + scheme.getUrl(project) + " " + id;

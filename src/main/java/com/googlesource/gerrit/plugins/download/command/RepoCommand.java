@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
+import com.google.gerrit.reviewdb.client.RefNames;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
@@ -39,7 +40,7 @@ public class RepoCommand extends DownloadCommand {
   }
 
   private static String trim(String ref) {
-    if (ref.startsWith("refs/changes/")) {
+    if (ref.startsWith(RefNames.REFS_CHANGES)) {
       int s1 = ref.lastIndexOf('/');
       if (s1 > 0) {
         int s2 = ref.lastIndexOf('/', s1 - 1);

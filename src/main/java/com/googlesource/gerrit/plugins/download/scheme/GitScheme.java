@@ -24,10 +24,13 @@ import com.google.inject.Inject;
 
 import org.eclipse.jgit.lib.Config;
 
+import java.util.Set;
+
 public class GitScheme extends DownloadScheme {
 
   private final String gitDaemonUrl;
   private final boolean schemeAllowed;
+  private final String[] mirrors;
 
   @Inject
   public GitScheme(@GerritServerConfig Config cfg,
@@ -36,6 +39,7 @@ public class GitScheme extends DownloadScheme {
         ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_GIT)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
+    this.mirrors = cfg.getStringList("mirrors", null, "mirrorUrl");
   }
 
   @Override
@@ -59,6 +63,11 @@ public class GitScheme extends DownloadScheme {
   @Override
   public boolean isAuthSupported() {
     return false;
+  }
+
+  @Override
+  public String[] getMirrors(){
+    return mirrors;
   }
 
   private static String ensureSlash(String in) {

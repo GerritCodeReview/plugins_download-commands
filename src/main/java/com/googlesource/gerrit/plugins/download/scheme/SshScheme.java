@@ -22,21 +22,26 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
+import org.eclipse.jgit.lib.Config;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Set;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
+  private final String[] mirrors;
 
   @Inject
-  SshScheme(@SshAdvertisedAddresses List<String> sshAddresses,
+  SshScheme(@GerritServerConfig Config cfg, @SshAdvertisedAddresses List<String> sshAddresses,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider, DownloadConfig downloadConfig) {
     String sshAddr = !sshAddresses.isEmpty() ? sshAddresses.get(0) : null;
@@ -52,6 +57,7 @@ public class SshScheme extends DownloadScheme {
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
+    this.mirrors = cfg.getStringList("mirrors", null, "mirrorUrl");
   }
 
   @Override
@@ -82,6 +88,11 @@ public class SshScheme extends DownloadScheme {
   @Override
   public boolean isAuthSupported() {
     return true;
+  }
+
+  @Override
+  public String[] getMirrors(){
+    return mirrors;
   }
 
   private static String ensureSlash(String in) {

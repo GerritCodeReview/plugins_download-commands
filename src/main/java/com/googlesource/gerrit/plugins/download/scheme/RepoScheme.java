@@ -18,14 +18,21 @@ import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.Downlo
 
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
+
+import org.eclipse.jgit.lib.Config;
+
+import java.util.Set;
 
 public class RepoScheme extends DownloadScheme {
   private final boolean schemeAllowed;
+  private final String[] mirrors;
 
   @Inject
-  RepoScheme(DownloadConfig downloadConfig) {
+  RepoScheme(@GerritServerConfig Config cfg, DownloadConfig downloadConfig) {
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(REPO_DOWNLOAD);
+    this.mirrors = cfg.getStringList("mirrors", null, "mirrorUrl");
   }
 
   @Override
@@ -46,5 +53,10 @@ public class RepoScheme extends DownloadScheme {
   @Override
   public boolean isAuthSupported() {
     return true;
+  }
+
+  @Override
+  public String[] getMirrors(){
+    return mirrors;
   }
 }

@@ -27,11 +27,18 @@ import com.google.inject.Provider;
 
 import org.eclipse.jgit.lib.Config;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class AnonymousHttpScheme extends DownloadScheme {
 
   private final String gitHttpUrl;
   private final String canonicalWebUrl;
   private final boolean schemeAllowed;
+  private final String[] mirrors;
 
   @Inject
   public AnonymousHttpScheme(@GerritServerConfig Config cfg,
@@ -41,6 +48,7 @@ public class AnonymousHttpScheme extends DownloadScheme {
     this.canonicalWebUrl = provider != null ? provider.get() : null;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_HTTP)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
+    this.mirrors = cfg.getStringList("mirrors", null, "mirrorUrl");
   }
 
   @Override
@@ -74,6 +82,11 @@ public class AnonymousHttpScheme extends DownloadScheme {
   @Override
   public boolean isAuthSupported() {
     return false;
+  }
+
+  @Override
+  public String[] getMirrors(){
+    return mirrors;
   }
 
   private static String ensureSlash(String in) {

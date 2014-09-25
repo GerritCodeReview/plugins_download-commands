@@ -38,6 +38,10 @@ public class DownloadCommandsModule extends AbstractModule {
       .to(PullCommand.class);
 
     bind(DownloadCommand.class)
+      .annotatedWith(Exports.named("Reset"))
+      .to(ResetCommand.class);
+
+    bind(DownloadCommand.class)
       .annotatedWith(Exports.named("repo"))
       .to(RepoCommand.class);
   }

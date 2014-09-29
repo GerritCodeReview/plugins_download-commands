@@ -17,7 +17,8 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.CHERRY_PICK;
 
 import com.google.gerrit.server.config.DownloadConfig;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 class CherryPickCommand extends GitDownloadCommand {
   @Inject

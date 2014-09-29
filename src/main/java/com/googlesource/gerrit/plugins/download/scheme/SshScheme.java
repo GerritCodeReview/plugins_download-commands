@@ -23,12 +23,13 @@ import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
-import com.google.inject.Inject;
 import com.google.inject.Provider;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+
+import javax.inject.Inject;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;

@@ -18,7 +18,8 @@ import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.Downlo
 
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 public class RepoScheme extends DownloadScheme {
   private final boolean schemeAllowed;

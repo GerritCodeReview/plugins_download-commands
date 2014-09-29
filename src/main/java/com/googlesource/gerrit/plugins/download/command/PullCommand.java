@@ -17,7 +17,8 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.PULL;
 
 import com.google.gerrit.server.config.DownloadConfig;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 class PullCommand extends GitDownloadCommand {
   @Inject

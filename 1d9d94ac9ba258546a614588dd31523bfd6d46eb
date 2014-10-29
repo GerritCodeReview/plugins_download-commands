@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b50a4612_5896fdd9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RepoCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2014-10-29T01:03:46Z",
+      "side": 1,
+      "message": "Is this annotation still needed if there are no longer any injected parameters?  Is the constructor even needed?",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 9
+      },
+      "revId": "1d9d94ac9ba258546a614588dd31523bfd6d46eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

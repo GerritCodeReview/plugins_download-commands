@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bffafb8_258a8e43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-01-23T15:24:31Z",
+      "side": 1,
+      "message": "This is bad since most users use this command to rebase the commit locally and then this message is not wanted.\n\nI believe this change was already discussed once and then it was discarded (but can\u0027t find it anymore).",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "96718b02c5e96b4e1365b79bda863a6e723574f3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

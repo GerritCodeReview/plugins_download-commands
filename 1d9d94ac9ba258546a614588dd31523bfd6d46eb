@@ -22,6 +22,30 @@
       "revId": "1d9d94ac9ba258546a614588dd31523bfd6d46eb",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "955d4234_47a74e9f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RepoCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1010008
+      },
+      "writtenOn": "2015-05-05T20:37:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b50a4612_5896fdd9",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 9
+      },
+      "revId": "1d9d94ac9ba258546a614588dd31523bfd6d46eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

@@ -16,6 +16,8 @@ that some download schemes must be enabled by [configuration]
 * `HTTP`: Scheme for authenticated downloads via the HTTP protocol.
 
 * `SSH`: Scheme for authenticated downloads via the SSH protocol.
+<br />
+Requires that users have a username.
 
 * `REPO`: Scheme for downloading with the Repo tool.
 

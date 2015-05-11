@@ -33,6 +33,8 @@ import java.util.List;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
+  private final String sshdHost;
+  private final int sshdPort;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
 
@@ -50,6 +52,21 @@ public class SshScheme extends DownloadScheme {
       }
     }
     this.sshdAddress = sshAddr;
+
+    int port = 29418;
+    int p = sshdAddress.indexOf(":");
+    if (p > 0) {
+      this.sshdHost = sshdAddress.substring(0, p);
+      try {
+        port = Integer.parseInt(sshdAddress.substring(p + 1));
+      } catch (NumberFormatException e) {
+        // use default port
+      }
+    } else {
+      this.sshdHost = sshdAddress;
+    }
+    this.sshdPort = port;
+
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH)
         || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
@@ -94,5 +111,13 @@ public class SshScheme extends DownloadScheme {
       return in + "/";
     }
     return in;
+  }
+
+  public String getSshdHost() {
+    return sshdHost;
+  }
+
+  public int getSshdPort() {
+    return sshdPort;
   }
 }

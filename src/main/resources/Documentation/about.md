@@ -55,3 +55,15 @@ The `Repo` command is only available for the `REPO` scheme.
 * `Repo`:
 Command to download a patch set of a change with the Repo tool.
 
+Clone Commands
+--------------
+
+The following clone commands are defined by this plugin.
+
+* `Clone`:
+Standard git clone command.
+
+* `Clone with commit-msg hook`:
+Standard git clone command with scp command to copy the commit-msg hook
+into the newly cloned repository.
+

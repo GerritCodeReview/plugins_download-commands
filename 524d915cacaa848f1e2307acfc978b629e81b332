@@ -16,6 +16,24 @@
       "revId": "524d915cacaa848f1e2307acfc978b629e81b332",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d119541_7aa77936",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-05-11T06:41:10Z",
+      "side": 1,
+      "message": "Ok, I\u0027ve put a note into the documentation, but I think writing a warning or info would be too much.",
+      "parentUuid": "4d119541_1a54fda6",
+      "revId": "524d915cacaa848f1e2307acfc978b629e81b332",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

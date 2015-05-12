@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed55e939_d7045c48",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2015-05-12T13:01:26Z",
+      "side": 1,
+      "message": "[optional] This could be all inlined into one statement:\n\n return new StringBuilder(super.getCommand(scheme, project))\n   .append(...)\n   .append(...)\n   .toString();",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "0f0f822ef738445eff882d78d8ccae033a16831c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd6ca517_76dbd068",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2015-05-12T13:01:26Z",
+      "side": 1,
+      "message": "nit: unnecessary blank line",
+      "revId": "0f0f822ef738445eff882d78d8ccae033a16831c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

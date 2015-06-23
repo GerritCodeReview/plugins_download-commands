@@ -48,8 +48,17 @@ public class CloneWithCommitMsgHook extends CloneCommand {
         .append("@")
         .append(sshScheme.getSshdHost())
         .append(":hooks/commit-msg ")
-        .append(project)
+        .append(getBaseName(project))
         .append("/.git/hooks/")
         .toString();
+  }
+
+  private String getBaseName(String project) {
+    int i = project.lastIndexOf('/');
+    if (i < 0) {
+      return project;
+    } else {
+      return project.substring(i + 1);
+    }
   }
 }

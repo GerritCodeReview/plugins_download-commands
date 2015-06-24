@@ -53,12 +53,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
         .toString();
   }
 
-  private String getBaseName(String project) {
-    int i = project.lastIndexOf('/');
-    if (i < 0) {
-      return project;
-    } else {
-      return project.substring(i + 1);
-    }
+  private static String getBaseName(String project) {
+    return project.substring(project.lastIndexOf('/') + 1);
   }
 }

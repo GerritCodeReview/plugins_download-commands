@@ -46,6 +46,30 @@
       "revId": "d405be1f30dc03fdb7bd02e58ea10addb44b47bc",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13650596_48f01fda",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1015513
+      },
+      "writtenOn": "2015-07-02T08:05:29Z",
+      "side": 1,
+      "message": "I don\u0027t know enough about the implied policies, but it would seem more appropriate to me to either throw an exception or return null (and let the caller handle it) here if \"id \u003d\u003d null\".",
+      "parentUuid": "13650596_a8c3db7c",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 9
+      },
+      "revId": "d405be1f30dc03fdb7bd02e58ea10addb44b47bc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

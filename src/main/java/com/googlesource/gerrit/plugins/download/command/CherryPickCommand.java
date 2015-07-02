@@ -17,12 +17,14 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.CHERRY_PICK;
 
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 
 class CherryPickCommand extends GitDownloadCommand {
   @Inject
-  CherryPickCommand(DownloadConfig downloadConfig) {
-    super(downloadConfig, CHERRY_PICK);
+  CherryPickCommand(DownloadConfig downloadConfig,
+      GitRepositoryManager repoManager) {
+    super(downloadConfig, CHERRY_PICK, repoManager);
   }
 
   @Override

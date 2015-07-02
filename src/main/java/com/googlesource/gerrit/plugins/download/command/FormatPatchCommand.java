@@ -17,12 +17,14 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.FORMAT_PATCH;
 
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 
 class FormatPatchCommand extends GitDownloadCommand {
   @Inject
-  FormatPatchCommand(DownloadConfig downloadConfig) {
-    super(downloadConfig, FORMAT_PATCH);
+  FormatPatchCommand(DownloadConfig downloadConfig,
+      GitRepositoryManager repoManager) {
+    super(downloadConfig, FORMAT_PATCH, repoManager);
   }
 
   @Override

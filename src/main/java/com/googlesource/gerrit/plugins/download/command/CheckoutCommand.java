@@ -17,12 +17,14 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.CHECKOUT;
 
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 
 class CheckoutCommand extends GitDownloadCommand {
   @Inject
-  CheckoutCommand(DownloadConfig downloadConfig) {
-    super(downloadConfig, CHECKOUT);
+  CheckoutCommand(DownloadConfig downloadConfig,
+      GitRepositoryManager repoManager) {
+    super(downloadConfig, CHECKOUT, repoManager);
   }
 
   @Override

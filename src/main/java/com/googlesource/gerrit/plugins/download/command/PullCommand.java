@@ -17,12 +17,14 @@ package com.googlesource.gerrit.plugins.download.command;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.PULL;
 
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 
 class PullCommand extends GitDownloadCommand {
   @Inject
-  PullCommand(DownloadConfig downloadConfig) {
-    super(downloadConfig, PULL);
+  PullCommand(DownloadConfig downloadConfig,
+      GitRepositoryManager repoManager) {
+    super(downloadConfig, PULL, repoManager);
   }
 
   @Override

@@ -19,21 +19,42 @@ import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.Downlo
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
+import com.google.gerrit.reviewdb.client.Project;
+import com.google.gerrit.reviewdb.client.RefNames;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.git.GitRepositoryManager;
 
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 
+import org.eclipse.jgit.errors.RepositoryNotFoundException;
+import org.eclipse.jgit.lib.Config;
+import org.eclipse.jgit.lib.ObjectId;
+import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.transport.URIish;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 abstract class GitDownloadCommand extends DownloadCommand {
-  private final boolean commandAllowed;
+  private static final Logger log =
+      LoggerFactory.getLogger(GitDownloadCommand.class);
 
-  GitDownloadCommand(
-      DownloadConfig downloadConfig, AccountGeneralPreferences.DownloadCommand cmd) {
+  private static final String UPLOADPACK = "uploadpack";
+  private static final String KEY_HIDE_REFS = "hideRefs";
+  private static final String KEY_ALLOW_TIP_SHA1_IN_WANT = "allowTipSha1InWant";
+
+  private final boolean commandAllowed;
+  private final GitRepositoryManager repoManager;
+
+  GitDownloadCommand(DownloadConfig downloadConfig,
+      AccountGeneralPreferences.DownloadCommand cmd,
+      GitRepositoryManager repoManager) {
     this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd)
         || downloadConfig.getDownloadCommands().contains(DEFAULT_DOWNLOADS);
+    this.repoManager = repoManager;
   }
 
   @Override
@@ -42,7 +63,10 @@ abstract class GitDownloadCommand extends DownloadCommand {
     if (commandAllowed && isRecognizedScheme(scheme)) {
       String url = scheme.getUrl(project);
       if (url != null && isValidUrl(url)) {
-        return getCommand(url, ref);
+        ref = resolveRef(project, ref);
+        if (ref != null) {
+          return getCommand(url, ref);
+        }
       }
     }
     return null;
@@ -58,6 +82,38 @@ abstract class GitDownloadCommand extends DownloadCommand {
       return true;
     } catch (URISyntaxException e) {
       return false;
+    }
+  }
+
+  private String resolveRef(String project, String ref) {
+    if (project.startsWith("$") || ref.startsWith("$")) {
+      // No real value but placeholders are being used.
+      return ref;
+    }
+
+    try (Repository repo = repoManager.openRepository(new Project.NameKey(project))) {
+      Config cfg = repo.getConfig();
+      if (cfg.getBoolean(UPLOADPACK, KEY_ALLOW_TIP_SHA1_IN_WANT, false)
+          && Arrays.asList(cfg.getStringList(UPLOADPACK, null, KEY_HIDE_REFS))
+              .contains(RefNames.REFS_CHANGES)) {
+        ObjectId id = repo.resolve(ref);
+        if (id != null) {
+          return id.name();
+        } else {
+          log.error(String.format("Cannot resolve ref %s in project %s.", ref,
+              project));
+          return null;
+        }
+      } else {
+        return ref;
+      }
+    } catch (RepositoryNotFoundException e) {
+      log.error(String.format("Missing project: %s",  project), e);
+      return null;
+    } catch (IOException e) {
+      log.error(
+          String.format("Failed to lookup project %s from cache.", project), e);
+      return null;
     }
   }
 

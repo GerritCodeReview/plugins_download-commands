@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f367919d_47fb2eb8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-07-02T11:46:14Z",
+      "side": 1,
+      "message": "I wonder if we should have some global config option to enable/disable this check here. It seems like a waste to open each repository to read the config when it\u0027s already known that no project is using such configuration.\nWould such a config option make sense (e.g. download.checkForHiddenChangeRefs)?",
+      "range": {
+        "startLine": 94,
+        "startChar": 1,
+        "endLine": 98,
+        "endChar": 49
+      },
+      "revId": "f31adc637ac35a1ae2f94ebae7137211051454f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

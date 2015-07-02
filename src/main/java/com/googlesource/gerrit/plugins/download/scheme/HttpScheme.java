@@ -69,6 +69,7 @@ public class HttpScheme extends DownloadScheme {
       r.append("@");
       r.append(host);
       r.append(base.substring(s));
+      r.append("a/");
     } else {
       return null;
     }

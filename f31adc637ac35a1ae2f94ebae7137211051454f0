@@ -22,6 +22,30 @@
       "revId": "f31adc637ac35a1ae2f94ebae7137211051454f0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13650596_a85f5b3f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2015-07-02T13:15:30Z",
+      "side": 1,
+      "message": "It would make sense to me.\n\nAfter all, resolveRef is run for each kind of command\nseparately. So typically 3-4 times per change screen.\n\nBut I\u0027d certainly be fine without it too.",
+      "parentUuid": "f367919d_47fb2eb8",
+      "range": {
+        "startLine": 94,
+        "startChar": 1,
+        "endLine": 98,
+        "endChar": 49
+      },
+      "revId": "f31adc637ac35a1ae2f94ebae7137211051454f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

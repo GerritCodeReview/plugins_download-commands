@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13650596_a82c3bd2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1015513
+      },
+      "writtenOn": "2015-07-02T11:33:06Z",
+      "side": 1,
+      "message": "Hmm, how about adding an early check for the placeholder case instead? Like this after line 88 at the beginning of the method:\n\nif (project.startsWith(\u0027$\u0027) || ref.startsWith(\u0027$\u0027)) {\n  // No real value but placeholders are being used.\n  return ref;\n}\n\nAnd in exchange remove this code as well as the one starting at line 104. And I would keep the log.error() from the previous patch set here.",
+      "revId": "ea07ab594505f9c1e8211ef7e7101fbed0e17a6d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

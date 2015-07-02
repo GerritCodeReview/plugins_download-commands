@@ -65,3 +65,25 @@ The download section configures the allowed download methods.
 
 	If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP
 	downloads are allowed.
+
+<a id="download.checkForHiddenChangeRefs">download.checkForHiddenChangeRefs</a>
+:	Whether the download commands should be adapted when the change
+	refs are hidden.
+
+	Git has a configuration option to hide refs from the initial
+	advertisement (`uploadpack.hideRefs`). This option can be used to
+	hide the change refs from the client. As consequence fetching
+	changes by change ref is not working anymore. However by setting
+	`uploadpack.allowTipSha1InWant` to `true` fetching changes by
+	commit ID is possible. If `download.checkForHiddenChangeRefs` is
+	set to `true` the git download commands use the commit ID instead
+	of the change ref when a project is configured like this.
+
+	Example git configuration on a project:
+
+		[uploadpack]
+		  hideRefs = refs/changes/
+		  hideRefs = refs/cache-automerge/
+		  allowTipSha1InWant = true
+
+	By default `false`.

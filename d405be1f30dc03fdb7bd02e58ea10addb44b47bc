@@ -70,6 +70,23 @@
       "revId": "d405be1f30dc03fdb7bd02e58ea10addb44b47bc",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f367919d_87d5a629",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2015-07-02T10:26:39Z",
+      "side": 1,
+      "message": "For me, this exception always gets thrown.\n\nWhen entering the resolveRef method, for me\n* project is always \u0027${project}\u0027 (yes, this literal string), and\n* ref is always \u0027${ref}\u0027 (yes, this literal string).\n\n(Really exactly those strings. So I guess the String is evaluated and interpolated somewhere down the road to fill \u0027${project}\u0027 and \u0027${ref}\u0027 with the concrete project and ref.)\n\nDue to project being \u0027${project}\u0027, the repoManager correctly\nfails to open the repo, and the method bails out.",
+      "revId": "d405be1f30dc03fdb7bd02e58ea10addb44b47bc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

@@ -54,17 +54,21 @@ public class SshScheme extends DownloadScheme {
     this.sshdAddress = sshAddr;
 
     int port = 29418;
-    int p = sshdAddress.indexOf(":");
-    if (p > 0) {
-      this.sshdHost = sshdAddress.substring(0, p);
-      try {
-        port = Integer.parseInt(sshdAddress.substring(p + 1));
-      } catch (NumberFormatException e) {
-        // use default port
+    String host = sshdAddress;
+    if (sshdAddress != null) {
+      int p = sshdAddress.indexOf(":");
+      if (p > 0) {
+        host = sshdAddress.substring(0, p);
+        try {
+          port = Integer.parseInt(sshdAddress.substring(p + 1));
+        } catch (NumberFormatException e) {
+          // use default port
+        }
+      } else {
+        host = sshdAddress;
       }
-    } else {
-      this.sshdHost = sshdAddress;
     }
+    this.sshdHost = host;
     this.sshdPort = port;
 
     this.userProvider = userProvider;

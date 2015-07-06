@@ -46,6 +46,30 @@
       "revId": "c0f1b84e494c8bab73f4786642dc768ae60468d9",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5365bdc2_3a7b61a0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2015-07-06T12:37:19Z",
+      "side": 1,
+      "message": "\u003e Where is this code? Can\u0027t find it.\n\nSorry, it was just me misreading the output.",
+      "parentUuid": "f367919d_6743d214",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 23
+      },
+      "revId": "c0f1b84e494c8bab73f4786642dc768ae60468d9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

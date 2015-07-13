@@ -64,6 +64,6 @@ The following clone commands are defined by this plugin.
 Standard git clone command.
 
 * `Clone with commit-msg hook`:
-Standard git clone command with scp command to copy the commit-msg hook
+Standard git clone command with a command to copy the commit-msg hook
 into the newly cloned repository.
 

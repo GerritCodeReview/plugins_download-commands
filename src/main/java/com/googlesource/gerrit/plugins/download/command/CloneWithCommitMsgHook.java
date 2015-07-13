@@ -19,9 +19,14 @@ import com.google.gerrit.server.CurrentUser;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
+import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
+import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
+  private static final String HOOK = "hooks/commit-msg";
+  private static final String TARGET = " `git rev-parse --git-dir`/";
+
   private final SshScheme sshScheme;
   private final Provider<CurrentUser> userProvider;
 
@@ -35,22 +40,46 @@ public class CloneWithCommitMsgHook extends CloneCommand {
   @Override
   public String getCommand(DownloadScheme scheme, String project) {
     String username = userProvider.get().getUserName();
-    if (!sshScheme.isEnabled() || username == null) {
+    if (username == null) {
       return null;
     }
 
-    return new StringBuilder()
-        .append(super.getCommand(scheme, project))
-        .append(" && scp -p -P ")
-        .append(sshScheme.getSshdPort())
-        .append(" ")
-        .append(username)
-        .append("@")
-        .append(sshScheme.getSshdHost())
-        .append(":hooks/commit-msg ")
-        .append(getBaseName(project))
-        .append("/.git/hooks/")
-        .toString();
+    String cloneCommand = super.getCommand(scheme, project);
+    String projectName = getBaseName(project);
+
+    if (scheme instanceof SshScheme) {
+      return new StringBuilder()
+      .append(cloneCommand)
+      .append(" && scp -p -P ")
+      .append(sshScheme.getSshdPort())
+      .append(" ")
+      .append(username)
+      .append("@")
+      .append(sshScheme.getSshdHost())
+      .append(":"  + HOOK)
+      .append(" ")
+      .append(projectName)
+      .append("/.git/hooks/")
+      .toString();
+    }
+
+    if (scheme instanceof HttpScheme || scheme instanceof AnonymousHttpScheme) {
+      return new StringBuilder()
+      .append(cloneCommand)
+      .append(" && (cd ")
+      .append(projectName)
+      .append(" && curl -kLo")
+      .append(TARGET + HOOK)
+      .append(" ")
+      .append(scheme.getUrl(project))
+      .append("/tools/" + HOOK)
+      .append("; chmod +x")
+      .append(TARGET + HOOK)
+      .append(")")
+      .toString();
+    }
+
+    return null;
   }
 
   private static String getBaseName(String project) {

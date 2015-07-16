@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3820262d_19d26b46",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "784c5e14_db4f1393",
+      "range": {
+        "startLine": 50,
+        "startChar": 6,
+        "endLine": 51,
+        "endChar": 8
+      },
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b84256dc_bd147f7c",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2015-07-16T08:46:18Z",
       "side": 1,
       "message": "Write this as:\n\n  .append(\":\")\n  .append(HOOK)",
+      "range": {
+        "startLine": 57,
+        "startChar": 6,
+        "endLine": 57,
+        "endChar": 26
+      },
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3820262d_39cf2f9f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b84256dc_bd147f7c",
       "range": {
         "startLine": 57,
         "startChar": 6,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "1817e2d9_98d67534",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b84256dc_7df7d7ca",
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b84256dc_5dfa1bb4",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 3
@@ -76,6 +142,30 @@
       "writtenOn": "2015-07-16T08:46:18Z",
       "side": 1,
       "message": "Bad indention, all \".append(*)\" lines should be indended by 4 space characters:\n\n  return new StringBuilder()\n      .append(\"git clone \" + host + project)\n      .append(\" \u0026\u0026 (cd \")\n  ...",
+      "range": {
+        "startLine": 67,
+        "startChar": 7,
+        "endLine": 68,
+        "endChar": 8
+      },
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1817e2d9_b8db395b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b84256dc_5dfa1bb4",
       "range": {
         "startLine": 67,
         "startChar": 7,
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "3820262d_d9dcf357",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "784c5e14_fb544f27",
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b84256dc_1d049349",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 3
@@ -116,6 +224,24 @@
       "writtenOn": "2015-07-16T08:46:18Z",
       "side": 1,
       "message": "Don\u0027t concatinate strings if we already have a StringBuilder.",
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3820262d_f9e1b714",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b84256dc_1d049349",
       "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "3820262d_99d67b34",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b84256dc_3d014f3a",
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "784c5e14_9b598b5e",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 3
@@ -150,6 +294,30 @@
       "writtenOn": "2015-07-16T08:46:18Z",
       "side": 1,
       "message": "better use lastIndexOf here too",
+      "range": {
+        "startLine": 85,
+        "startChar": 34,
+        "endLine": 85,
+        "endChar": 41
+      },
+      "revId": "f2a08329c696c90ad2f0e6cef87880587c39e06b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1817e2d9_58f1bddd",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2015-07-16T13:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "784c5e14_9b598b5e",
       "range": {
         "startLine": 85,
         "startChar": 34,

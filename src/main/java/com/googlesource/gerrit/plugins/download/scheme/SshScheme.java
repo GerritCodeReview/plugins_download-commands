@@ -14,7 +14,6 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
-import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.SSH;
 
 import com.google.common.base.Strings;
@@ -72,8 +71,7 @@ public class SshScheme extends DownloadScheme {
     this.sshdPort = port;
 
     this.userProvider = userProvider;
-    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH)
-        || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
   }
 
   @Override

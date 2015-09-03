@@ -14,8 +14,6 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadCommand.DEFAULT_DOWNLOADS;
-
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
@@ -57,8 +55,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
       DownloadConfig downloadConfig,
       AccountGeneralPreferences.DownloadCommand cmd,
       GitRepositoryManager repoManager) {
-    this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd)
-        || downloadConfig.getDownloadCommands().contains(DEFAULT_DOWNLOADS);
+    this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd);
     this.repoManager = repoManager;
     this.checkForHiddenChangeRefs =
         cfg.getBoolean(DOWNLOAD, KEY_CHECK_FOR_HIDDEN_CHANGE_REFS, false);

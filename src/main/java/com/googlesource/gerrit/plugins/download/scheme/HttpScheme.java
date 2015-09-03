@@ -14,7 +14,6 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
-import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.DEFAULT_DOWNLOADS;
 import static com.google.gerrit.reviewdb.client.AccountGeneralPreferences.DownloadScheme.HTTP;
 
 import com.google.gerrit.common.Nullable;
@@ -43,8 +42,7 @@ public class HttpScheme extends DownloadScheme {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
     this.canonicalWebUrl = urlProvider != null ? urlProvider.get() : null;
     this.userProvider = userProvider;
-    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP)
-        || downloadConfig.getDownloadSchemes().contains(DEFAULT_DOWNLOADS);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP);
   }
 
   @Override

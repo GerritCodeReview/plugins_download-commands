@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
@@ -23,16 +24,23 @@ import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 
+import org.eclipse.jgit.lib.Config;
+
 public class CloneWithCommitMsgHook extends CloneCommand {
   private static final String HOOK = "hooks/commit-msg";
   private static final String TARGET = " `git rev-parse --git-dir`/";
 
+  private final String configCommand;
   private final SshScheme sshScheme;
   private final Provider<CurrentUser> userProvider;
 
   @Inject
-  CloneWithCommitMsgHook(SshScheme sshScheme,
+  CloneWithCommitMsgHook(
+      @GerritServerConfig Config config,
+      SshScheme sshScheme,
       Provider<CurrentUser> userProvider) {
+    this.configCommand =
+        config.getString("gerrit", null, "installCommitMsgHookCommand");
     this.sshScheme = sshScheme;
     this.userProvider = userProvider;
   }
@@ -44,6 +52,17 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       return null;
     }
     String projectName = getBaseName(project);
+
+    if (configCommand != null) {
+      return new StringBuilder()
+          .append(super.getCommand(scheme, project))
+          .append(" && (cd ")
+          .append(projectName)
+          .append(" && ")
+          .append(configCommand)
+          .append(")")
+          .toString();
+    }
 
     if (scheme instanceof SshScheme) {
       return new StringBuilder()

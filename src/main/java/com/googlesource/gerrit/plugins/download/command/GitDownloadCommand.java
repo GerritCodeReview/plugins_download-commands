@@ -14,9 +14,9 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
-import com.google.gerrit.reviewdb.client.AccountGeneralPreferences;
 import com.google.gerrit.reviewdb.client.Project;
 import com.google.gerrit.reviewdb.client.RefNames;
 import com.google.gerrit.server.config.DownloadConfig;
@@ -54,7 +54,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   GitDownloadCommand(@GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
-      AccountGeneralPreferences.DownloadCommand cmd,
+      GeneralPreferencesInfo.DownloadCommand cmd,
       GitRepositoryManager repoManager) {
     this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd);
     this.repoManager = repoManager;

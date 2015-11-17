@@ -43,7 +43,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   private static final String DOWNLOAD = "download";
   private static final String UPLOADPACK = "uploadpack";
-  private static final String KEY_ALLOW_TIP_SHA1_IN_WANT = "allowTipSha1InWant";
+  private static final String KEY_ALLOW_TIP_SHA1_IN_WANT = "allowTipSHA1InWant";
+  private static final String KEY_ALLOW_REACHABLE_SHA1_IN_WANT = "allowReachableSHA1InWant";
   private static final String KEY_CHECK_FOR_HIDDEN_CHANGE_REFS = "checkForHiddenChangeRefs";
   private static final String KEY_HIDE_REFS = "hideRefs";
 
@@ -99,7 +100,10 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
     try (Repository repo = repoManager.openRepository(new Project.NameKey(project))) {
       Config cfg = repo.getConfig();
-      if (cfg.getBoolean(UPLOADPACK, KEY_ALLOW_TIP_SHA1_IN_WANT, false)
+      boolean allowSha1InWant =
+        cfg.getBoolean(UPLOADPACK, KEY_ALLOW_TIP_SHA1_IN_WANT, false) ||
+        cfg.getBoolean(UPLOADPACK, KEY_ALLOW_REACHABLE_SHA1_IN_WANT, false);
+      if (allowSha1InWant
           && Arrays.asList(cfg.getStringList(UPLOADPACK, null, KEY_HIDE_REFS))
               .contains(RefNames.REFS_CHANGES)) {
         ObjectId id = repo.resolve(ref);

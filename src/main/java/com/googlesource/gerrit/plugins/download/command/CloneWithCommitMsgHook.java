@@ -65,11 +65,15 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     }
 
     if (scheme instanceof SshScheme) {
-      return new StringBuilder()
+      StringBuilder b = new StringBuilder()
           .append(super.getCommand(scheme, project))
-          .append(" && scp -p -P ")
-          .append(sshScheme.getSshdPort())
-          .append(" ")
+          .append(" && scp -p");
+
+      if (sshScheme.getSshdPort() != 22) {
+        b.append(" -P ").append(sshScheme.getSshdPort());
+      }
+
+      b.append(" ")
           .append(username)
           .append("@")
           .append(sshScheme.getSshdHost())
@@ -77,8 +81,9 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(HOOK)
           .append(" ")
           .append(projectName)
-          .append("/.git/hooks/")
-          .toString();
+          .append("/.git/hooks/");
+
+      return b.toString();
     }
 
     if (scheme instanceof HttpScheme || scheme instanceof AnonymousHttpScheme) {

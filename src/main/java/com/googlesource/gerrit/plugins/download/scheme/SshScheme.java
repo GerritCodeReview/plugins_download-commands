@@ -50,23 +50,26 @@ public class SshScheme extends DownloadScheme {
         // ignore, then this scheme will be disabled
       }
     }
-    this.sshdAddress = sshAddr;
 
     int port = 29418;
-    String host = sshdAddress;
-    if (sshdAddress != null) {
-      int p = sshdAddress.indexOf(":");
+    String host = sshAddr;
+    if (sshAddr != null) {
+      int p = sshAddr.indexOf(":");
       if (p > 0) {
-        host = sshdAddress.substring(0, p);
+        host = sshAddr.substring(0, p);
         try {
-          port = Integer.parseInt(sshdAddress.substring(p + 1));
+          port = Integer.parseInt(sshAddr.substring(p + 1));
         } catch (NumberFormatException e) {
           // use default port
         }
+        if (port == 22) {
+          sshAddr = host;
+        }
       } else {
-        host = sshdAddress;
+        host = sshAddr;
       }
     }
+    this.sshdAddress = sshAddr;
     this.sshdHost = host;
     this.sshdPort = port;
 

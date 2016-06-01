@@ -109,14 +109,12 @@ abstract class GitDownloadCommand extends DownloadCommand {
         ObjectId id = repo.resolve(ref);
         if (id != null) {
           return id.name();
-        } else {
-          log.error(String.format("Cannot resolve ref %s in project %s.", ref,
-              project));
-          return null;
         }
-      } else {
-        return ref;
+        log.error(String.format("Cannot resolve ref %s in project %s.", ref,
+            project));
+        return null;
       }
+      return ref;
     } catch (RepositoryNotFoundException e) {
       log.error(String.format("Missing project: %s",  project), e);
       return null;

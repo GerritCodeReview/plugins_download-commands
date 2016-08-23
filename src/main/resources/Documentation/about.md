@@ -6,8 +6,8 @@ Download Schemes
 ----------------
 
 The following download schemes are defined by this plugin. Please note
-that some download schemes must be enabled by [configuration]
-(config.md#download.scheme).
+that some download schemes must be enabled by
+[configuration](config.md#download.scheme).
 
 * `Anonymous Git`: Scheme for anonymous downloads via the Git protocol.
 

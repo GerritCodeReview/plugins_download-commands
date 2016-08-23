@@ -7,7 +7,7 @@ Download Schemes
 
 The following download schemes are defined by this plugin. Please note
 that some download schemes must be enabled by [configuration]
-(config.html#download.scheme).
+(config.md#download.scheme).
 
 * `Anonymous Git`: Scheme for anonymous downloads via the Git protocol.
 
@@ -26,7 +26,7 @@ Download Commands
 
 The following download commands are defined by this plugin. Please note
 that some download commands must be enabled by [configuration]
-(config.html#download.command).
+(config.md#download.command).
 
 ### Git Commands
 

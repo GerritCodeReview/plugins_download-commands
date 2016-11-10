@@ -87,18 +87,15 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     }
 
     if (scheme instanceof HttpScheme || scheme instanceof AnonymousHttpScheme) {
-      String host = getHttpHost(scheme, project);
       return new StringBuilder()
-          .append("git clone ")
-          .append(host)
-          .append(project)
+          .append(super.getCommand(scheme, project))
           .append(" && (cd ")
           .append(projectName)
           .append(" && curl -kLo")
           .append(TARGET)
           .append(HOOK)
           .append(" ")
-          .append(host)
+          .append(getHttpHost(scheme.getUrl(project), project))
           .append("tools/")
           .append(HOOK)
           .append("; chmod +x")
@@ -110,14 +107,12 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     return null;
   }
 
-  private String getHttpHost(DownloadScheme scheme, String project) {
-    String host = scheme.getUrl(project);
-    host = host.substring(0, host.lastIndexOf(project));
-    int auth = host.lastIndexOf("/a/");
+  private String getHttpHost(String url, String project) {
+    int auth = url.lastIndexOf("/a/");
     if (auth > -1) {
-      host = host.substring(0, auth + 1);
+      return url.substring(0, auth + 1);
     }
-    return host;
+    return url.substring(0, url.lastIndexOf(project));
   }
 
   private static String getBaseName(String project) {

@@ -82,18 +82,15 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     }
 
     if (scheme instanceof HttpScheme || scheme instanceof AnonymousHttpScheme) {
-      String host = getHttpHost(scheme, project);
       return new StringBuilder()
-          .append("git clone ")
-          .append(host)
-          .append(project)
+          .append(super.getCommand(scheme, project))
           .append(" && (cd ")
           .append(projectName)
           .append(" && curl -kLo")
           .append(TARGET)
           .append(HOOK)
           .append(" ")
-          .append(host)
+          .append(getHttpHost(scheme, project))
           .append("tools/")
           .append(HOOK)
           .append("; chmod +x")

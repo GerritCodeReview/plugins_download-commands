@@ -22,6 +22,30 @@
       "revId": "c422256cd6af02302d3643a63c355813d735af95",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b70b387_548d4cbc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2016-11-11T17:57:19Z",
+      "side": 1,
+      "message": "I tested that case locally, with projects called /a and a/a and it worked. The reason for changing this is that the \"/a\" for authentication was wrongfully being removed from the url when using the option of cloning with the commit message hook. Even if consistency is a reason to change this (both url are the same no matter if you are cloning with or without a commit message hook), the main one is that when removing the authentication cloning was failing in our test server because of a validation plugin that we have not receiving an authenticated user.",
+      "parentUuid": "0b70b387_3490d0d5",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 37
+      },
+      "revId": "c422256cd6af02302d3643a63c355813d735af95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

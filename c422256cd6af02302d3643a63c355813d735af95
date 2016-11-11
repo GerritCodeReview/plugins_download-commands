@@ -118,6 +118,30 @@
       "revId": "c422256cd6af02302d3643a63c355813d735af95",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b70b387_545e2c59",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-11T18:24:23Z",
+      "side": 1,
+      "message": "Ok, I see now why it\u0027s not failing. It\u0027s not failing because project is not the actual project name but a placeholder \u0027${project-path}/${project-base-name}\u0027 and you are just lucky that this placeholder doesn\u0027t include \u0027/a/\u0027.\n\nCan you try your test with undoing the changes to this method and just doing the change in line 91? That alone should already fix your clone problem, shouldn\u0027t it?",
+      "parentUuid": "0b70b387_b444e090",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 37
+      },
+      "revId": "c422256cd6af02302d3643a63c355813d735af95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

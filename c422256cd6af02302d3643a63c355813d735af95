@@ -142,6 +142,30 @@
       "revId": "c422256cd6af02302d3643a63c355813d735af95",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb6c3fba_13ef6c45",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2016-11-11T18:27:32Z",
+      "side": 1,
+      "message": "Indeed, please take a look at the latest patch set and thanks for your insights.",
+      "parentUuid": "0b70b387_545e2c59",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 37
+      },
+      "revId": "c422256cd6af02302d3643a63c355813d735af95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

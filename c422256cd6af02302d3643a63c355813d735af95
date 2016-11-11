@@ -70,6 +70,30 @@
       "revId": "c422256cd6af02302d3643a63c355813d735af95",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b70b387_b444e090",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2016-11-11T18:07:45Z",
+      "side": 1,
+      "message": "Exactly, the existent code was stripping the /a from the URL. That\u0027s why I prefer now to let the schema to build the url and I only modified what I need to make the commit msg hook to download correctly. Let me check with your proposed project name ans I\u0027ll vote verified depending on the output.",
+      "parentUuid": "0b70b387_748a48a7",
+      "range": {
+        "startLine": 112,
+        "startChar": 15,
+        "endLine": 112,
+        "endChar": 37
+      },
+      "revId": "c422256cd6af02302d3643a63c355813d735af95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

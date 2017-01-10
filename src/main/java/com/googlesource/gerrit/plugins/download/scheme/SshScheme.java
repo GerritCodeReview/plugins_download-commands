@@ -25,7 +25,6 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -38,11 +37,14 @@ public class SshScheme extends DownloadScheme {
   private final boolean schemeAllowed;
 
   @Inject
-  SshScheme(@SshAdvertisedAddresses List<String> sshAddresses,
+  SshScheme(
+      @SshAdvertisedAddresses List<String> sshAddresses,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
-      Provider<CurrentUser> userProvider, DownloadConfig downloadConfig) {
+      Provider<CurrentUser> userProvider,
+      DownloadConfig downloadConfig) {
     String sshAddr = !sshAddresses.isEmpty() ? sshAddresses.get(0) : null;
-    if (sshAddr != null && (sshAddr.startsWith("*:") || "".equals(sshAddr))
+    if (sshAddr != null
+        && (sshAddr.startsWith("*:") || "".equals(sshAddr))
         && urlProvider != null) {
       try {
         sshAddr = (new URL(urlProvider.get())).getHost() + sshAddr.substring(1);

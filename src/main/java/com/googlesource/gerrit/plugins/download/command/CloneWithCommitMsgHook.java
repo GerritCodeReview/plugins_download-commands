@@ -19,11 +19,9 @@ import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
-
 import org.eclipse.jgit.lib.Config;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
@@ -36,11 +34,8 @@ public class CloneWithCommitMsgHook extends CloneCommand {
 
   @Inject
   CloneWithCommitMsgHook(
-      @GerritServerConfig Config config,
-      SshScheme sshScheme,
-      Provider<CurrentUser> userProvider) {
-    this.configCommand =
-        config.getString("gerrit", null, "installCommitMsgHookCommand");
+      @GerritServerConfig Config config, SshScheme sshScheme, Provider<CurrentUser> userProvider) {
+    this.configCommand = config.getString("gerrit", null, "installCommitMsgHookCommand");
     this.sshScheme = sshScheme;
     this.userProvider = userProvider;
   }
@@ -65,9 +60,8 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     }
 
     if (scheme instanceof SshScheme) {
-      StringBuilder b = new StringBuilder()
-          .append(super.getCommand(scheme, project))
-          .append(" && scp -p");
+      StringBuilder b =
+          new StringBuilder().append(super.getCommand(scheme, project)).append(" && scp -p");
 
       if (sshScheme.getSshdPort() != 22) {
         b.append(" -P ").append(sshScheme.getSshdPort());

@@ -20,12 +20,12 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
-
 import org.eclipse.jgit.lib.Config;
 
 class CherryPickCommand extends GitDownloadCommand {
   @Inject
-  CherryPickCommand(@GerritServerConfig Config cfg,
+  CherryPickCommand(
+      @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
     super(cfg, downloadConfig, CHERRY_PICK, repoManager);

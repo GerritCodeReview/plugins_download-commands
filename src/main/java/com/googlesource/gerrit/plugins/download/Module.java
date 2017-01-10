@@ -15,7 +15,6 @@
 package com.googlesource.gerrit.plugins.download;
 
 import com.google.inject.AbstractModule;
-
 import com.googlesource.gerrit.plugins.download.command.CloneCommandsModule;
 import com.googlesource.gerrit.plugins.download.command.DownloadCommandsModule;
 import com.googlesource.gerrit.plugins.download.scheme.SchemeModule;

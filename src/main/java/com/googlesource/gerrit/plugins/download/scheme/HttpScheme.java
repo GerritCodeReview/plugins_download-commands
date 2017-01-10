@@ -24,7 +24,6 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import org.eclipse.jgit.lib.Config;
 
 public class HttpScheme extends DownloadScheme {
@@ -35,7 +34,8 @@ public class HttpScheme extends DownloadScheme {
   private final boolean schemeAllowed;
 
   @Inject
-  public HttpScheme(@GerritServerConfig Config cfg,
+  public HttpScheme(
+      @GerritServerConfig Config cfg,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,
       DownloadConfig downloadConfig) {

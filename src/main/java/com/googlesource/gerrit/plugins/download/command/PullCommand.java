@@ -20,12 +20,12 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
-
 import org.eclipse.jgit.lib.Config;
 
 class PullCommand extends GitDownloadCommand {
   @Inject
-  PullCommand(@GerritServerConfig Config cfg,
+  PullCommand(
+      @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
     super(cfg, downloadConfig, PULL, repoManager);

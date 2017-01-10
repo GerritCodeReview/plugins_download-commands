@@ -23,7 +23,6 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import org.eclipse.jgit.lib.Config;
 
 public class AnonymousHttpScheme extends DownloadScheme {
@@ -33,13 +32,13 @@ public class AnonymousHttpScheme extends DownloadScheme {
   private final boolean schemeAllowed;
 
   @Inject
-  public AnonymousHttpScheme(@GerritServerConfig Config cfg,
+  public AnonymousHttpScheme(
+      @GerritServerConfig Config cfg,
       @CanonicalWebUrl @Nullable Provider<String> provider,
       DownloadConfig downloadConfig) {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
     this.canonicalWebUrl = provider != null ? provider.get() : null;
-    this.schemeAllowed =
-        downloadConfig.getDownloadSchemes().contains(ANON_HTTP);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_HTTP);
   }
 
   @Override

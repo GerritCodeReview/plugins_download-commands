@@ -20,12 +20,12 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
-
 import org.eclipse.jgit.lib.Config;
 
 class CheckoutCommand extends GitDownloadCommand {
   @Inject
-  CheckoutCommand(@GerritServerConfig Config cfg,
+  CheckoutCommand(
+      @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
     super(cfg, downloadConfig, CHECKOUT, repoManager);

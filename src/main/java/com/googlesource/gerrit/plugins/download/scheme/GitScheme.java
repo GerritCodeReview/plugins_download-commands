@@ -20,7 +20,6 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
-
 import org.eclipse.jgit.lib.Config;
 
 public class GitScheme extends DownloadScheme {
@@ -29,10 +28,8 @@ public class GitScheme extends DownloadScheme {
   private final boolean schemeAllowed;
 
   @Inject
-  public GitScheme(@GerritServerConfig Config cfg,
-      DownloadConfig downloadConfig) {
-    this.gitDaemonUrl =
-        ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
+  public GitScheme(@GerritServerConfig Config cfg, DownloadConfig downloadConfig) {
+    this.gitDaemonUrl = ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_GIT);
   }
 

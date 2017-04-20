@@ -74,7 +74,7 @@ The download section configures the allowed download methods.
 	advertisement (`uploadpack.hideRefs`). This option can be used to
 	hide the change refs from the client. As consequence fetching
 	changes by change ref does not work anymore. However by setting
-	`uploadpack.allowTipSha1InWant` to `true` fetching changes by
+	`uploadpack.allowTipSHA1InWant` to `true` fetching changes by
 	commit ID is possible. If `download.checkForHiddenChangeRefs` is
 	set to `true` the git download commands use the commit ID instead
 	of the change ref when a project is configured like this.
@@ -84,6 +84,6 @@ The download section configures the allowed download methods.
 		[uploadpack]
 		  hideRefs = refs/changes/
 		  hideRefs = refs/cache-automerge/
-		  allowTipSha1InWant = true
+		  allowTipSHA1InWant = true
 
 	By default `false`.

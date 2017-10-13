@@ -93,6 +93,10 @@ abstract class GitDownloadCommand extends DownloadCommand {
       // No real value but placeholders are being used.
       return ref;
     }
+    if (ObjectId.isId(ref)) {
+      // Already a SHA-1.
+      return ref;
+    }
 
     try (Repository repo = repoManager.openRepository(new Project.NameKey(project))) {
       Config cfg = repo.getConfig();

@@ -85,7 +85,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(super.getCommand(scheme, project))
           .append(" && (cd ")
           .append(projectName)
-          .append(" && curl -kLo")
+          .append(" && curl -Lo")
           .append(TARGET)
           .append(HOOK)
           .append(" ")

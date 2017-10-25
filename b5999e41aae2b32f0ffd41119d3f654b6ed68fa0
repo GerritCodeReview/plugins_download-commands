@@ -22,6 +22,30 @@
       "revId": "b5999e41aae2b32f0ffd41119d3f654b6ed68fa0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6873db1c_eaffa539",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1011842
+      },
+      "writtenOn": "2017-10-25T21:51:05Z",
+      "side": 1,
+      "message": "Ah, the commit-msg hook\u0027s CHANGE_ID_AFTER got confused by Reported-by. Thanks, done.",
+      "parentUuid": "085c7ceb_5cda9773",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "b5999e41aae2b32f0ffd41119d3f654b6ed68fa0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

@@ -16,7 +16,6 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.SSH;
 
-import com.google.common.base.Strings;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
@@ -85,7 +84,7 @@ public class SshScheme extends DownloadScheme {
       return null;
     }
     String username = userProvider.get().getUserName();
-    if (Strings.isNullOrEmpty(username)) {
+    if (username == null) {
       return null;
     }
 

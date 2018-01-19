@@ -22,6 +22,7 @@ import com.google.inject.Provider;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
+import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
@@ -42,8 +43,8 @@ public class CloneWithCommitMsgHook extends CloneCommand {
 
   @Override
   public String getCommand(DownloadScheme scheme, String project) {
-    String username = userProvider.get().getUserName();
-    if (username == null) {
+    Optional<String> username = userProvider.get().getUserName();
+    if (!username.isPresent()) {
       return null;
     }
     String projectName = getBaseName(project);
@@ -68,7 +69,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       }
 
       b.append(" ")
-          .append(username)
+          .append(username.get())
           .append("@")
           .append(sshScheme.getSshdHost())
           .append(":")

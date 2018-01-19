@@ -27,6 +27,7 @@ import com.google.inject.Provider;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
@@ -83,14 +84,15 @@ public class SshScheme extends DownloadScheme {
     if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {
       return null;
     }
-    String username = userProvider.get().getUserName();
-    if (username == null) {
+
+    Optional<String> username = userProvider.get().getUserName();
+    if (!username.isPresent()) {
       return null;
     }
 
     StringBuilder r = new StringBuilder();
     r.append("ssh://");
-    r.append(username);
+    r.append(username.get());
     r.append("@");
     r.append(ensureSlash(sshdAddress));
     r.append(project);

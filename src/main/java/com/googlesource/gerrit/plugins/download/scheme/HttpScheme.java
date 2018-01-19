@@ -63,8 +63,10 @@ public class HttpScheme extends DownloadScheme {
       }
       String host = base.substring(p + 3, s);
       r.append(base.substring(0, p + 3));
-      r.append(userProvider.get().getUserName());
-      r.append("@");
+      if (userProvider.get().getUserName().isPresent()) {
+        r.append(userProvider.get().getUserName().get());
+        r.append("@");
+      }
       r.append(host);
       r.append(base.substring(s));
       r.append("a/");

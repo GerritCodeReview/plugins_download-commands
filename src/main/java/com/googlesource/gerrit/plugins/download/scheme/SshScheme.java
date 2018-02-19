@@ -22,12 +22,17 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.apache.xerces.util.URI;
+import org.apache.xerces.util.URI.MalformedURIException;
+import org.eclipse.jgit.lib.Config;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
@@ -35,42 +40,62 @@ public class SshScheme extends DownloadScheme {
   private final int sshdPort;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
+  private static final Logger log = Logger.getLogger(SshScheme.class);
 
   @Inject
   SshScheme(
       @SshAdvertisedAddresses List<String> sshAddresses,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,
-      DownloadConfig downloadConfig) {
-    String sshAddr = !sshAddresses.isEmpty() ? sshAddresses.get(0) : null;
-    if (sshAddr != null
-        && (sshAddr.startsWith("*:") || "".equals(sshAddr))
-        && urlProvider != null) {
+      DownloadConfig downloadConfig,
+      @GerritServerConfig Config cfg) {
+    String sshAddr = "";
+    String host = "";
+    int port = 29418;
+
+    String gitSshUrl = cfg.getString("gerrit", null, "gitSshUrl");
+    if (gitSshUrl != null) {
       try {
-        sshAddr = (new URL(urlProvider.get())).getHost() + sshAddr.substring(1);
-      } catch (MalformedURLException e) {
-        // ignore, then this scheme will be disabled
+        URI sshUri = new URI(gitSshUrl);
+        host = sshUri.getHost();
+        sshAddr = host;
+        port = sshUri.getPort();
+
+      } catch (MalformedURIException e) {
+        log.error("Invalid URL syntax for gitSshUrl: " + gitSshUrl, e);
+      }
+    } else {
+      sshAddr = !sshAddresses.isEmpty() ? sshAddresses.get(0) : null;
+      if (sshAddr != null
+          && (sshAddr.startsWith("*:") || "".equals(sshAddr))
+          && urlProvider != null) {
+        try {
+          sshAddr = (new URL(urlProvider.get())).getHost() + sshAddr.substring(1);
+        } catch (MalformedURLException e) {
+          // ignore, then this scheme will be disabled
+        }
+      }
+
+      port = 29418;
+      host = sshAddr;
+      if (sshAddr != null) {
+        int p = sshAddr.indexOf(":");
+        if (p > 0) {
+          host = sshAddr.substring(0, p);
+          try {
+            port = Integer.parseInt(sshAddr.substring(p + 1));
+          } catch (NumberFormatException e) {
+            // use default port
+          }
+          if (port == 22) {
+            sshAddr = host;
+          }
+        } else {
+          host = sshAddr;
+        }
       }
     }
 
-    int port = 29418;
-    String host = sshAddr;
-    if (sshAddr != null) {
-      int p = sshAddr.indexOf(":");
-      if (p > 0) {
-        host = sshAddr.substring(0, p);
-        try {
-          port = Integer.parseInt(sshAddr.substring(p + 1));
-        } catch (NumberFormatException e) {
-          // use default port
-        }
-        if (port == 22) {
-          sshAddr = host;
-        }
-      } else {
-        host = sshAddr;
-      }
-    }
     this.sshdAddress = sshAddr;
     this.sshdHost = host;
     this.sshdPort = port;

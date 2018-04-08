@@ -16,8 +16,8 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.REPO_DOWNLOAD;
 
+import com.google.gerrit.config.DownloadConfig;
 import com.google.gerrit.extensions.config.DownloadScheme;
-import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Inject;
 
 public class RepoScheme extends DownloadScheme {

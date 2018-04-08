@@ -16,8 +16,8 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.FORMAT_PATCH;
 
-import com.google.gerrit.server.config.DownloadConfig;
-import com.google.gerrit.server.config.GerritServerConfig;
+import com.google.gerrit.config.DownloadConfig;
+import com.google.gerrit.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 import org.eclipse.jgit.lib.Config;

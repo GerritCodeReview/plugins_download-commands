@@ -16,9 +16,9 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.ANON_GIT;
 
+import com.google.gerrit.config.DownloadConfig;
+import com.google.gerrit.config.GerritServerConfig;
 import com.google.gerrit.extensions.config.DownloadScheme;
-import com.google.gerrit.server.config.DownloadConfig;
-import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import org.eclipse.jgit.lib.Config;
 

@@ -14,9 +14,9 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.gerrit.config.GerritServerConfig;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;

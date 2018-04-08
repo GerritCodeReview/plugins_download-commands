@@ -17,10 +17,10 @@ package com.googlesource.gerrit.plugins.download.scheme;
 import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.SSH;
 
 import com.google.gerrit.common.Nullable;
+import com.google.gerrit.config.CanonicalWebUrl;
+import com.google.gerrit.config.DownloadConfig;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.config.CanonicalWebUrl;
-import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;

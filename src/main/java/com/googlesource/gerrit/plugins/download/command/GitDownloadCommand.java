@@ -106,15 +106,15 @@ abstract class GitDownloadCommand extends DownloadCommand {
         if (id != null) {
           return id.name();
         }
-        log.error(String.format("Cannot resolve ref %s in project %s.", ref, project));
+        log.error("Cannot resolve ref {} in project {}", ref, project);
         return null;
       }
       return ref;
     } catch (RepositoryNotFoundException e) {
-      log.error(String.format("Missing project: %s", project), e);
+      log.error("Missing project: {}", project, e);
       return null;
     } catch (IOException e) {
-      log.error(String.format("Failed to lookup project %s from cache.", project), e);
+      log.error("Failed to lookup project {} from cache", project, e);
       return null;
     }
   }

@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
@@ -31,11 +32,9 @@ import org.eclipse.jgit.lib.Config;
 import org.eclipse.jgit.lib.ObjectId;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.transport.URIish;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 abstract class GitDownloadCommand extends DownloadCommand {
-  private static final Logger log = LoggerFactory.getLogger(GitDownloadCommand.class);
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
   private static final String DOWNLOAD = "download";
   private static final String UPLOADPACK = "uploadpack";
@@ -106,15 +105,15 @@ abstract class GitDownloadCommand extends DownloadCommand {
         if (id != null) {
           return id.name();
         }
-        log.error("Cannot resolve ref {} in project {}", ref, project);
+        logger.atSevere().log("Cannot resolve ref %s in project %s", ref, project);
         return null;
       }
       return ref;
     } catch (RepositoryNotFoundException e) {
-      log.error("Missing project: {}", project, e);
+      logger.atSevere().withCause(e).log("Missing project: %s", project);
       return null;
     } catch (IOException e) {
-      log.error("Failed to lookup project {} from cache", project, e);
+      logger.atSevere().withCause(e).log("Failed to lookup project %s from cache", project);
       return null;
     }
   }

@@ -87,3 +87,25 @@ The download section configures the allowed download methods.
 		  allowTipSHA1InWant = true
 
 	By default `false`.
+
+	
+### <a id="gerrit">Section gerrit</a>
+
+```
+[gerrit]
+  installCommitMsgHookCommand = command
+  installCommitExtraCommand = command
+```	
+
+<a id="gerrit.installCommitMsgHookCommand">gerrit.installCommitMsgHookCommand</a>
+  Optional command to install the commit-msg hook. Typically of the form:
+  `fetch-cmd some://url/to/commit-msg .git/hooks/commit-msg ; chmod +x .git/hooks/commit-msg`
+  By default unset; falls back to using scp from the canonical SSH host, 
+  or curl from the canonical HTTP URL for the server. Only necessary 
+  if a proxy or other server/network configuration prevents clients 
+  from fetching from the default location.
+
+<a id="gerrit.installCommitExtraCommand">gerrit.installCommitExtraCommand</a>
+  Optional command to complete the commit-msg hook. For example:
+  `git submodule update --init --recursive && git review -s`
+  would initialize the submodules and setup git review.

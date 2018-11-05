@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "6346d324_997b21cd",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2018-11-05T15:27:38Z",
+      "side": 1,
+      "message": "Sigh, the configuration of this plugin is a mess, since it\u0027s intermixed with the Gerrit core configuration. Normally plugins should have their configuration in a \"plugins.\u003cplugin-name\u003e\" section in gerrit.config or in a separate config file. This plugin has its configuration in the Gerrit core namespace as it was earlier part of Gerrit core and we never took the time to migrate the configuration to a plugin namespace :(\nConsidering this leaving it in the \"gerrit\" section next to gerrit.installCommitMsgHookCommand is maybe fine.",
+      "parentUuid": "61f4b9ff_0e7157e3",
+      "range": {
+        "startLine": 40,
+        "startChar": 42,
+        "endLine": 40,
+        "endChar": 48
+      },
+      "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd3d0f1f_eb834eff",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 2
@@ -140,6 +164,30 @@
       "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06802aae_cec634c3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2018-11-05T15:27:38Z",
+      "side": 1,
+      "message": "Ah, right I missed this.",
+      "parentUuid": "55b05511_dffd09ac",
+      "range": {
+        "startLine": 83,
+        "startChar": 23,
+        "endLine": 84,
+        "endChar": 28
+      },
+      "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

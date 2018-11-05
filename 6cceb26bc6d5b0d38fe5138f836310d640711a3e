@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "bc54ddcd_98dfbc45",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1065558
+      },
+      "writtenOn": "2018-11-05T14:52:28Z",
+      "side": 1,
+      "message": "Will update the configuration based on the previous comment\u0027s answer.",
+      "parentUuid": "b19aff93_ab957471",
+      "range": {
+        "startLine": 40,
+        "startChar": 58,
+        "endLine": 40,
+        "endChar": 83
+      },
+      "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f4b9ff_0e7157e3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1065558
+      },
+      "writtenOn": "2018-11-05T14:52:28Z",
+      "side": 1,
+      "message": "I would instead propose to add a \"clone\" section since this is related to clone. \"Download\" is for downloading a patch set. What do you think?",
+      "parentUuid": "f928092f_e28415b0",
+      "range": {
+        "startLine": 40,
+        "startChar": 42,
+        "endLine": 40,
+        "endChar": 48
+      },
+      "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cd3d0f1f_eb834eff",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2018-11-05T09:37:39Z",
       "side": 1,
       "message": "This seems to be done twice now if both configCommand and extraCommand are not null",
+      "range": {
+        "startLine": 83,
+        "startChar": 23,
+        "endLine": 84,
+        "endChar": 28
+      },
+      "revId": "6cceb26bc6d5b0d38fe5138f836310d640711a3e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55b05511_dffd09ac",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1065558
+      },
+      "writtenOn": "2018-11-05T14:52:28Z",
+      "side": 1,
+      "message": "I do not think so, configCommand returns the command right away. configCommand acts as an override.",
+      "parentUuid": "cd3d0f1f_eb834eff",
       "range": {
         "startLine": 83,
         "startChar": 23,

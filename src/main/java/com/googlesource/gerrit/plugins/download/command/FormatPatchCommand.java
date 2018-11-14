@@ -33,6 +33,6 @@ class FormatPatchCommand extends GitDownloadCommand {
 
   @Override
   String getCommand(String url, String ref) {
-    return "git fetch " + url + " " + ref + " && git format-patch -1 --stdout FETCH_HEAD";
+    return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git format-patch -1 --stdout FETCH_HEAD";
   }
 }

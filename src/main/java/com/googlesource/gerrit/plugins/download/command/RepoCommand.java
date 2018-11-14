@@ -25,7 +25,7 @@ public class RepoCommand extends DownloadCommand {
     if (scheme instanceof RepoScheme) {
       String id = trim(ref);
       if (id != null) {
-        return "repo download " + scheme.getUrl(project) + " " + id;
+        return "repo download " + QuoteUtil.quote(scheme.getUrl(project)) + " " + id;
       }
     }
     return null;

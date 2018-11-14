@@ -1,4 +1,4 @@
-// Copyright (C) 2015 The Android Open Source Project
+// Copyright (C) 2013 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import com.google.gerrit.extensions.config.DownloadScheme;
+public class QuoteUtil {
 
-public class CloneCommand extends com.google.gerrit.extensions.config.CloneCommand {
+  private QuoteUtil() {
+  }
 
-  @Override
-  public String getCommand(DownloadScheme scheme, String project) {
-    return "git clone " + QuoteUtil.quote(scheme.getUrl(project));
+  public static String quote(String string) {
+    return "\"" + string + "\"";
   }
 }

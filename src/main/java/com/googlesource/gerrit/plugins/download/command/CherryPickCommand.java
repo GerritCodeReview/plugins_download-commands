@@ -33,6 +33,6 @@ class CherryPickCommand extends GitDownloadCommand {
 
   @Override
   String getCommand(String url, String ref) {
-    return "git fetch " + url + " " + ref + " && git cherry-pick FETCH_HEAD";
+    return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git cherry-pick FETCH_HEAD";
   }
 }

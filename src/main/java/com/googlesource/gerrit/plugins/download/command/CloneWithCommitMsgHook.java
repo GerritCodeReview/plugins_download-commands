@@ -55,7 +55,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       return new StringBuilder()
           .append(super.getCommand(scheme, project))
           .append(" && (cd ")
-          .append(projectName)
+          .append(QuoteUtil.quote((projectName)))
           .append(" && ")
           .append(configCommand)
           .append(")")
@@ -77,11 +77,9 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(":")
           .append(HOOK)
           .append(" ")
-          .append(projectName)
-          .append("/.git/hooks/");
-
+          .append(QuoteUtil.quote(projectName + "/.git/hooks/"));
       if (extraCommand != null) {
-        b.append(" && (cd ").append(projectName).append(" && ").append(extraCommand).append(")");
+        b.append(" && (cd ").append(QuoteUtil.quote(projectName)).append(" && ").append(extraCommand).append(")");
       }
       return b.toString();
     }
@@ -90,7 +88,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       return new StringBuilder()
           .append(super.getCommand(scheme, project))
           .append(" && (cd ")
-          .append(projectName)
+          .append(QuoteUtil.quote(projectName))
           .append(" && curl -Lo")
           .append(TARGET)
           .append(HOOK)

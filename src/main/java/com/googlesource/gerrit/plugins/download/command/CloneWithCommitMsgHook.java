@@ -30,6 +30,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
   private static final String TARGET = " `git rev-parse --git-dir`/";
 
   private final String configCommand;
+  private final String extraCommand;
   private final SshScheme sshScheme;
   private final Provider<CurrentUser> userProvider;
 
@@ -37,6 +38,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
   CloneWithCommitMsgHook(
       @GerritServerConfig Config config, SshScheme sshScheme, Provider<CurrentUser> userProvider) {
     this.configCommand = config.getString("gerrit", null, "installCommitMsgHookCommand");
+    this.extraCommand = config.getString("gerrit", null, "installCommitExtraCommand");
     this.sshScheme = sshScheme;
     this.userProvider = userProvider;
   }
@@ -78,6 +80,9 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(projectName)
           .append("/.git/hooks/");
 
+      if (extraCommand != null) {
+        b.append(" && (cd ").append(projectName).append(" && ").append(extraCommand).append(")");
+      }
       return b.toString();
     }
 

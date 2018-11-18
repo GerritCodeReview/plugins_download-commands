@@ -22,6 +22,30 @@
       "revId": "388bc01eff2e2159f1668a5062dade29ee48b801",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94e37f4f_77b92b86",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/QuoteUtil.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014257
+      },
+      "writtenOn": "2018-11-18T02:57:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "92c1e417_e499733f",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "388bc01eff2e2159f1668a5062dade29ee48b801",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

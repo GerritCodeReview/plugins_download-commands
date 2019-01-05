@@ -22,6 +22,30 @@
       "revId": "9ee1a508035f64dadbe1846a857b3cfae5361b42",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa770ec2_3d23180f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-05T17:23:05Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "6e5a0ae7_47b5accc",
+      "range": {
+        "startLine": 94,
+        "startChar": 37,
+        "endLine": 94,
+        "endChar": 44
+      },
+      "revId": "9ee1a508035f64dadbe1846a857b3cfae5361b42",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

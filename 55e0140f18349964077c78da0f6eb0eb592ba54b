@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1060971_c4134b8c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2019-01-14T19:16:43Z",
+      "side": 1,
+      "message": "According to my local test, the hooks directory exists even if removing this command. Also, the command provisions for a potentially missing .git parent directory (through -p), which doesn\u0027t happen, as .git always exists.\n\nIs the goal of this change simply to make the provisioning of .git/hooks explicit in this code? If so, how about adding that information to the commit message? Otherwise, under which circumstances was a missing .git/hooks directory structure noticed? (Would document this further as well.)",
+      "range": {
+        "startLine": 88,
+        "startChar": 10,
+        "endLine": 88,
+        "endChar": 44
+      },
+      "revId": "55e0140f18349964077c78da0f6eb0eb592ba54b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}

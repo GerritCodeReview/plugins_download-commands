@@ -22,6 +22,30 @@
       "revId": "55e0140f18349964077c78da0f6eb0eb592ba54b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ab8475a_6c913324",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-14T19:19:51Z",
+      "side": 1,
+      "message": "Nope, everytime i clone on my mac the hooks directory was missing thus this command was failing for me (as directory did not exist).",
+      "parentUuid": "c1060971_c4134b8c",
+      "range": {
+        "startLine": 88,
+        "startChar": 10,
+        "endLine": 88,
+        "endChar": 44
+      },
+      "revId": "55e0140f18349964077c78da0f6eb0eb592ba54b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

@@ -78,7 +78,11 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(" ")
           .append(QuoteUtil.quote(projectName + "/.git/hooks/"));
       if (extraCommand != null) {
-        b.append(" && (cd ").append(QuoteUtil.quote(projectName)).append(" && ").append(extraCommand).append(")");
+        b.append(" && (cd ")
+            .append(QuoteUtil.quote(projectName))
+            .append(" && ")
+            .append(extraCommand)
+            .append(")");
       }
       return b.toString();
     }

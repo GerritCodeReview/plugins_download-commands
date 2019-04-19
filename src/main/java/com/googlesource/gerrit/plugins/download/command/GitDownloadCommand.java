@@ -93,7 +93,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
       return ref;
     }
 
-    try (Repository repo = repoManager.openRepository(new Project.NameKey(project))) {
+    try (Repository repo = repoManager.openRepository(Project.nameKey(project))) {
       Config cfg = repo.getConfig();
       boolean allowSha1InWant =
           cfg.getBoolean(UPLOADPACK, KEY_ALLOW_TIP_SHA1_IN_WANT, false)

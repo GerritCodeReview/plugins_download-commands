@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
-import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.SSH;
+import static com.google.gerrit.entities.CoreDownloadSchemes.SSH;
 
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;

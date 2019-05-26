@@ -14,12 +14,11 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
-import static com.google.gerrit.reviewdb.client.CoreDownloadSchemes.ANON_GIT;
-
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
+import static com.google.gerrit.entities.CoreDownloadSchemes.ANON_GIT;
 import org.eclipse.jgit.lib.Config;
 
 public class GitScheme extends DownloadScheme {

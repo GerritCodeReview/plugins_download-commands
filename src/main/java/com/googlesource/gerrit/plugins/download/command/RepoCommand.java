@@ -14,9 +14,9 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.gerrit.entities.RefNames;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
-import com.google.gerrit.reviewdb.client.RefNames;
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 
 public class RepoCommand extends DownloadCommand {

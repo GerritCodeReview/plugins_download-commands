@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a073cf50_e0803294",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/AnonymousHttpScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-05-26T23:31:13Z",
+      "side": 1,
+      "message": "Why is this moved down here?  Static imports should remain at the top.",
+      "revId": "18b46d5180a2a81e5f0cece35f9904c7385ab265",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}

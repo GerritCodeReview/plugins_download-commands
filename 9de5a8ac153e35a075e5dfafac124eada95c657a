@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "e877de14_61e00e23",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-10-02T23:28:56Z",
+      "side": 1,
+      "message": "Does this still compile if the class is renamed but the file isn\u0027t?  I thought a java source file had to have at least one class with the same name as the source filename.",
+      "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e47c37a_1b25099a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-10-02T23:28:56Z",
+      "side": 1,
+      "message": "I\u0027d prefer to put this in its own source file.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 1
+      },
+      "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9365e8ea_5f3a03c1",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/DownloadCommandsModule.java",
         "patchSetId": 1
@@ -13,6 +53,24 @@
       "writtenOn": "2019-10-02T22:38:22Z",
       "side": 1,
       "message": "it doesn\u0027t work if the annotation are the same.  i don\u0027t know anything about this code to explain it.\n\nadding trailing whitespace is a hack, but since all the output goes to html, the user ends up not seeing it :).",
+      "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63647aa2_a227c4bc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/DownloadCommandsModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-10-02T23:28:56Z",
+      "side": 1,
+      "message": "Change them to \"Checkout (git)\" and \"Checkout (repo)\"?",
+      "parentUuid": "9365e8ea_5f3a03c1",
       "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true

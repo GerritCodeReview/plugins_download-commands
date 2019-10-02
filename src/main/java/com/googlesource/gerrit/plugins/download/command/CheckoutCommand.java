@@ -22,9 +22,9 @@ import com.google.gerrit.server.git.GitRepositoryManager;
 import com.google.inject.Inject;
 import org.eclipse.jgit.lib.Config;
 
-class CheckoutCommand extends GitDownloadCommand {
+class GitCheckoutCommand extends GitDownloadCommand {
   @Inject
-  CheckoutCommand(
+  GitCheckoutCommand(
       @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
@@ -34,5 +34,17 @@ class CheckoutCommand extends GitDownloadCommand {
   @Override
   String getCommand(String url, String ref) {
     return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git checkout FETCH_HEAD";
+  }
+}
+
+class RepoCheckoutCommand extends RepoDownloadCommand {
+  @Inject
+  RepoCheckoutCommand(DownloadConfig downloadConfig) {
+    super(downloadConfig, CHECKOUT);
+  }
+
+  @Override
+  String getCommand(String url, String id) {
+    return "repo download " + QuoteUtil.quote(url) + " " + id;
   }
 }

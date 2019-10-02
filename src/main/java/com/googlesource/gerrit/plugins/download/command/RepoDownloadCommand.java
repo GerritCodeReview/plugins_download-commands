@@ -1,4 +1,4 @@
-// Copyright (C) 2013 The Android Open Source Project
+// Copyright 2019 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,21 +14,37 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.reviewdb.client.RefNames;
+import com.google.gerrit.server.config.DownloadConfig;
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 
-public class RepoCommand extends DownloadCommand {
+abstract class RepoDownloadCommand extends DownloadCommand {
+
+  private final boolean commandAllowed;
+
+  RepoDownloadCommand(
+      DownloadConfig downloadConfig,
+      GeneralPreferencesInfo.DownloadCommand cmd) {
+    this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd);
+  }
+
   @Override
   public String getCommand(DownloadScheme scheme, String project, String ref) {
-    if (scheme instanceof RepoScheme) {
+    if (commandAllowed && isRecognizedScheme(scheme)) {
       String id = trim(ref);
       if (id != null) {
-        return "repo download " + QuoteUtil.quote(scheme.getUrl(project)) + " " + id;
+        String url = scheme.getUrl(project);
+        return getCommand(url, id);
       }
     }
     return null;
+  }
+
+  private static boolean isRecognizedScheme(DownloadScheme scheme) {
+    return (scheme instanceof RepoScheme);
   }
 
   private static String trim(String ref) {
@@ -43,4 +59,6 @@ public class RepoCommand extends DownloadCommand {
     }
     return null;
   }
+
+  abstract String getCommand(String url, String id);
 }

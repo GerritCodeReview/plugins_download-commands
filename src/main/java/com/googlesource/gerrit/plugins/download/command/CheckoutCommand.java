@@ -35,4 +35,9 @@ class CheckoutCommand extends GitDownloadCommand {
   String getCommand(String url, String ref) {
     return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git checkout FETCH_HEAD";
   }
+
+  @Override
+  String getRepoCommand(String url, String id) {
+    return "repo download " + QuoteUtil.quote(url) + " " + id;
+  }
 }

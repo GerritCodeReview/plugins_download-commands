@@ -32,7 +32,5 @@ public class DownloadCommandsModule extends AbstractModule {
         .to(FormatPatchCommand.class);
 
     bind(DownloadCommand.class).annotatedWith(Exports.named("Pull")).to(PullCommand.class);
-
-    bind(DownloadCommand.class).annotatedWith(Exports.named("repo")).to(RepoCommand.class);
   }
 }

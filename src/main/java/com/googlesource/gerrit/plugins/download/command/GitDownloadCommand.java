@@ -60,22 +60,25 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
-    if (commandAllowed && isRecognizedScheme(scheme)) {
+    if (commandAllowed) {
       String url = scheme.getUrl(project);
-      if (url != null && isValidUrl(url)) {
-        if (checkForHiddenChangeRefs) {
-          ref = resolveRef(project, ref);
+      if (scheme instanceof RepoScheme) {
+        String id = refToId(ref);
+        if (id != null) {
+          return getRepoCommand(url, id);
         }
-        if (ref != null) {
-          return getCommand(url, ref);
+      } else {
+        if (url != null && isValidUrl(url)) {
+          if (checkForHiddenChangeRefs) {
+            ref = resolveRef(project, ref);
+          }
+          if (ref != null) {
+            return getCommand(url, ref);
+          }
         }
       }
     }
     return null;
-  }
-
-  private static boolean isRecognizedScheme(DownloadScheme scheme) {
-    return !(scheme instanceof RepoScheme);
   }
 
   private static boolean isValidUrl(String url) {
@@ -85,6 +88,19 @@ abstract class GitDownloadCommand extends DownloadCommand {
     } catch (URISyntaxException e) {
       return false;
     }
+  }
+
+  private static String refToId(String ref) {
+    if (ref.startsWith(RefNames.REFS_CHANGES)) {
+      int s1 = ref.lastIndexOf('/');
+      if (s1 > 0) {
+        int s2 = ref.lastIndexOf('/', s1 - 1);
+        if (s2 > 0) {
+          return ref.substring(s2 + 1);
+        }
+      }
+    }
+    return null;
   }
 
   private String resolveRef(String project, String ref) {
@@ -119,4 +135,9 @@ abstract class GitDownloadCommand extends DownloadCommand {
   }
 
   abstract String getCommand(String url, String ref);
+
+  // Most commands don't support this, so default it to nothing.
+  String getRepoCommand(String url, String id) {
+    return null;
+  }
 }

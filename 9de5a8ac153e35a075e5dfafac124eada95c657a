@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "144fceb5_9324b9b2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2019-10-03T18:35:00Z",
+      "side": 1,
+      "message": "i\u0027ve been testing it on a local live build, so it seems to be fine ?  i also `rm -rf` the output dir between runs as bazel seems to get incremental builds wrong ...",
+      "parentUuid": "e877de14_61e00e23",
+      "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2e47c37a_1b25099a",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
         "patchSetId": 1
@@ -71,6 +89,24 @@
       "side": 1,
       "message": "Change them to \"Checkout (git)\" and \"Checkout (repo)\"?",
       "parentUuid": "9365e8ea_5f3a03c1",
+      "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ea51179_187c3e31",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/DownloadCommandsModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2019-10-03T18:35:00Z",
+      "side": 1,
+      "message": "unfortunately these are displayed directly to the user, so i don\u0027t think that\u0027s an improvement overall.\n\nclick the \"Download patch\" item in this CL to see the UI.  when it says \"Checkout\" and \"Cherry Pick\" as the headers above the git command, that string comes directly from here.",
+      "parentUuid": "63647aa2_a227c4bc",
       "revId": "9de5a8ac153e35a075e5dfafac124eada95c657a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true

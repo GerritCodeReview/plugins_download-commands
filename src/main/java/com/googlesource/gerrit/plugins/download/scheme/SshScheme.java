@@ -53,7 +53,7 @@ public class SshScheme extends DownloadScheme {
       }
     }
 
-    int port = 29418;
+    int port = 22;
     String host = sshAddr;
     if (sshAddr != null) {
       int p = sshAddr.indexOf(":");

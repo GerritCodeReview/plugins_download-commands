@@ -32,7 +32,7 @@ class FormatPatchCommand extends GitDownloadCommand {
   }
 
   @Override
-  String getCommand(String url, String ref) {
+  String getCommand(String url, String ref, String id) {
     return "git fetch "
         + QuoteUtil.quote(url)
         + " "

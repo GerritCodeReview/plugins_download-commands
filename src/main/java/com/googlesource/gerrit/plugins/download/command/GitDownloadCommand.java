@@ -61,20 +61,25 @@ abstract class GitDownloadCommand extends DownloadCommand {
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed) {
+      String id = refToId(ref);
+      if (id == null) {
+        return null;
+      }
+
       String url = scheme.getUrl(project);
+      if (url == null) {
+        return null;
+      }
+
       if (scheme instanceof RepoScheme) {
-        String id = refToId(ref);
-        if (id != null) {
-          return getRepoCommand(url, id);
+        return getRepoCommand(url, id);
+      }
+      if (isValidUrl(url)) {
+        if (checkForHiddenChangeRefs) {
+          ref = resolveRef(project, ref);
         }
-      } else {
-        if (url != null && isValidUrl(url)) {
-          if (checkForHiddenChangeRefs) {
-            ref = resolveRef(project, ref);
-          }
-          if (ref != null) {
-            return getCommand(url, ref);
-          }
+        if (ref != null) {
+          return getCommand(url, ref, id);
         }
       }
     }
@@ -134,7 +139,12 @@ abstract class GitDownloadCommand extends DownloadCommand {
     }
   }
 
-  abstract String getCommand(String url, String ref);
+  /**
+   * @param url The project URL this change is for.
+   * @param ref Git named ref to this CL/patchset.
+   * @param id The CL/PS numbers.
+   */
+  abstract String getCommand(String url, String ref, String id);
 
   /**
    * @param url The project URL this change is for.

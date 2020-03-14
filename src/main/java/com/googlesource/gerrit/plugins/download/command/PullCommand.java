@@ -32,7 +32,7 @@ class PullCommand extends GitDownloadCommand {
   }
 
   @Override
-  String getCommand(String url, String ref) {
+  String getCommand(String url, String ref, String id) {
     return "git pull " + QuoteUtil.quote(url) + " " + ref;
   }
 }

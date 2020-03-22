@@ -137,7 +137,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
   abstract String getCommand(String url, String ref);
 
   // Most commands don't support this, so default it to nothing.
-  String getRepoCommand(String url, String id) {
+  String getRepoCommand(
+      @SuppressWarnings("unused") String url, @SuppressWarnings("unused") String id) {
     return null;
   }
 }

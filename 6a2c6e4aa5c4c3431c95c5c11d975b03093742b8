@@ -94,6 +94,30 @@
       "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d276e272_5e91198c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-03-26T02:08:38Z",
+      "side": 1,
+      "message": "It looks OK. I\u0027ll pull the change and build it locally to check.",
+      "parentUuid": "365cdca5_30d11a10",
+      "range": {
+        "startLine": 35,
+        "startChar": 42,
+        "endLine": 35,
+        "endChar": 53
+      },
+      "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

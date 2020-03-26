@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "300b41e9_0977a117",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-03-26T02:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96faba08_8ffe240d",
+      "range": {
+        "startLine": 76,
+        "startChar": 8,
+        "endLine": 76,
+        "endChar": 14
+      },
+      "revId": "71bdb465738a0343526c2cf34c7b9e9e6aa97fbd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "acd74ebf_b84814a3",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5b5c58c5_fe675cc0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-03-26T02:51:25Z",
+      "side": 1,
+      "message": "Done in https://gerrit-review.googlesource.com/c/plugins/download-commands/+/260361",
+      "parentUuid": "acd74ebf_b84814a3",
+      "range": {
+        "startLine": 150,
+        "startChar": 2,
+        "endLine": 150,
+        "endChar": 64
+      },
+      "revId": "71bdb465738a0343526c2cf34c7b9e9e6aa97fbd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54eb8ec4_73a5b7ff",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
         "patchSetId": 2
@@ -68,6 +116,30 @@
       "revId": "71bdb465738a0343526c2cf34c7b9e9e6aa97fbd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a817fa38_1c627ec6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-03-26T02:51:25Z",
+      "side": 1,
+      "message": "Done in https://gerrit-review.googlesource.com/c/plugins/download-commands/+/260361",
+      "parentUuid": "54eb8ec4_73a5b7ff",
+      "range": {
+        "startLine": 151,
+        "startChar": 24,
+        "endLine": 151,
+        "endChar": 45
+      },
+      "revId": "71bdb465738a0343526c2cf34c7b9e9e6aa97fbd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

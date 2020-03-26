@@ -70,6 +70,30 @@
       "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "365cdca5_30d11a10",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-03-26T01:59:42Z",
+      "side": 1,
+      "message": "i\u0027ve written something, but i don\u0027t know if it helps.  i don\u0027t know where one would see these unused param warnings.",
+      "parentUuid": "0c5b6f53_f61f69bb",
+      "range": {
+        "startLine": 35,
+        "startChar": 42,
+        "endLine": 35,
+        "endChar": 53
+      },
+      "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

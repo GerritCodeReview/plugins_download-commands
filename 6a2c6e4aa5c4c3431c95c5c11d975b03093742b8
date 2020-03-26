@@ -166,6 +166,30 @@
       "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3cb41253_df184450",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CheckoutCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-03-26T13:41:11Z",
+      "side": 1,
+      "message": "i guess i\u0027ll never see those as i don\u0027t use GUI IDE\u0027s.  everything is via a terminal.",
+      "parentUuid": "aee538fd_25d117f3",
+      "range": {
+        "startLine": 35,
+        "startChar": 42,
+        "endLine": 35,
+        "endChar": 53
+      },
+      "revId": "6a2c6e4aa5c4c3431c95c5c11d975b03093742b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

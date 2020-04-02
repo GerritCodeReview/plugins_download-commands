@@ -37,13 +37,18 @@ class BranchCommand extends GitDownloadCommand {
         + QuoteUtil.quote(url)
         + " "
         + ref
-        + " && git checkout -b CL-"
+        + " && git checkout -b Change-"
         + id.replaceAll("/", "-")
         + " FETCH_HEAD";
   }
 
   @Override
   String getRepoCommand(String url, String id) {
-    return "repo download -b CL-" + id.replaceAll("/", "-") + " " + QuoteUtil.quote(url) + " " + id;
+    return "repo download -b Change-"
+        + id.replaceAll("/", "-")
+        + " "
+        + QuoteUtil.quote(url)
+        + " "
+        + id;
   }
 }

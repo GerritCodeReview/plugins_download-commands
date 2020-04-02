@@ -46,6 +46,30 @@
       "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5325c1e4_95643ca2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1024147
+      },
+      "writtenOn": "2020-04-02T13:59:44Z",
+      "side": 1,
+      "message": "let\u0027s replace. we have too many config knobs already.",
+      "parentUuid": "918bcb2b_97f51488",
+      "range": {
+        "startLine": 47,
+        "startChar": 29,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

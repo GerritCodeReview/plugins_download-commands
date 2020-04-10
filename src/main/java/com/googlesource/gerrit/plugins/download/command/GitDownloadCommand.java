@@ -141,14 +141,14 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   /**
    * @param url The project URL this change is for.
-   * @param ref Git named ref to this change/patchset.
-   * @param id The change/PS numbers.
+   * @param ref Git named ref to this CL/patchset.
+   * @param id The CL/PS numbers.
    */
   abstract String getCommand(String url, String ref, String id);
 
   /**
    * @param url The project URL this change is for.
-   * @param id The change/PS numbers.
+   * @param id The CL/PS numbers.
    */
   String getRepoCommand(String url, String id) {
     // Most commands don't support this, so default it to nothing.

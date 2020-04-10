@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "zuul-check:plugins_download-commands": {
+      "state": "SCHEDULED",
+      "message": "Change has been enqueued in check",
+      "started": "2020-04-10T22:36:56Z",
+      "created": "2020-04-10T22:36:58Z",
+      "updated": "2020-04-10T22:36:58Z"
+    }
+  }
+}

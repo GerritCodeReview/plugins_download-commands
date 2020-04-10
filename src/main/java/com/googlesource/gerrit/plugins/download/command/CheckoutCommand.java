@@ -32,7 +32,7 @@ class CheckoutCommand extends GitDownloadCommand {
   }
 
   @Override
-  String getCommand(String url, String ref, String id) {
+  String getCommand(String url, String ref) {
     return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git checkout FETCH_HEAD";
   }
 

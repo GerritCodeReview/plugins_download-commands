@@ -61,7 +61,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed) {
-      String id = refToId(ref);
+      String id = Change.Id.fromRef(ref) != null ?
+          Change.Id.fromRef(ref).toString() : null;
       if (id == null) {
         return null;
       }

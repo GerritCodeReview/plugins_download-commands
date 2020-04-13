@@ -15,6 +15,7 @@
 package com.googlesource.gerrit.plugins.download.command;
 
 import com.google.common.flogger.FluentLogger;
+import com.google.gerrit.entities.Change;
 import com.google.gerrit.entities.Project;
 import com.google.gerrit.entities.RefNames;
 import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
@@ -61,7 +62,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed) {
-      String id = refToId(ref);
+      Change.Id idFromRef = Change.Id.fromRef(ref);
+      String id = idFromRef != null ? idFromRef.toString() : null;
       if (id == null) {
         return null;
       }
@@ -93,19 +95,6 @@ abstract class GitDownloadCommand extends DownloadCommand {
     } catch (URISyntaxException e) {
       return false;
     }
-  }
-
-  private static String refToId(String ref) {
-    if (ref.startsWith(RefNames.REFS_CHANGES)) {
-      int s1 = ref.lastIndexOf('/');
-      if (s1 > 0) {
-        int s2 = ref.lastIndexOf('/', s1 - 1);
-        if (s2 > 0) {
-          return ref.substring(s2 + 1);
-        }
-      }
-    }
-    return null;
   }
 
   private String resolveRef(String project, String ref) {

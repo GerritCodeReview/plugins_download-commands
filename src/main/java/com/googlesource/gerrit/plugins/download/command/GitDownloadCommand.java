@@ -61,7 +61,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed) {
-      String id = refToId(ref);
+      String id = Change.Id.fromRef(ref) != null ?
+          Change.Id.fromRef(ref).toString() : null;
       if (id == null) {
         return null;
       }
@@ -93,19 +94,6 @@ abstract class GitDownloadCommand extends DownloadCommand {
     } catch (URISyntaxException e) {
       return false;
     }
-  }
-
-  private static String refToId(String ref) {
-    if (ref.startsWith(RefNames.REFS_CHANGES)) {
-      int s1 = ref.lastIndexOf('/');
-      if (s1 > 0) {
-        int s2 = ref.lastIndexOf('/', s1 - 1);
-        if (s2 > 0) {
-          return ref.substring(s2 + 1);
-        }
-      }
-    }
-    return null;
   }
 
   private String resolveRef(String project, String ref) {

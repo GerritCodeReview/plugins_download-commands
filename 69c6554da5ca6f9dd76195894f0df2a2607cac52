@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18950a15_1a5f5cbf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-04-13T05:32:01Z",
+      "side": 1,
+      "message": "There\u0027s no need to call fromRef twice.  Something like this would do:\n\n Change.Id idFromRef \u003d Change.Id.fromRef(ref);\n String id \u003d idFromRef !\u003d null ? idFromRef.toString() : null;",
+      "range": {
+        "startLine": 65,
+        "startChar": 18,
+        "endLine": 66,
+        "endChar": 51
+      },
+      "revId": "69c6554da5ca6f9dd76195894f0df2a2607cac52",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}

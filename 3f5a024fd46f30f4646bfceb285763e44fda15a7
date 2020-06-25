@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9804e366_b4afbba7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-06-25T05:42:35Z",
+      "side": 1,
+      "message": "i think i copied \u0026 pasted this without fully understanding the significance\n\nshould we create another DownloadCommand enum like BRANCH ?",
+      "parentUuid": "9c1b22a1_da22fd3a",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6d245789_188755dd",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
         "patchSetId": 3
@@ -117,6 +141,30 @@
       "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0289c6fb_509ccb7b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-06-25T05:42:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cf9b197_84edcf34",
+      "range": {
+        "startLine": 47,
+        "startChar": 29,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

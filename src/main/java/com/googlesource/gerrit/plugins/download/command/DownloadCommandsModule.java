@@ -25,6 +25,8 @@ public class DownloadCommandsModule extends AbstractModule {
 
     bind(DownloadCommand.class).annotatedWith(Exports.named("Branch")).to(BranchCommand.class);
 
+    bind(DownloadCommand.class).annotatedWith(Exports.named("Reset To")).to(ResetCommand.class);
+
     bind(DownloadCommand.class)
         .annotatedWith(Exports.named("Cherry Pick"))
         .to(CherryPickCommand.class);

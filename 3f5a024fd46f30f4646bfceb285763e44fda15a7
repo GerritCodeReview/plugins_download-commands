@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "6c8a198b_04c1150b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-06-25T05:55:42Z",
+      "side": 1,
+      "message": "I\u0027m not sure.  The way that enum is used is a bit confusing. It\u0027s a core enum, but only used in this plugin. I tried to remove it earlier, but it just got messy.",
+      "parentUuid": "9804e366_b4afbba7",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6d245789_188755dd",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
         "patchSetId": 3

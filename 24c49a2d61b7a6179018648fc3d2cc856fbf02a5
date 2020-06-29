@@ -16,6 +16,23 @@
       "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57d0249f_cd433458",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-29T21:15:32Z",
+      "side": 1,
+      "message": "There are already 4 commands: [1]. Do you think it wouldn\u0027t be too much on the small screen, and even scroll would be needed? We probably also don\u0027t want to make user preference, what commands to show/hide?",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

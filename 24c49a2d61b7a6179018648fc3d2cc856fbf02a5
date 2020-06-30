@@ -33,6 +33,47 @@
       "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f71a0383_a0d56d95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-06-30T00:13:39Z",
+      "side": 1,
+      "message": "Yes, that is a concern.  I wonder if it\u0027s supposed to be possible to limit which ones are shown?  In core there is an enum that is used, but I didn\u0027t check in detail what it\u0027s for.  I thought it could be removed, but that causes a lot of issues.\n\nSee also my inline comment about the enum.",
+      "parentUuid": "57d0249f_cd433458",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2143ee9_f7472948",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RebaseCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-06-30T00:13:39Z",
+      "side": 1,
+      "message": "Do we need to introduce a new enum value?",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

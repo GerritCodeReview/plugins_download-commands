@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9defbb6e_0d3cf358",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-07-02T06:41:31Z",
+      "side": 1,
+      "message": "i\u0027m unable to view https://crbug.com/gerrit/10021 so i\u0027m guessing at the report, and i think this change is OK with what i suspect it\u0027s about (shell command injection through crafted repo names)",
+      "revId": "c4ef993fa5e8578641d6447c831ace13743dd5de",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

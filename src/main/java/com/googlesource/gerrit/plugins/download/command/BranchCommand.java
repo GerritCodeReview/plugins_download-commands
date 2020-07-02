@@ -43,12 +43,13 @@ class BranchCommand extends GitDownloadCommand {
   }
 
   @Override
-  String getRepoCommand(String url, String id) {
+  String getRepoCommand(String url, String id, String ps) {
     return "repo download -b change-"
         + id.replaceAll("/", "-")
         + " "
         + QuoteUtil.quote(url)
         + " "
-        + id;
+        + id
+        + (ps.isEmpty() ? "" : "/" + ps);
   }
 }

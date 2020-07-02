@@ -14,8 +14,10 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.entities.Change;
+import com.google.gerrit.entities.PatchSet;
 import com.google.gerrit.entities.Project;
 import com.google.gerrit.entities.RefNames;
 import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
@@ -74,7 +76,10 @@ abstract class GitDownloadCommand extends DownloadCommand {
       }
 
       if (scheme instanceof RepoScheme) {
-        return getRepoCommand(url, id);
+        PatchSet.Id psIdFromRef = PatchSet.Id.fromRef(ref);
+        checkNotNull(psIdFromRef);
+        String ps = psIdFromRef.getId();
+        return getRepoCommand(url, id, ps);
       }
       if (isValidUrl(url)) {
         if (checkForHiddenChangeRefs) {
@@ -137,9 +142,10 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   /**
    * @param url The project URL this change is for.
-   * @param id The change/PS numbers.
+   * @param id The change number.
+   * @param ps The patchset (PS) number.
    */
-  String getRepoCommand(String url, String id) {
+  String getRepoCommand(String url, String id, String ps) {
     // Most commands don't support this, so default it to nothing.
     return null;
   }

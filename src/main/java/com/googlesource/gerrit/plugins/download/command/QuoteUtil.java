@@ -19,6 +19,11 @@ public class QuoteUtil {
   private QuoteUtil() {}
 
   public static String quote(String string) {
-    return "\"" + string + "\"";
+    // Avoid quotes if the chars are entirely "safe".
+    if (string.matches("^[a-zA-Z0-9@_.:/-]+$")) {
+      return string;
+    } else {
+      return "\"" + string + "\"";
+    }
   }
 }

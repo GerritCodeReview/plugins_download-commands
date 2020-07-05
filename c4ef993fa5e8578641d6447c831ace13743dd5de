@@ -16,6 +16,24 @@
       "revId": "c4ef993fa5e8578641d6447c831ace13743dd5de",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38a0fce6_70e00c08",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-07-05T12:27:32Z",
+      "side": 1,
+      "message": "I\u0027ve removed the security label. The issue was fixed several releases ago, so there\u0027s no need to restrict it.",
+      "parentUuid": "9defbb6e_0d3cf358",
+      "revId": "c4ef993fa5e8578641d6447c831ace13743dd5de",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

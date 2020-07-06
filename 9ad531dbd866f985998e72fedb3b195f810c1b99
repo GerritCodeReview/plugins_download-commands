@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc387bc0_0fdd29d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-07-06T18:35:00Z",
+      "side": 1,
+      "message": "not sure if there are other reviewers here i could lean on so i don\u0027t have to keep leaning on you",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

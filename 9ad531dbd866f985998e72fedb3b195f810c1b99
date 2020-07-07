@@ -16,6 +16,40 @@
       "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a6b62a7_d9bec18b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-07-07T15:55:29Z",
+      "side": 1,
+      "message": "Nit below.",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed55011e_2ed7dcb7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-07-07T15:55:29Z",
+      "side": 1,
+      "message": "@param line missing for this added \u0027ps\u0027 parameter.",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }

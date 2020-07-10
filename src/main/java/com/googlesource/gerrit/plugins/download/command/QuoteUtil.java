@@ -22,8 +22,7 @@ public class QuoteUtil {
     // Avoid quotes if the chars are entirely "safe".
     if (string.matches("^[a-zA-Z0-9@_.:/-]+$")) {
       return string;
-    } else {
-      return "\"" + string + "\"";
     }
+    return "\"" + string + "\"";
   }
 }

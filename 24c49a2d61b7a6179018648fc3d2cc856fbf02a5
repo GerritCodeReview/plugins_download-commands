@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "abc3deba_718a8efb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T13:44:13Z",
+      "side": 1,
+      "message": "Not sure how common is this use-case, for justifying the extra real estate used in all people\u0027s screens.\n\nI would suggest to park this until we have a way to enabling/disabling download commands on the user\u0027s preferences.\n\nWDYT?",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2143ee9_f7472948",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RebaseCommand.java",
         "patchSetId": 2

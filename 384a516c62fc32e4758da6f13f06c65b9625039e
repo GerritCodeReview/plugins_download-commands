@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5fc9d83_c249e0fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T07:43:12Z",
+      "side": 1,
+      "message": "I really like the idea: I do now modify always the command by hand, as I typically use the reset.",
+      "revId": "384a516c62fc32e4758da6f13f06c65b9625039e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

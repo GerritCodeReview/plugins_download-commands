@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "713a2df7_e7145bd5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-07-20T18:42:21Z",
+      "side": 1,
+      "message": "taking another look, i think you\u0027re right this needs a new enum.  it looks like it\u0027s just used for user pref tracking.",
+      "parentUuid": "6c8a198b_04c1150b",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "3f5a024fd46f30f4646bfceb285763e44fda15a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6d245789_188755dd",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
         "patchSetId": 3

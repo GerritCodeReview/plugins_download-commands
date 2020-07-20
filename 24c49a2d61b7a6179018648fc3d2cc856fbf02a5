@@ -89,6 +89,23 @@
     },
     {
       "key": {
+        "uuid": "089cb082_60940b74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-07-20T15:44:16Z",
+      "side": 1,
+      "message": "@Ben, would you mind having a look at the usability concerns raised herein? -Thanks. Also adding Mike to this review.\n\nNote: I merged the base change after prior approval. That use case was also more recognized (the Reset To one). We can revisit it too if need be, usability-wise. My preference would (also) be to keep it in, though.",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2143ee9_f7472948",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RebaseCommand.java",
         "patchSetId": 2

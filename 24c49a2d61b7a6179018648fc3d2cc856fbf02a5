@@ -142,6 +142,23 @@
     },
     {
       "key": {
+        "uuid": "8006121b_e06ec33c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2020-07-21T13:00:21Z",
+      "side": 1,
+      "message": "At the moment we cannot tell the \"copy\" buttons clicks apart in the dialog. I have sent this change for review: https://gerrit-review.googlesource.com/c/gerrit/+/276139. In one week we should have enough data. Ping me.\n\nI agree that this does not scale on the frontend side with the current \"Download\" dialog design. I find it already overwhelming and confusing for new users.\n\n",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2143ee9_f7472948",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RebaseCommand.java",
         "patchSetId": 2

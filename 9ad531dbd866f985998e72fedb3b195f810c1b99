@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "89d04ea2_f730304c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-22T07:21:11Z",
+      "side": 1,
+      "message": "What is not clear to me, non repo commands work without this explicit patch set retrieval.",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ed55011e_2ed7dcb7",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
         "patchSetId": 1

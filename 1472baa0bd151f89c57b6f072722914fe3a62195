@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "708f4afe_d2258385",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-22T07:21:11Z",
+      "side": 1,
+      "message": "You could use Optional\u003cString\u003e instead, but patch set is always there, in gerrit.",
+      "range": {
+        "startLine": 79,
+        "startChar": 64,
+        "endLine": 79,
+        "endChar": 66
+      },
+      "revId": "1472baa0bd151f89c57b6f072722914fe3a62195",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37c4f768_ddeedb6b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-22T07:21:11Z",
+      "side": 1,
+      "message": "Why this check is needed?",
+      "range": {
+        "startLine": 79,
+        "startChar": 20,
+        "endLine": 79,
+        "endChar": 39
+      },
+      "revId": "1472baa0bd151f89c57b6f072722914fe3a62195",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}

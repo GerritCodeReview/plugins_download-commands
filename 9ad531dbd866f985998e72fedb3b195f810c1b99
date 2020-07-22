@@ -50,6 +50,24 @@
       "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "561832ce_b0db9e07",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-07-22T07:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed55011e_2ed7dcb7",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

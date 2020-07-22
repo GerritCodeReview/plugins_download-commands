@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "c1793c2d_6480d371",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1007145
+      },
+      "writtenOn": "2020-07-22T07:40:26Z",
+      "side": 1,
+      "message": "switched to checkNotNull so i think this is no longer needed",
+      "parentUuid": "89d04ea2_f730304c",
+      "revId": "9ad531dbd866f985998e72fedb3b195f810c1b99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ed55011e_2ed7dcb7",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
         "patchSetId": 1

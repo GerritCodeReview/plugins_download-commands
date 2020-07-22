@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.CHECKOUT;
+import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.BRANCH;
 
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -28,7 +28,7 @@ class BranchCommand extends GitDownloadCommand {
       @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
-    super(cfg, downloadConfig, CHECKOUT, repoManager);
+    super(cfg, downloadConfig, BRANCH, repoManager);
   }
 
   @Override

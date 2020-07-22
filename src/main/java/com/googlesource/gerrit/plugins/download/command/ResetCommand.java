@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.CHECKOUT;
+import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.RESET;
 
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -28,7 +28,7 @@ public class ResetCommand extends GitDownloadCommand {
       @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
       GitRepositoryManager repoManager) {
-    super(cfg, downloadConfig, CHECKOUT, repoManager);
+    super(cfg, downloadConfig, RESET, repoManager);
   }
 
   @Override

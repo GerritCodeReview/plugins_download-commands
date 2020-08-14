@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a251434f_bcf26f18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026112
+      },
+      "writtenOn": "2020-08-14T08:51:03Z",
+      "side": 1,
+      "message": "This might be cheap enough to forward fix with a null check. Up to you.",
+      "revId": "87e3930cea7c06aea454998abdddf6515a9f103b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

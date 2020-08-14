@@ -37,8 +37,7 @@ class CherryPickCommand extends GitDownloadCommand {
   }
 
   @Override
-  String getRepoCommand(String url, String id, String ps) {
-    return "repo download -c " + QuoteUtil.quote(url) + " " + id
-        + (ps.isEmpty() ? "" : "/" + ps);
+  String getRepoCommand(String url, String id) {
+    return "repo download -c " + QuoteUtil.quote(url) + " " + id;
   }
 }

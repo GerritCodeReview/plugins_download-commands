@@ -16,6 +16,23 @@
       "revId": "87e3930cea7c06aea454998abdddf6515a9f103b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "637de6d5_7299ab13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1091982
+      },
+      "writtenOn": "2020-08-14T09:09:08Z",
+      "side": 1,
+      "message": "hiesel@, GitDownloadCommand line_81 of base is expecting the psIdFromRef always not to be null\n\ncheckNotNull(psIdFromRef);\n\nI can comment out this line and handle the null case, but I think that would assume a different behavior from what the author intended.\n",
+      "revId": "87e3930cea7c06aea454998abdddf6515a9f103b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

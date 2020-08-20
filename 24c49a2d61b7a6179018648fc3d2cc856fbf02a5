@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "619c17d1_a9b0783e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2020-08-20T07:02:44Z",
+      "side": 1,
+      "message": "As promised, here are some numbers from Google\u0027s Gerrit installations:\n\n  4322 cherrypick\n  1515 checkout\n  946  branch\n  213  pull\n  97   resetto\n\nI think it would be extremely helpful, if we would extend the download plugin by a description for each command. Reading the commit message of this change I see why \"rebase on\" is helpful, but just seeing a \"rebase on\" command in the dialog I would maybe not be sure what it does and why I should be using it.\n\nWDYT?",
+      "parentUuid": "8006121b_e06ec33c",
+      "revId": "24c49a2d61b7a6179018648fc3d2cc856fbf02a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d2143ee9_f7472948",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/RebaseCommand.java",
         "patchSetId": 2

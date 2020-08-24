@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "70f43c98_8f4f8976",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1100310
+      },
+      "writtenOn": "2020-08-24T06:41:55Z",
+      "side": 1,
+      "message": "\u003e I\u0027m surprised that we don\u0027t already have a utility for quoting a string.\n\norg.eclipse.jgit.util.QuotedString.BOURNE?",
+      "revId": "7bd2008be31497696e4818f4a4d91b317251c9ac",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}

@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.scheme;
 
-import static com.google.gerrit.entities.CoreDownloadSchemes.REPO_DOWNLOAD;
+import static com.google.gerrit.entities.CoreDownloadSchemes.REPO;
 
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
@@ -25,7 +25,7 @@ public class RepoScheme extends DownloadScheme {
 
   @Inject
   RepoScheme(DownloadConfig downloadConfig) {
-    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(REPO_DOWNLOAD);
+    this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(REPO);
   }
 
   @Override

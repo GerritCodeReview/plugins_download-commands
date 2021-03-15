@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "696a5560_04028489",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2021-03-15T08:11:30Z",
+      "side": 1,
+      "message": "Why would we want to remove the permissions for maintainers?",
+      "revId": "118975480c249f0aed3282de0303c5a4e67d470f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

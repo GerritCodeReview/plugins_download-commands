@@ -19,7 +19,7 @@ server.
   scheme = http
   scheme = anon_http
   scheme = anon_git
-  scheme = repo_download
+  scheme = repo
 ```
 
 The download section configures the allowed download methods.
@@ -58,9 +58,10 @@ The download section configures the allowed download methods.
 	(../../../Documentation/config-gerrit.html#gerrit.canonicalGitUrl)
 	variable.
 
-	* `repo_download`: Gerrit advertises patch set downloads with the
-	`repo download` command, assuming that all projects managed by this
-	instance are generally worked on with the repo multi-repository
+	* `repo`: Gerrit advertises patch set downloads with the `repo download`
+	command, assuming that all projects managed by this instance are generally
+	worked on with the
+	[repo multi-repository tool](https://gerrit.googlesource.com/git-repo)
 	tool.  This is not default, as not all instances will deploy repo.
 
 	If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP

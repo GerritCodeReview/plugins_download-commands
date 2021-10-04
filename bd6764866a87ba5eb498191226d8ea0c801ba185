@@ -87,6 +87,23 @@
       "parentUuid": "7839fc77_04207d38",
       "revId": "bd6764866a87ba5eb498191226d8ea0c801ba185",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c18ad2cb_2a44cafc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1079304
+      },
+      "writtenOn": "2021-10-04T03:30:13Z",
+      "side": 1,
+      "message": "git clone \"https://gerrit.googlesource.com/plugins/download-commands\"",
+      "revId": "bd6764866a87ba5eb498191226d8ea0c801ba185",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

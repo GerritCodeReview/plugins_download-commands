@@ -5,7 +5,7 @@ gerrit_plugin(
     srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
         "Gerrit-PluginName: download-commands",
-        "Gerrit-Module: com.googlesource.gerrit.plugins.download.Module",
+        "Gerrit-Module: com.googlesource.gerrit.plugins.download.PluginModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
 )

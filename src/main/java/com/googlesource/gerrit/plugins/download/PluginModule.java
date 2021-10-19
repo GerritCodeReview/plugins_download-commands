@@ -19,7 +19,7 @@ import com.googlesource.gerrit.plugins.download.command.CloneCommandsModule;
 import com.googlesource.gerrit.plugins.download.command.DownloadCommandsModule;
 import com.googlesource.gerrit.plugins.download.scheme.SchemeModule;
 
-class Module extends AbstractModule {
+class PluginModule extends AbstractModule {
   @Override
   protected void configure() {
     install(new CloneCommandsModule());

@@ -16,6 +16,46 @@
       "message": "i think this should finish up the previous discussions we had in this space",
       "revId": "5bd359c08e10b93d2c08762f75cde01a14e45fc6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9af77939_81f6736b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012523
+      },
+      "writtenOn": "2021-11-18T03:47:32Z",
+      "side": 1,
+      "message": "The download as branch command was missing in this change and the documentation did not show how to enable it again. Only looking in the source code made me find the cause.",
+      "revId": "5bd359c08e10b93d2c08762f75cde01a14e45fc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7d11635_dc6c0ecd",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1012523
+      },
+      "writtenOn": "2021-11-18T03:47:32Z",
+      "side": 1,
+      "message": "Could you also update the documentation to reflect this change?",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 37
+      },
+      "revId": "5bd359c08e10b93d2c08762f75cde01a14e45fc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

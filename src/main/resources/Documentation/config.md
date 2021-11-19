@@ -11,10 +11,12 @@ server.
 
 ```
 [download]
+  command = branch
   command = checkout
   command = cherry_pick
   command = pull
   command = format_patch
+  command = reset
   scheme = ssh
   scheme = http
   scheme = anon_http
@@ -29,6 +31,8 @@ The download section configures the allowed download methods.
 
 	Multiple commands are supported:
 
+	* `branch`: Command to fetch an create a new branch from the patch set.
+
 	* `checkout`: Command to fetch and checkout the patch set.
 
 	* `cherry_pick`: Command to fetch the patch set and cherry-pick
@@ -38,6 +42,9 @@ The download section configures the allowed download methods.
 
 	* `format_patch`: Command to fetch the patch set and feed it
 	into the `format-patch` command.
+
+	* `reset`: Command to fetch the patch set and reset the current branch
+	(or HEAD) to it.
 
 	If `download.command` is not specified, all download commands are
 	offered.

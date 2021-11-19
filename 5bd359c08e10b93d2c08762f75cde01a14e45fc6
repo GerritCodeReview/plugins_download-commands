@@ -80,6 +80,30 @@
       },
       "revId": "5bd359c08e10b93d2c08762f75cde01a14e45fc6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de8726ab_2ae9293a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/BranchCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1012523
+      },
+      "writtenOn": "2021-11-19T00:25:12Z",
+      "side": 1,
+      "message": "https://gerrit.googlesource.com/plugins/download-commands/+/refs/changes/62/289962/1/src/main/resources/Documentation/config.md#section-download\n\nThe branch and reset commands are missing. Before you would see the branch and reset options in the download commands, after this change they were gone.\n\nAdding command \u003d branch to the configuration brought it back.",
+      "parentUuid": "7e6ca9f3_3f25702a",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 37
+      },
+      "revId": "5bd359c08e10b93d2c08762f75cde01a14e45fc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

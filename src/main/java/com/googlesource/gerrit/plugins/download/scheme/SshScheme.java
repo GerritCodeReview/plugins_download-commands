@@ -47,7 +47,7 @@ public class SshScheme extends DownloadScheme {
         && (sshAddr.startsWith("*:") || "".equals(sshAddr))
         && urlProvider != null) {
       try {
-        sshAddr = (new URL(urlProvider.get())).getHost() + sshAddr.substring(1);
+        sshAddr = new URL(urlProvider.get()).getHost() + sshAddr.substring(1);
       } catch (MalformedURLException e) {
         // ignore, then this scheme will be disabled
       }

@@ -55,7 +55,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       return new StringBuilder()
           .append(super.getCommand(scheme, project))
           .append(" && (cd ")
-          .append(QuoteUtil.quote((projectName)))
+          .append(QuoteUtil.quote(projectName))
           .append(" && ")
           .append(configCommand)
           .append(")")

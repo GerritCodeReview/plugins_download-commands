@@ -24,6 +24,9 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import org.eclipse.jgit.lib.Config;
 
 public class HttpScheme extends DownloadScheme {
@@ -64,7 +67,13 @@ public class HttpScheme extends DownloadScheme {
       String host = base.substring(p + 3, s);
       r.append(base.substring(0, p + 3));
       if (userProvider.get().getUserName().isPresent()) {
-        r.append(userProvider.get().getUserName().get());
+        try {
+          r.append(
+              URLEncoder.encode(
+                  userProvider.get().getUserName().get(), StandardCharsets.UTF_8.name()));
+        } catch (UnsupportedEncodingException e) {
+          throw new RuntimeException("No UTF-8 support", e);
+        }
         r.append("@");
       }
       r.append(host);

@@ -24,8 +24,11 @@ import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,7 +95,11 @@ public class SshScheme extends DownloadScheme {
 
     StringBuilder r = new StringBuilder();
     r.append("ssh://");
-    r.append(username.get());
+    try {
+      r.append(URLEncoder.encode(username.get(), StandardCharsets.UTF_8.name()));
+    } catch (UnsupportedEncodingException e) {
+      throw new RuntimeException("No UTF-8 support", e);
+    }
     r.append("@");
     r.append(ensureSlash(sshdAddress));
     r.append(project);

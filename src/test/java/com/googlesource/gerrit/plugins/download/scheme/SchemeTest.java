@@ -16,13 +16,13 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.common.collect.ImmutableList;
 import com.google.gerrit.entities.Account;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.GroupMembership;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.inject.Provider;
 import com.google.inject.util.Providers;
-import java.util.List;
 import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Before;
@@ -41,7 +41,10 @@ public class SchemeTest {
     httpScheme = new HttpScheme(cfg, urlProvider, userProvider, downloadConfig);
     sshScheme =
         new SshScheme(
-            List.of("gerrit.company.com:29418"), urlProvider, userProvider, downloadConfig);
+            ImmutableList.of("gerrit.company.com:29418"),
+            urlProvider,
+            userProvider,
+            downloadConfig);
   }
 
   @Test

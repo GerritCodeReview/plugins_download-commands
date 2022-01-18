@@ -72,7 +72,7 @@ public class HttpScheme extends DownloadScheme {
               URLEncoder.encode(
                   userProvider.get().getUserName().get(), StandardCharsets.UTF_8.name()));
         } catch (UnsupportedEncodingException e) {
-          throw new RuntimeException("No UTF-8 support", e);
+          throw new IllegalStateException("No UTF-8 support", e);
         }
         r.append("@");
       }

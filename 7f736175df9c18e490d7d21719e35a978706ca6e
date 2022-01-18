@@ -22,6 +22,30 @@
       },
       "revId": "7f736175df9c18e490d7d21719e35a978706ca6e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc2aaaf0_f3e5a5b2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2022-01-18T11:10:06Z",
+      "side": 0,
+      "message": "Sure, [1] to do the same change in Gerrit core.\n\n[1] https://gerrit-review.googlesource.com/c/gerrit/+/328424",
+      "parentUuid": "5a2c6b22_704b0065",
+      "range": {
+        "startLine": 100,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 5
+      },
+      "revId": "7f736175df9c18e490d7d21719e35a978706ca6e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

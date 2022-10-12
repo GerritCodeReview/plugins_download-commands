@@ -48,6 +48,7 @@ public class HttpScheme extends DownloadScheme {
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP);
   }
 
+  @Nullable
   @Override
   public String getUrl(String project) {
     if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {

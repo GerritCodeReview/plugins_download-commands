@@ -41,6 +41,7 @@ public class AnonymousHttpScheme extends DownloadScheme {
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_HTTP);
   }
 
+  @Nullable
   @Override
   public String getUrl(String project) {
     if (!isEnabled()) {

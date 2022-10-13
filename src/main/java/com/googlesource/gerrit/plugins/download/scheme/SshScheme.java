@@ -82,6 +82,7 @@ public class SshScheme extends DownloadScheme {
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
   }
 
+  @Nullable
   @Override
   public String getUrl(String project) {
     if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {

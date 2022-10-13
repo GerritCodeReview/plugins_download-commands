@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -43,6 +44,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
     this.userProvider = userProvider;
   }
 
+  @Nullable
   @Override
   public String getCommand(DownloadScheme scheme, String project) {
     Optional<String> username = userProvider.get().getUserName();

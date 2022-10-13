@@ -15,6 +15,7 @@
 package com.googlesource.gerrit.plugins.download.command;
 
 import com.google.common.flogger.FluentLogger;
+import com.google.gerrit.common.Nullable;
 import com.google.gerrit.entities.Change;
 import com.google.gerrit.entities.Project;
 import com.google.gerrit.entities.RefNames;
@@ -59,6 +60,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
         cfg.getBoolean(DOWNLOAD, KEY_CHECK_FOR_HIDDEN_CHANGE_REFS, false);
   }
 
+  @Nullable
   @Override
   public final String getCommand(DownloadScheme scheme, String project, String ref) {
     if (commandAllowed) {
@@ -97,6 +99,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
     }
   }
 
+  @Nullable
   private String resolveRef(String project, String ref) {
     if (project.startsWith("$") || ref.startsWith("$")) {
       // No real value but placeholders are being used.
@@ -139,6 +142,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
    * @param url The project URL this change is for.
    * @param id The change/PS numbers.
    */
+  @Nullable
   String getRepoCommand(String url, String id) {
     // Most commands don't support this, so default it to nothing.
     return null;

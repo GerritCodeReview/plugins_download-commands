@@ -28,12 +28,12 @@ import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 import org.eclipse.jgit.lib.Config;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
-  @VisibleForTesting protected static final String HOOK = "hooks/commit-msg";
-  @VisibleForTesting protected static final String TARGET = " `git rev-parse --git-dir`/";
   @VisibleForTesting protected static final String HOOK_COMMAND_KEY = "installCommitMsgHookCommand";
+  @VisibleForTesting protected static final String HOOKS_DIR = "`git rev-parse --git-dir`/hooks/";
   @VisibleForTesting protected static final String EXTRA_COMMAND_KEY = "installCommitExtraCommand";
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
+  private static final String HOOK = "commit-msg";
 
   private final String configCommand;
   private final String extraCommand;
@@ -51,7 +51,6 @@ public class CloneWithCommitMsgHook extends CloneCommand {
   @Override
   public String getCommand(DownloadScheme scheme, String project) {
     String projectName = getBaseName(project);
-
     StringBuilder command = null;
 
     if (configCommand != null) {
@@ -71,14 +70,15 @@ public class CloneWithCommitMsgHook extends CloneCommand {
               .append(super.getCommand(scheme, project))
               .append(" && (cd ")
               .append(QuoteUtil.quote(projectName))
-              .append(" && mkdir -p .git/hooks")
-              .append(" && curl -Lo")
-              .append(TARGET)
+              .append(" && mkdir -p ")
+              .append(HOOKS_DIR)
+              .append(" && curl -Lo ")
+              .append(HOOKS_DIR)
               .append(HOOK)
               .append(" ")
               .append(getHookUrl())
-              .append("; chmod +x")
-              .append(TARGET)
+              .append("; chmod +x ")
+              .append(HOOKS_DIR)
               .append(HOOK)
               .append(")");
     }
@@ -101,7 +101,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
       if (!canonicalWebUrl.endsWith("/")) {
         hookUrl.append("/");
       }
-      hookUrl.append("tools/").append(HOOK);
+      hookUrl.append("tools/hooks/").append(HOOK);
     } else {
       logger.atWarning().log(
           "Cannot add commit-msg hook URL since gerrit.canonicalWebUrl isn't configured.");

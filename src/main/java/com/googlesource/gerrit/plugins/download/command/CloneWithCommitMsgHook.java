@@ -14,112 +14,97 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
-import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.googlesource.gerrit.plugins.download.scheme.AnonymousHttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
 import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
-import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
   private static final String HOOK = "hooks/commit-msg";
   private static final String TARGET = " `git rev-parse --git-dir`/";
 
   private final String configCommand;
   private final String extraCommand;
-  private final SshScheme sshScheme;
-  private final Provider<CurrentUser> userProvider;
+  private final String canonicalWebUrl;
 
   @Inject
   CloneWithCommitMsgHook(
-      @GerritServerConfig Config config, SshScheme sshScheme, Provider<CurrentUser> userProvider) {
+      @GerritServerConfig Config config, @CanonicalWebUrl @Nullable Provider<String> urlProvider) {
     this.configCommand = config.getString("gerrit", null, "installCommitMsgHookCommand");
     this.extraCommand = config.getString("gerrit", null, "installCommitExtraCommand");
-    this.sshScheme = sshScheme;
-    this.userProvider = userProvider;
+    this.canonicalWebUrl = urlProvider != null ? urlProvider.get() : null;
   }
 
   @Nullable
   @Override
   public String getCommand(DownloadScheme scheme, String project) {
-    Optional<String> username = userProvider.get().getUserName();
-    if (!username.isPresent()) {
-      return null;
-    }
     String projectName = getBaseName(project);
 
+    StringBuilder command = null;
+
     if (configCommand != null) {
-      return new StringBuilder()
-          .append(super.getCommand(scheme, project))
+      command =
+          new StringBuilder()
+              .append(super.getCommand(scheme, project))
+              .append(" && (cd ")
+              .append(QuoteUtil.quote(projectName))
+              .append(" && ")
+              .append(configCommand)
+              .append(")");
+    }
+
+    if (scheme instanceof HttpScheme
+        || scheme instanceof AnonymousHttpScheme
+        || scheme instanceof SshScheme) {
+      command =
+          new StringBuilder()
+              .append(super.getCommand(scheme, project))
+              .append(" && (cd ")
+              .append(QuoteUtil.quote(projectName))
+              .append(" && mkdir -p .git/hooks")
+              .append(" && curl -Lo")
+              .append(TARGET)
+              .append(HOOK)
+              .append(" ")
+              .append(getHookUrl())
+              .append("; chmod +x")
+              .append(TARGET)
+              .append(HOOK)
+              .append(")");
+    }
+
+    if (extraCommand != null && command != null) {
+      command
           .append(" && (cd ")
           .append(QuoteUtil.quote(projectName))
           .append(" && ")
-          .append(configCommand)
-          .append(")")
-          .toString();
+          .append(extraCommand)
+          .append(")");
     }
-
-    if (scheme instanceof SshScheme) {
-      StringBuilder b =
-          new StringBuilder().append(super.getCommand(scheme, project)).append(" && scp -p");
-
-      if (sshScheme.getSshdPort() != 22) {
-        b.append(" -P ").append(sshScheme.getSshdPort());
-      }
-
-      b.append(" ")
-          .append(username.get())
-          .append("@")
-          .append(sshScheme.getSshdHost())
-          .append(":")
-          .append(HOOK)
-          .append(" ")
-          .append(QuoteUtil.quote(projectName + "/.git/hooks/"));
-      if (extraCommand != null) {
-        b.append(" && (cd ")
-            .append(QuoteUtil.quote(projectName))
-            .append(" && ")
-            .append(extraCommand)
-            .append(")");
-      }
-      return b.toString();
-    }
-
-    if (scheme instanceof HttpScheme || scheme instanceof AnonymousHttpScheme) {
-      return new StringBuilder()
-          .append(super.getCommand(scheme, project))
-          .append(" && (cd ")
-          .append(QuoteUtil.quote(projectName))
-          .append(" && mkdir -p .git/hooks")
-          .append(" && curl -Lo")
-          .append(TARGET)
-          .append(HOOK)
-          .append(" ")
-          .append(getHttpHost(scheme, project))
-          .append("tools/")
-          .append(HOOK)
-          .append("; chmod +x")
-          .append(TARGET)
-          .append(HOOK)
-          .append(")")
-          .toString();
-    }
-    return null;
+    return command != null ? command.toString() : null;
   }
 
-  private String getHttpHost(DownloadScheme scheme, String project) {
-    String host = scheme.getUrl(project);
-    host = host.substring(0, host.lastIndexOf(project));
-    int auth = host.lastIndexOf("/a/");
-    if (auth > -1) {
-      host = host.substring(0, auth + 1);
+  private StringBuilder getHookUrl() {
+    StringBuilder hookUrl = new StringBuilder();
+    if (canonicalWebUrl != null) {
+      hookUrl.append(canonicalWebUrl);
+      if (!canonicalWebUrl.endsWith("/")) {
+        hookUrl.append("/");
+      }
+      hookUrl.append("tools/").append(HOOK);
+    } else {
+      logger.atWarning().log(
+          "Cannot add commit-msg hook URL since gerrit.canonicalWebUrl isn't configured.");
     }
-    return host;
+    return hookUrl;
   }
 
   private static String getBaseName(String project) {

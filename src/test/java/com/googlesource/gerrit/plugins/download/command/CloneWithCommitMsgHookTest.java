@@ -29,12 +29,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     assertThat(command)
         .isEqualTo(
             String.format(
-                "git clone \"%s\" && scp -p -P %d %s@%s:hooks/commit-msg %s/.git/hooks/",
-                sshScheme.getUrl(ENV.projectName),
-                ENV.sshPort,
-                ENV.userName,
-                ENV.fqdn,
-                baseName(ENV.projectName)));
+                "git clone \"%s\" && %s",
+                sshScheme.getUrl(ENV.projectName), getDefaultHookCommand()));
   }
 
   @Test
@@ -68,8 +64,12 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     assertThat(command)
         .isEqualTo(
             String.format(
-                "git clone \"%s\" && (cd %s && %s)",
-                sshScheme.getUrl(ENV.projectName), baseName(ENV.projectName), hookCommand));
+                "git clone \"%s\" && (cd %s && %s) && (cd %s && %s)",
+                sshScheme.getUrl(ENV.projectName),
+                baseName(ENV.projectName),
+                hookCommand,
+                baseName(ENV.projectName),
+                extraCommand));
   }
 
   @Test
@@ -78,11 +78,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     assertThat(command)
         .isEqualTo(
             String.format(
-                "git clone \"%s\" && (cd %s && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://%s@%s/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)",
-                httpScheme.getUrl(ENV.projectName),
-                baseName(ENV.projectName),
-                ENV.urlEncodedUserName(),
-                ENV.fqdn));
+                "git clone \"%s\" && %s",
+                httpScheme.getUrl(ENV.projectName), getDefaultHookCommand()));
   }
 
   @Test
@@ -105,18 +102,28 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     assertThat(command)
         .isEqualTo(
             String.format(
-                "git clone \"%s\" && (cd %s && %s)",
-                httpScheme.getUrl(ENV.projectName), baseName(ENV.projectName), hookCommand));
+                "git clone \"%s\" && (cd %s && %s) && (cd %s && %s)",
+                httpScheme.getUrl(ENV.projectName),
+                baseName(ENV.projectName),
+                hookCommand,
+                baseName(ENV.projectName),
+                extraCommand));
   }
 
   private String baseName(String projectName) {
     return projectName.substring(projectName.lastIndexOf('/') + 1);
   }
 
+  private String getDefaultHookCommand() {
+    return String.format(
+        "(cd %s && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://%s/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)",
+        baseName(ENV.projectName), ENV.fqdn);
+  }
+
   private CloneCommand getCloneCommand(String hookCommand, String extraCommand) {
     Config cfg = new Config();
     cfg.setString("gerrit", null, HOOK_COMMAND_KEY, hookCommand);
     cfg.setString("gerrit", null, EXTRA_COMMAND_KEY, extraCommand);
-    return new CloneWithCommitMsgHook(cfg, sshScheme, userProvider);
+    return new CloneWithCommitMsgHook(cfg, urlProvider);
   }
 }

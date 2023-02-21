@@ -15,6 +15,7 @@ package com.googlesource.gerrit.plugins.download.command;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.EXTRA_COMMAND_KEY;
+import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.HOOKS_DIR;
 import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.HOOK_COMMAND_KEY;
 
 import com.googlesource.gerrit.plugins.download.DownloadCommandTest;
@@ -27,6 +28,9 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
   public void testSshNoConfiguredCommands() throws Exception {
     String command = getCloneCommand(null, null).getCommand(sshScheme, ENV.projectName);
     System.out.println(command);
+    System.out.println(
+        String.format(
+            "git clone \"%s\" && %s", sshScheme.getUrl(ENV.projectName), getDefaultHookCommand()));
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -118,8 +122,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
 
   private String getDefaultHookCommand() {
     return String.format(
-        "(cd %s && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://%s/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)",
-        baseName(ENV.projectName), ENV.fqdn);
+        "(cd %s && mkdir -p %s && curl -Lo %scommit-msg https://%s/tools/hooks/commit-msg; chmod +x %scommit-msg)",
+        baseName(ENV.projectName), HOOKS_DIR, HOOKS_DIR, ENV.fqdn, HOOKS_DIR);
   }
 
   private CloneCommand getCloneCommand(String hookCommand, String extraCommand) {

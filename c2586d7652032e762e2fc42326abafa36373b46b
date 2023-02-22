@@ -93,6 +93,30 @@
       },
       "revId": "c2586d7652032e762e2fc42326abafa36373b46b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "512e50db_5a064ef9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1065558
+      },
+      "writtenOn": "2023-02-22T20:20:31Z",
+      "side": 1,
+      "message": "This wasn\u0027t true for our command:\n git clone \"ssh://ourserver/mytest\" \u0026\u0026 (cd \"mytest\" \u0026\u0026 mkdir -p .git/hooks \u0026\u0026 curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://ourserver/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg) \u0026\u0026 (git submodule update --init --recursive \u0026\u0026 git review -s)\n\nerror: \n fatal: not a git repository (or any of the parent directories): .git\n\nour config:\n installCommitExtraCommand \u003d git submodule update --init --recursive \u0026\u0026 git review -s",
+      "parentUuid": "b93977d5_c0b01f35",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 47
+      },
+      "revId": "c2586d7652032e762e2fc42326abafa36373b46b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

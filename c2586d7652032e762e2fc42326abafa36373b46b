@@ -117,6 +117,30 @@
       },
       "revId": "c2586d7652032e762e2fc42326abafa36373b46b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79d461e7_739579fb",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-02-23T07:37:04Z",
+      "side": 1,
+      "message": "Done!\nYou are absolutely right. I falsely presumed I could parse shell.\nThanks for correcting.\n\nP.s. for next time, that would definitely have warranted a Verified-1 vote 😊",
+      "parentUuid": "512e50db_5a064ef9",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 47
+      },
+      "revId": "c2586d7652032e762e2fc42326abafa36373b46b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

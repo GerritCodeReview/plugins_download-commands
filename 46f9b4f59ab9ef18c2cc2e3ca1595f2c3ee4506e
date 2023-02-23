@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c16eedc8_d346a3c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1065558
+      },
+      "writtenOn": "2023-02-23T14:13:57Z",
+      "side": 1,
+      "message": "works for us. This change will solve a big pain point for new clones. It was starting to get reported at least twice a week by our users. \n\nOur IT department will need to push\n`CURL_SSL_BACKEND\u003dschannel` to everyone since our cert is self signed",
+      "revId": "46f9b4f59ab9ef18c2cc2e3ca1595f2c3ee4506e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

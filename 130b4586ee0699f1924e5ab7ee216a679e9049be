@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1fe6f95_a6df781e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2023-02-23T07:30:32Z",
+      "side": 1,
+      "message": "At Google we have our own implementation of CloneCommand, so we don\u0027t mind much about this change.",
+      "revId": "130b4586ee0699f1924e5ab7ee216a679e9049be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

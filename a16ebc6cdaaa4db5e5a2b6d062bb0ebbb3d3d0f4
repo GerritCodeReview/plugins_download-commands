@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c82c3d6_37949a00",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2023-03-01T20:09:32Z",
+      "side": 0,
+      "message": "Why not reorder this to come before the SshScheme? That way there\u0027s still support for ssh but it\u0027s not the preferred solution.",
+      "revId": "a16ebc6cdaaa4db5e5a2b6d062bb0ebbb3d3d0f4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

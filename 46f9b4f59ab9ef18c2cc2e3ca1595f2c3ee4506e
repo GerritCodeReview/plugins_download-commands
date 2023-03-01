@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe0e2ccd_aedb4cdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2023-03-01T20:09:32Z",
+      "side": 1,
+      "message": "We typically expect that the commit message has standalone justification vs relying on issue tracker links. Can you add that please?",
+      "revId": "46f9b4f59ab9ef18c2cc2e3ca1595f2c3ee4506e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c16eedc8_d346a3c8",
@@ -31,6 +48,23 @@
       "writtenOn": "2023-02-27T20:15:14Z",
       "side": 1,
       "message": "Looks good to me. Since there are too many local variations of SSH clients and SSH server configurations to give a one-size-fits-all example, as this bug revealed, standardizing on HTTP for the commit-msg download seems the most reasonable choice.",
+      "revId": "46f9b4f59ab9ef18c2cc2e3ca1595f2c3ee4506e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f40c73d_5b74faea",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2023-03-01T20:09:32Z",
+      "side": 1,
+      "message": "This is missing the `return` from the current tip and so can be re-assigned in the blocks below.",
       "revId": "46f9b4f59ab9ef18c2cc2e3ca1595f2c3ee4506e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

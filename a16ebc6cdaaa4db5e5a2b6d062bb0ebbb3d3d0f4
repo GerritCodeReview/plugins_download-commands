@@ -16,6 +16,24 @@
       "message": "Why not reorder this to come before the SshScheme? That way there\u0027s still support for ssh but it\u0027s not the preferred solution.",
       "revId": "a16ebc6cdaaa4db5e5a2b6d062bb0ebbb3d3d0f4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b486eced_85604a6f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-03-02T13:25:50Z",
+      "side": 0,
+      "message": "I don\u0027t quite follow you.\nIf the scheme is for http or https, curl will be used and if the scheme is ssh scp will be used no matter the order.",
+      "parentUuid": "7c82c3d6_37949a00",
+      "revId": "a16ebc6cdaaa4db5e5a2b6d062bb0ebbb3d3d0f4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

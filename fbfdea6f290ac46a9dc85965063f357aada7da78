@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28c4412d_99d62ee4",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-03-02T13:05:02Z",
+      "side": 1,
+      "message": "Delete debug prints",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 99
+      },
+      "revId": "fbfdea6f290ac46a9dc85965063f357aada7da78",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33957c51_854d1e00",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-03-02T13:05:02Z",
+      "side": 1,
+      "message": "Delete debug print",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 32
+      },
+      "revId": "fbfdea6f290ac46a9dc85965063f357aada7da78",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

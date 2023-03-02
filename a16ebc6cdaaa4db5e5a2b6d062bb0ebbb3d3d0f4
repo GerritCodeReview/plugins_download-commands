@@ -34,6 +34,24 @@
       "parentUuid": "7c82c3d6_37949a00",
       "revId": "a16ebc6cdaaa4db5e5a2b6d062bb0ebbb3d3d0f4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48546782_42984afd",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2023-03-02T16:32:54Z",
+      "side": 0,
+      "message": "Sorry, yeah, I was confused about what was being passed into this method. Never mind.",
+      "parentUuid": "b486eced_85604a6f",
+      "revId": "a16ebc6cdaaa4db5e5a2b6d062bb0ebbb3d3d0f4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

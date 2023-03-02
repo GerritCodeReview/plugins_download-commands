@@ -16,75 +16,24 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.common.collect.ImmutableList;
-import com.google.gerrit.entities.Account;
-import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.account.GroupMembership;
-import com.google.gerrit.server.config.DownloadConfig;
-import com.google.inject.Provider;
-import com.google.inject.util.Providers;
-import java.util.Optional;
-import org.eclipse.jgit.lib.Config;
-import org.junit.Before;
+import com.googlesource.gerrit.plugins.download.DownloadCommandTest;
 import org.junit.Test;
 
-public class SchemeTest {
-  private HttpScheme httpScheme;
-  private SshScheme sshScheme;
-
-  @Before
-  public void setUp() {
-    Config cfg = new Config();
-    Provider<String> urlProvider = Providers.of("https://gerrit.company.com/");
-    Provider<CurrentUser> userProvider = Providers.of(fakeUser());
-    DownloadConfig downloadConfig = new DownloadConfig(cfg);
-    httpScheme = new HttpScheme(cfg, urlProvider, userProvider, downloadConfig);
-    sshScheme =
-        new SshScheme(
-            ImmutableList.of("gerrit.company.com:29418"),
-            urlProvider,
-            userProvider,
-            downloadConfig);
+public class SchemeTest extends DownloadCommandTest {
+  @Test
+  public void ensureHttpSchemeEncodedInUrl() throws Exception {
+    assertThat(httpScheme.getUrl(ENV.projectName))
+        .isEqualTo(
+            String.format(
+                "https://%s@%s/a/%s", ENV.urlEncodedUserName(), ENV.fqdn, ENV.projectName));
   }
 
   @Test
-  public void ensureHttpSchemeEncodedInUrl() {
-    assertThat(httpScheme.getUrl("foo"))
-        .isEqualTo("https://john-doe%40company.com@gerrit.company.com/a/foo");
-  }
-
-  @Test
-  public void ensureSshSchemeEncodedInUrl() {
-    assertThat(sshScheme.getUrl("foo"))
-        .isEqualTo("ssh://john-doe%40company.com@gerrit.company.com:29418/foo");
-  }
-
-  private static CurrentUser fakeUser() {
-    return new CurrentUser() {
-      @Override
-      public Optional<String> getUserName() {
-        return Optional.of("john-doe@company.com");
-      }
-
-      @Override
-      public GroupMembership getEffectiveGroups() {
-        throw new UnsupportedOperationException("not implemented");
-      }
-
-      @Override
-      public Object getCacheKey() {
-        return new Object();
-      }
-
-      @Override
-      public boolean isIdentifiedUser() {
-        return true;
-      }
-
-      @Override
-      public Account.Id getAccountId() {
-        return Account.id(1);
-      }
-    };
+  public void ensureSshSchemeEncodedInUrl() throws Exception {
+    assertThat(sshScheme.getUrl(ENV.projectName))
+        .isEqualTo(
+            String.format(
+                "ssh://%s@%s:%d/%s",
+                ENV.urlEncodedUserName(), ENV.fqdn, ENV.sshPort, ENV.projectName));
   }
 }

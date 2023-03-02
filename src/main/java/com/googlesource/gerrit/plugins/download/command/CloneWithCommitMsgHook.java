@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
@@ -27,6 +28,9 @@ import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 
 public class CloneWithCommitMsgHook extends CloneCommand {
+  @VisibleForTesting protected static final String HOOK_COMMAND_KEY = "installCommitMsgHookCommand";
+  @VisibleForTesting protected static final String EXTRA_COMMAND_KEY = "installCommitExtraCommand";
+
   private static final String HOOK = "hooks/commit-msg";
   private static final String TARGET = " `git rev-parse --git-dir`/";
 
@@ -38,8 +42,8 @@ public class CloneWithCommitMsgHook extends CloneCommand {
   @Inject
   CloneWithCommitMsgHook(
       @GerritServerConfig Config config, SshScheme sshScheme, Provider<CurrentUser> userProvider) {
-    this.configCommand = config.getString("gerrit", null, "installCommitMsgHookCommand");
-    this.extraCommand = config.getString("gerrit", null, "installCommitExtraCommand");
+    this.configCommand = config.getString("gerrit", null, HOOK_COMMAND_KEY);
+    this.extraCommand = config.getString("gerrit", null, EXTRA_COMMAND_KEY);
     this.sshScheme = sshScheme;
     this.userProvider = userProvider;
   }

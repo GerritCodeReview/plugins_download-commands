@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.gerrit.entities.CoreDownloadSchemes.SSH;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
@@ -40,7 +41,8 @@ public class SshScheme extends DownloadScheme {
   private final boolean schemeAllowed;
 
   @Inject
-  SshScheme(
+  @VisibleForTesting
+  public SshScheme(
       @SshAdvertisedAddresses List<String> sshAddresses,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,

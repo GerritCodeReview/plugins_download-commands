@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99edbe3d_c74a1148",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-03-02T13:04:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb477281_31be7366",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "7f82369c4aa8cbd621490ddda0ac12003dd479e6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a89e42e_53b53ed3",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-02T13:04:01Z",
       "side": 1,
       "message": "Delete debug print",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "7f82369c4aa8cbd621490ddda0ac12003dd479e6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8fb2f6f_ce52e88a",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-03-02T13:04:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89e42e_53b53ed3",
       "range": {
         "startLine": 79,
         "startChar": 0,

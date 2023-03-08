@@ -22,6 +22,7 @@ server.
   scheme = anon_http
   scheme = anon_git
   scheme = repo
+  hidden = ssh
 ```
 
 The download section configures the allowed download methods.
@@ -73,6 +74,16 @@ The download section configures the allowed download methods.
 
 	If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP
 	downloads are allowed.
+
+<a id="download.hidden">download.hidden</a>
+:	Schemes that can be used to download changes, but will not be advertised
+	in the UI. This can be any scheme that can be configured in <<download.scheme>>.
+
+	This is mostly useful in a deprecation scenario during a time where using
+	a scheme is discouraged, but has to be supported until all clients have
+	migrated to use a different scheme.
+
+	By default, no scheme will be hidden in the UI.
 
 <a id="download.checkForHiddenChangeRefs">download.checkForHiddenChangeRefs</a>
 :	Whether the download commands should be adapted when the change

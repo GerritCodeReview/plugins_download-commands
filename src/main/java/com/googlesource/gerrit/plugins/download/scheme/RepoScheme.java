@@ -22,10 +22,12 @@ import com.google.inject.Inject;
 
 public class RepoScheme extends DownloadScheme {
   private final boolean schemeAllowed;
+  private final boolean schemeHidden;
 
   @Inject
   RepoScheme(DownloadConfig downloadConfig) {
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(REPO);
+    this.schemeHidden = downloadConfig.getHiddenSchemes().contains(REPO);
   }
 
   @Override
@@ -36,6 +38,11 @@ public class RepoScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed;
+  }
+
+  @Override
+  public boolean isHidden() {
+    return schemeHidden;
   }
 
   @Override

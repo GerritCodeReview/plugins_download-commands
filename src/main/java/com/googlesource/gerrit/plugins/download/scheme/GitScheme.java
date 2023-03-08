@@ -26,11 +26,13 @@ public class GitScheme extends DownloadScheme {
 
   private final String gitDaemonUrl;
   private final boolean schemeAllowed;
+  private final boolean schemeHidden;
 
   @Inject
   public GitScheme(@GerritServerConfig Config cfg, DownloadConfig downloadConfig) {
     this.gitDaemonUrl = ensureSlash(cfg.getString("gerrit", null, "canonicalGitUrl"));
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_GIT);
+    this.schemeHidden = downloadConfig.getHiddenSchemes().contains(ANON_GIT);
   }
 
   @Override
@@ -44,6 +46,11 @@ public class GitScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && gitDaemonUrl != null;
+  }
+
+  @Override
+  public boolean isHidden() {
+    return schemeHidden;
   }
 
   @Override

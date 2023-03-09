@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20c0ffa8_65b911e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-03-09T13:51:38Z",
+      "side": 1,
+      "message": "I tried this with the corresponding change in gerrit core:\n- initialised a new site\n- created test project with an initial commit\n- set download.hide \u003d ssh\n\nThis correctly hides the ssh download URL on changes.\n\nBut the ssh tab with the clone URLs on the project\u0027s General page\nhttp://localhost:8080/admin/repos/test,general\nstill shows the clone command for ssh.\nI think the ssh tab on this page should be also hidden if \n```\ndownload.scheme \u003d ssh\ndownload.hide \u003d ssh\n```",
+      "revId": "60adb9655cad6c38b2a8d2384b19e0466fa8ea24",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

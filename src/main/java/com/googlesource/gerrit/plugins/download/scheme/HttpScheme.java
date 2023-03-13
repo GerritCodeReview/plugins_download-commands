@@ -35,6 +35,7 @@ public class HttpScheme extends DownloadScheme {
   private final String canonicalWebUrl;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
+  private final boolean schemeHidden;
 
   @Inject
   public HttpScheme(
@@ -46,6 +47,7 @@ public class HttpScheme extends DownloadScheme {
     this.canonicalWebUrl = urlProvider != null ? urlProvider.get() : null;
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP);
+    this.schemeHidden = downloadConfig.getHiddenSchemes().contains(HTTP);
   }
 
   @Nullable
@@ -90,6 +92,11 @@ public class HttpScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && (gitHttpUrl != null || canonicalWebUrl != null);
+  }
+
+  @Override
+  public boolean isHidden() {
+    return schemeHidden;
   }
 
   @Override

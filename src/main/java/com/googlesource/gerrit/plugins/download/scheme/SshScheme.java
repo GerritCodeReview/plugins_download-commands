@@ -39,6 +39,7 @@ public class SshScheme extends DownloadScheme {
   private final int sshdPort;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
+  private final boolean schemeHidden;
 
   @Inject
   @VisibleForTesting
@@ -82,6 +83,7 @@ public class SshScheme extends DownloadScheme {
 
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
+    this.schemeHidden = downloadConfig.getHiddenSchemes().contains(SSH);
   }
 
   @Nullable
@@ -112,6 +114,11 @@ public class SshScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && sshdAddress != null;
+  }
+
+  @Override
+  public boolean isHidden() {
+    return schemeHidden;
   }
 
   @Override

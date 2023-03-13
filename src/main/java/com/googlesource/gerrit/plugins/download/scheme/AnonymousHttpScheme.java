@@ -30,6 +30,7 @@ public class AnonymousHttpScheme extends DownloadScheme {
   private final String gitHttpUrl;
   private final String canonicalWebUrl;
   private final boolean schemeAllowed;
+  private final boolean schemeHidden;
 
   @Inject
   public AnonymousHttpScheme(
@@ -39,6 +40,7 @@ public class AnonymousHttpScheme extends DownloadScheme {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
     this.canonicalWebUrl = provider != null ? provider.get() : null;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(ANON_HTTP);
+    this.schemeHidden = downloadConfig.getHiddenSchemes().contains(ANON_HTTP);
   }
 
   @Nullable
@@ -63,6 +65,11 @@ public class AnonymousHttpScheme extends DownloadScheme {
   @Override
   public boolean isEnabled() {
     return schemeAllowed && (gitHttpUrl != null || canonicalWebUrl != null);
+  }
+
+  @Override
+  public boolean isHidden() {
+    return schemeHidden;
   }
 
   @Override

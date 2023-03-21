@@ -117,7 +117,7 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
 
   private String getDefaultHookCommand() {
     return String.format(
-        "(cd %s && mkdir -p %s && curl -Lo %scommit-msg https://%s/tools/hooks/commit-msg; chmod +x %scommit-msg)",
+        "(cd %s && mkdir -p %s && curl -Lo %scommit-msg https://%s/tools/hooks/commit-msg && chmod +x %scommit-msg)",
         baseName(ENV.projectName), HOOKS_DIR, HOOKS_DIR, ENV.fqdn, HOOKS_DIR);
   }
 

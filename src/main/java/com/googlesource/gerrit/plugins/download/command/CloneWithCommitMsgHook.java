@@ -77,7 +77,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
               .append(HOOK)
               .append(" ")
               .append(getHookUrl())
-              .append("; chmod +x ")
+              .append(" && chmod +x ")
               .append(HOOKS_DIR)
               .append(HOOK)
               .append(")");

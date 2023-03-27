@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68048f41_db4c8317",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2023-03-27T06:25:22Z",
+      "side": 1,
+      "message": "We don\u0027t want to remove the owner access right for the Gerrit maintainers.",
+      "revId": "3fd584445b6ac1cb806d47f54566fa64f6cca1a0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

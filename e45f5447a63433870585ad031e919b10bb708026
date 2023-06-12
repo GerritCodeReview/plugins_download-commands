@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "419a1a40_b848aa34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161325
+      },
+      "writtenOn": "2023-06-12T20:42:49Z",
+      "side": 1,
+      "message": "This would work fine for someone who is fluent in git; however, `git checkout FETCH_HEAD` leads to a detached HEAD state this involves extra complexity. Of course, the clean way would be to create a branch.\n\nFor people who only use git occasionally, it is nice if a small set of commands is sufficient. In particular, I found that people use the `git cherry-pick` command from gerrit extensively (they prefer one or more cherry-picks over a single checkout). However, the fact that a new commit hash is always generated, does create some confusion, which I would like to address with this patch.\n\nThe goal here is just to make the default better suited for more use cases, it does not add any clever feature. Do you want me to reword the commit message?",
+      "parentUuid": "dddaf30c_cbb5eab5",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

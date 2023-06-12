@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "dddaf30c_cbb5eab5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2023-06-12T13:46:39Z",
+      "side": 1,
+      "message": "Why don\u0027t you just use the checkout command in this case?",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

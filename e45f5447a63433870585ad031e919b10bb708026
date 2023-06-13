@@ -72,6 +72,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "70978779_4558c4d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161325
+      },
+      "writtenOn": "2023-06-13T12:59:24Z",
+      "side": 1,
+      "message": "Thank you for this background information! I will re-upload with a better commit message. Note that cherry-pick does not lead to a detached HEAD state.\n\n\u003e There is already the \"branch\" command [1] that does exactly this. Maybe enable this command?\n\nYes, we have \"branch\" and \"cherry-pick\" commands enabled. Some users prefer to use cherry-pick.\n\n\u003e So I would expect that this rather adds more confusion for people that are not deeply familiar with git, because the behaviour of the command is different depending on what is checked out locally.\n\nThis is hard for me to judge. I have seen someone carefully cherry-picking two subsequent patchsets and then adding his patchset on top of it -- he was surprised that this led to a rebase when pushing his patchset; having fast-forward would have eliminated this surprise. If he did the cherry-pick out-of-order, the commits would have changed indeed; however, I think he would not have been surprised by this.\n\nAnyway, I guess it is a balance between (a) providing the git-commands that are maximally helpful even if the non-optimal version, \"cherry-pick\", is used, and (b) steer users to learn the more appropriate version, \"branch\". IMO the main question for the reviewers is whether the projects leans towards (a) or (b).",
+      "parentUuid": "2b8fd13d_6be07fe0",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

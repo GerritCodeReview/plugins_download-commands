@@ -48,6 +48,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b8fd13d_6be07fe0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2023-06-13T08:35:03Z",
+      "side": 1,
+      "message": "\u003e This would work fine for someone who is fluent in git; however,\n\u003e `git checkout FETCH_HEAD` leads to a detached HEAD state this involves extra \n\u003e complexity.\n\nThis is the same for the cherry-pick command, isn\u0027t it?\n\n\n\u003e Of course, the clean way would be to create a branch.\n\nThere is already the \"branch\" command [1] that does exactly this. Maybe enable this command?\n\n[1] https://gerrit-review.git.corp.google.com/plugins/download-commands/Documentation/config.html#download.command\n\n\n\u003e For people who only use git occasionally, it is nice if a small set of\n\u003e commands is sufficient. In particular, I found that people use the\n\u003e `git cherry-pick` command from gerrit extensively (they prefer one or\n\u003e more cherry-picks over a single checkout). However, the fact that a new\n\u003e commit hash is always generated, does create some confusion, which I\n\u003e would like to address with this patch.\n\nIIUC the added --ff option only makes a difference if the current HEAD is the same as the parent of the cherry-pick’ed commit [2]. I\u0027m not sure that people who only use git occasionally will be aware of this precondition, so for them it seems safer to use the existing checkout or branch commands, which work without precondition. With the cherry-pick --ff command they will still get a new commit created if locally they have checked out a commit that is not the parent commit of the cherry-picked commit, so trying to use this command to cherry-pick a (unmerged) patch from a colleague and then upload a new patch on top may actually disturb the change of the colleague. So I would expect that this rather adds more confusion for people that are not deeply familiar with git, because the behaviour of the command is different depending on what is checked out locally.\n\n[2] https://git-scm.com/docs/git-cherry-pick#Documentation/git-cherry-pick.txt---ff\n\n\u003e The goal here is just to make the default better suited for more use cases,\n\u003e it does not add any clever feature.\n\nSure, I\u0027m neither against nor in favour of adding this option. Just trying to understand why adding it is useful.\n\n\u003e Do you want me to reword the commit message?\n\nThanks, it would be nice to include why adding the --ff option to the \"cherry-pick\" command is preferred over just using the existing \"checkout\" and \"branch\" commands.\n\nSince I\u0027m not convinced enough (yet) to approve this, let\u0027s get the opinion of another maintainer. Hence adding Nasser as a reviewer.",
+      "parentUuid": "419a1a40_b848aa34",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

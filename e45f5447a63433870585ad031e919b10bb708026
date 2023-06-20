@@ -120,6 +120,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "14e7a483_a60f89b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-06-20T08:15:42Z",
+      "side": 1,
+      "message": "This command can be considered a public API that is now changing.\nThe issue I see is that for that case the user expected the command that is copied from \"Cherry Pick\" to behave in a certain manner that it didn\u0027t.\nBut in the general case there are thousands upon thousands developers around the globe who expects \"Cherry Pick\" command to behave as it does today (create a new commit). From experience of being a Gerrit admin for ~ a decade I can confidently say that this would annoy a lot of those Gerrit users out there.\n\nI think it would be preferable to instead add a CherryPickFastForward command that has this new behavior.\nThat way the behavior for all Gerrit instances globally won\u0027t change as default but  each Gerrit admin can decide which cherry-pick commands they want to expose.\nFor your case you can chose not to expose the plain cherry-pick but the cherry-pick-ff command instead.",
+      "parentUuid": "3708902b_2683d55e",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

@@ -144,6 +144,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ab91a4a_15d7a399",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161325
+      },
+      "writtenOn": "2023-06-27T12:52:27Z",
+      "side": 1,
+      "message": "The suggestion for a separate CherryPickFastForward command would work for me. Because it adds extra clutter, maybe best to keep out of the download-commands plugin? I will add a custom plugin to our gerrit installation.\n\nCurrently gerrit\u0027s download commands have these behaviors:\n  (1) branch/checkout/reset: never create a new commit\n  (2) pull: only create a new commit if needed\n  (3) cherry_pick: always create a new commit\n\nThe intention for this patch is to move cherry_pick from (3) to (2) and thereby simplifying default behavior. If you think that this breaks reasonable gerrit use cases, this is not a good approach. How about abandoning this change?",
+      "parentUuid": "14e7a483_a60f89b0",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

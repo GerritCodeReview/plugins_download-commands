@@ -168,6 +168,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c850fc6_6eb92197",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2023-06-27T14:01:46Z",
+      "side": 1,
+      "message": "\u003e The suggestion for a separate CherryPickFastForward command would work for me. Because it adds extra clutter, maybe best to keep out of the download-commands plugin?\n\nI wouldn\u0027t consider it clutter 😊.\nIt would be preferable to keep the old behavior while also being able to use this new behavior. Alas I think it would require changes in core Gerrit as the \"command types\" for some reason are defined in [core Gerrit](https://gerrit.googlesource.com/gerrit/+/f70491232a2ccc7878731f65d27607e07a4d1c9e/java/com/google/gerrit/extensions/client/GeneralPreferencesInfo.java#26)\n\n\u003e \n\u003e Currently gerrit\u0027s download commands have these behaviors:\n\u003e   (1) branch/checkout/reset: never create a new commit\n\u003e   (2) pull: only create a new commit if needed\n\u003e   (3) cherry_pick: always create a new commit\n\u003e \n\u003e The intention for this patch is to move cherry_pick from (3) to (2) and thereby simplifying default behavior. If you think that this breaks reasonable gerrit use cases, this is not a good approach. How about abandoning this change?\n\nI don\u0027t know that one use-case is more reasonable than the other just that changing the behavior will break expectation of current behavior.\nPerhaps that is acceptable?\nI\u0027ll remove my CR-1 to not block this if others feel differently.",
+      "parentUuid": "9ab91a4a_15d7a399",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

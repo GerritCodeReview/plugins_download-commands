@@ -192,6 +192,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3548a4f_e8b46a22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161325
+      },
+      "writtenOn": "2023-06-29T13:54:37Z",
+      "side": 1,
+      "message": "Not quite sure if I can/should contribute anything else here, or if this is just up to the maintainers.\n\nTo make a change that affects many users, a strong stance from the maintainers would be required. Given that this has not materialized, and no one wants to be on the attention set, the reasons in favor of the patch must be too weak.\n\n\u003e I don\u0027t know that one use-case is more reasonable than the other just that changing the behavior will break expectation of current behavior.\n\u003e Perhaps that is acceptable?\n\nThis is why I think it would be correct to change behavior:\n- My understanding is that typical gerrit-workflows preserve SHA-hashes of commits when possible. (In contrast, GitHub often creates new commits.) Thus for workflows implicitly suggested by the download commands, fast-forward would be the more intuitive default option.\n- Furthermore, any workflow that expects the existing behavior of a new commit SHA-hash on cherry-pick, cannot reasonably use the other download-commands out of the box, which would make this plugin not that useful in the first place.\n- The original implementation of `git cherry-pick --ff` mentioned this\nmight be the default in the future, so at least in 2010 it seemed the\nmore natural default, with caveats mentioned there. https://github.com/git/git/commit/c62f6ec341b1a768be7c9adf84d07c5b3b113a81\n\nAnyway, because this patchset is only a minor usability improvement at best, I am fine with abandoning it without additional discussion.",
+      "parentUuid": "7c850fc6_6eb92197",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "e45f5447a63433870585ad031e919b10bb708026",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "86241dca_9b46ad7b",

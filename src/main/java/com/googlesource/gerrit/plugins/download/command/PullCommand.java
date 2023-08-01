@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.download.command;
 
-import static com.google.gerrit.extensions.client.GeneralPreferencesInfo.DownloadCommand.PULL;
+import static com.google.gerrit.server.config.DownloadConfig.DownloadCommand.PULL;
 
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;

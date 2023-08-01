@@ -19,7 +19,6 @@ import com.google.gerrit.common.Nullable;
 import com.google.gerrit.entities.Change;
 import com.google.gerrit.entities.Project;
 import com.google.gerrit.entities.RefNames;
-import com.google.gerrit.extensions.client.GeneralPreferencesInfo;
 import com.google.gerrit.extensions.config.DownloadCommand;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
@@ -52,7 +51,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
   GitDownloadCommand(
       @GerritServerConfig Config cfg,
       DownloadConfig downloadConfig,
-      GeneralPreferencesInfo.DownloadCommand cmd,
+      DownloadConfig.DownloadCommand cmd,
       GitRepositoryManager repoManager) {
     this.commandAllowed = downloadConfig.getDownloadCommands().contains(cmd);
     this.repoManager = repoManager;

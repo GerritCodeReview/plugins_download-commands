@@ -81,6 +81,7 @@ public class DownloadCommandTest {
     }
   }
 
+  protected static final String PLUGIN_NAME = "download-commands";
   protected static TestEnvironment ENV = new TestEnvironment();
 
   protected HttpScheme httpScheme;
@@ -94,11 +95,9 @@ public class DownloadCommandTest {
 
   @Before
   public void setUp() {
-    final String pluginName = "download-commands";
-
     PluginConfigFactory configFactory = Mockito.mock(PluginConfigFactory.class);
-    Mockito.when(configFactory.getFromGerritConfig(pluginName))
-        .thenReturn(PluginConfig.createFromGerritConfig(pluginName, new Config()));
+    Mockito.when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(PluginConfig.createFromGerritConfig(PLUGIN_NAME, new Config()));
 
     urlProvider = Providers.of(ENV.canonicalUrl());
 
@@ -111,7 +110,7 @@ public class DownloadCommandTest {
     sshScheme =
         new SshScheme(
             ImmutableList.of(String.format("%s:%d", ENV.fqdn, ENV.sshPort)),
-            pluginName,
+            PLUGIN_NAME,
             configFactory,
             urlProvider,
             userProvider,

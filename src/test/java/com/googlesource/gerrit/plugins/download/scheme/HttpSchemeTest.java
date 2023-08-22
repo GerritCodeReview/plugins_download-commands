@@ -1,4 +1,4 @@
-// Copyright (C) 2022 The Android Open Source Project
+// Copyright (C) 2024 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,21 +19,12 @@ import static com.google.common.truth.Truth.assertThat;
 import com.googlesource.gerrit.plugins.download.DownloadCommandTest;
 import org.junit.Test;
 
-public class SchemeTest extends DownloadCommandTest {
+public class HttpSchemeTest extends DownloadCommandTest {
   @Test
   public void ensureHttpSchemeEncodedInUrl() throws Exception {
     assertThat(httpScheme.getUrl(ENV.projectName))
         .isEqualTo(
             String.format(
                 "https://%s@%s/a/%s", ENV.urlEncodedUserName(), ENV.fqdn, ENV.projectName));
-  }
-
-  @Test
-  public void ensureSshSchemeEncodedInUrl() throws Exception {
-    assertThat(sshScheme.getUrl(ENV.projectName))
-        .isEqualTo(
-            String.format(
-                "ssh://%s@%s:%d/%s",
-                ENV.urlEncodedUserName(), ENV.fqdn, ENV.sshPort, ENV.projectName));
   }
 }

@@ -144,6 +144,7 @@ The download section configures the allowed download methods.
 ```
 [plugin "@PLUGIN@"]
 	sshdAdvertisedPrimaryAddress = host:port
+	sshIncludeUserName = true
 ```
 
 <a id="plugin.@PLUGIN@.sshdAdvertisedPrimaryAddress">plugin.@PLUGIN@.sshdAdvertisedPrimaryAddress</a>
@@ -164,3 +165,6 @@ form, `:'port'` may be omitted to use the default SSH port of 22.
 * `['IPv6']:'port'` (for example `[ff02::1]:29418`)
 
 By default unset.
+
+<a id="plugin.@PLUGIN@.sshIncludeUserName">plugin.@PLUGIN@.sshIncludeUserName</a>
+:	Whether the SSH scheme's download commands should include the current user's username or not. By default `true`.

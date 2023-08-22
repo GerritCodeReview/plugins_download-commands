@@ -44,6 +44,7 @@ public class SshScheme extends DownloadScheme {
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
   private final boolean schemeHidden;
+  private final boolean includeUserName;
 
   @Inject
   @VisibleForTesting
@@ -101,6 +102,7 @@ public class SshScheme extends DownloadScheme {
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
     this.schemeHidden = downloadConfig.getHiddenSchemes().contains(SSH);
+    this.includeUserName = config.getBoolean("sshIncludeUserName", true);
   }
 
   @Nullable
@@ -127,12 +129,16 @@ public class SshScheme extends DownloadScheme {
 
     StringBuilder r = new StringBuilder();
     r.append("ssh://");
-    try {
-      r.append(URLEncoder.encode(username.get(), StandardCharsets.UTF_8.name()));
-    } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("No UTF-8 support", e);
+
+    if (includeUserName) {
+      try {
+        r.append(URLEncoder.encode(username.get(), StandardCharsets.UTF_8.name()));
+      } catch (UnsupportedEncodingException e) {
+        throw new IllegalStateException("No UTF-8 support", e);
+      }
+      r.append("@");
     }
-    r.append("@");
+
     r.append(ensureSlash(address));
     r.append(project);
     return r.toString();

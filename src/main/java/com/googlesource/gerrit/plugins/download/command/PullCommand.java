@@ -33,6 +33,10 @@ class PullCommand extends GitDownloadCommand {
 
   @Override
   String getCommand(String url, String ref, String id) {
-    return "git pull " + QuoteUtil.quote(url) + " " + ref;
+    return "git pull "
+        + (recursiveCheckout ? "--recurse-submodules " : "")
+        + QuoteUtil.quote(url)
+        + " "
+        + ref;
   }
 }

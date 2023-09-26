@@ -33,6 +33,12 @@ public class ResetCommand extends GitDownloadCommand {
 
   @Override
   String getCommand(String url, String ref, String id) {
-    return "git fetch " + QuoteUtil.quote(url) + " " + ref + " && git reset --hard FETCH_HEAD";
+    return "git fetch "
+        + QuoteUtil.quote(url)
+        + " "
+        + ref
+        + " && git reset "
+        + recurseSubmodulesFlag
+        + "--hard FETCH_HEAD";
   }
 }

@@ -23,6 +23,7 @@ server.
   scheme = anon_git
   scheme = repo
   hide = ssh
+  recurseSubmodules = true
 ```
 
 The download section configures the allowed download methods.
@@ -84,6 +85,15 @@ The download section configures the allowed download methods.
     migrated to use a different scheme.
 
     By default, no scheme will be hidden in the UI.
+
+<a id="download.hide">download.recurseSubmodules</a>
+    Add `--recurse-submodules` to the `checkout` command to update submodules
+    while checking out change.
+
+    Note: recursive checkout can issue multiple parallel fetch requests increasing
+    the load on the server.
+
+    By default, set to `false`.
 
 <a id="download.checkForHiddenChangeRefs">download.checkForHiddenChangeRefs</a>
 :	Whether the download commands should be adapted when the change

@@ -39,6 +39,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
   private static final String DOWNLOAD = "download";
   private static final String UPLOADPACK = "uploadpack";
+  private static final String RECURSE_SUBMODULES = "recurseSubmodules";
   private static final String KEY_ALLOW_TIP_SHA1_IN_WANT = "allowTipSHA1InWant";
   private static final String KEY_ALLOW_REACHABLE_SHA1_IN_WANT = "allowReachableSHA1InWant";
   private static final String KEY_CHECK_FOR_HIDDEN_CHANGE_REFS = "checkForHiddenChangeRefs";
@@ -47,6 +48,7 @@ abstract class GitDownloadCommand extends DownloadCommand {
   private final boolean commandAllowed;
   private final GitRepositoryManager repoManager;
   private final boolean checkForHiddenChangeRefs;
+  protected final String recurseSubmodulesFlag;
 
   GitDownloadCommand(
       @GerritServerConfig Config cfg,
@@ -57,6 +59,8 @@ abstract class GitDownloadCommand extends DownloadCommand {
     this.repoManager = repoManager;
     this.checkForHiddenChangeRefs =
         cfg.getBoolean(DOWNLOAD, KEY_CHECK_FOR_HIDDEN_CHANGE_REFS, false);
+    this.recurseSubmodulesFlag =
+        cfg.getBoolean(DOWNLOAD, RECURSE_SUBMODULES, false) ? "--recurse-submodules " : "";
   }
 
   @Nullable
@@ -87,6 +91,14 @@ abstract class GitDownloadCommand extends DownloadCommand {
       }
     }
     return null;
+  }
+
+  protected String getGitCheckout() {
+    return getGitCheckout("");
+  }
+
+  protected String getGitCheckout(String additionalArgs) {
+    return "git checkout " + recurseSubmodulesFlag + additionalArgs;
   }
 
   private static boolean isValidUrl(String url) {

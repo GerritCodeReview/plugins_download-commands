@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3a64e8a_86916096",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-26T15:03:45Z",
+      "side": 1,
+      "message": "Verified with:\n```\n$ bazel test --cache_test_results\u003dNO plugins/download-commands:download-commands_tests                                                                                                                                                    ─╯\nINFO: Invocation ID: b1c80a31-5450-4c15-a212-622d6b121213\nINFO: Reading \u0027startup\u0027 options from /Users/lock/.bazelrc: --output_user_root\u003d/Users/lock/.cache/bazel\nINFO: Options provided by the client:\n  Inherited \u0027common\u0027 options: --isatty\u003d1 --terminal_columns\u003d238\nINFO: Reading rc options for \u0027test\u0027 from /Users/lock/workspace/gerrit/core/gerrit/.bazelrc:\n  Inherited \u0027build\u0027 options: --workspace_status_command\u003dpython3 ./tools/workspace_status.py --repository_cache\u003d~/.gerritcodereview/bazel-cache/repository --action_env\u003dPATH --disk_cache\u003d~/.gerritcodereview/bazel-cache/cas --java_language_version\u003d11 --java_runtime_version\u003dremotejdk_11 --tool_java_language_version\u003d11 --tool_java_runtime_version\u003dremotejdk_11 --incompatible_strict_action_env --announce_rc\nINFO: Reading rc options for \u0027test\u0027 from /Users/lock/workspace/gerrit/core/gerrit/.bazelrc:\n  \u0027test\u0027 options: --build_tests_only --test_output\u003derrors\nINFO: Analyzed target //plugins/download-commands:download-commands_tests (0 packages loaded, 136 targets configured).\nINFO: Found 1 test target...\nTarget //plugins/download-commands:download-commands_tests up-to-date:\n  bazel-bin/plugins/download-commands/download-commands_tests.jar\n  bazel-bin/plugins/download-commands/download-commands_tests\nINFO: Elapsed time: 5.470s, Critical Path: 5.08s\nINFO: 5 processes: 1 internal, 3 darwin-sandbox, 1 worker.\nINFO: Build completed successfully, 5 total actions\n//plugins/download-commands:download-commands_tests                      PASSED in 0.8s\n\nExecuted 1 out of 1 test: 1 test passes.\n```",
+      "revId": "4b3323bc67cff2021df7ccb65e69f297d861d9f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

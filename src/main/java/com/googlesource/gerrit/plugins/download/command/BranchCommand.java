@@ -37,7 +37,8 @@ class BranchCommand extends GitDownloadCommand {
         + QuoteUtil.quote(url)
         + " "
         + ref
-        + " && git checkout -b change-"
+        + " && "
+        + getGitCheckout("-b change-")
         + id.replaceAll("/", "-")
         + " FETCH_HEAD";
   }

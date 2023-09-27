@@ -236,6 +236,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cdc96b7_865faae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:48:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed8fc752_1ac8c4e6",
+      "range": {
+        "startLine": 26,
+        "startChar": 10,
+        "endLine": 26,
+        "endChar": 27
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ffd4b301_3c0fa3d9",
@@ -267,6 +291,24 @@
       "side": 1,
       "message": "I\u0027ve forgotten that those two also support that flag, the `pull` is already covered in the latest patch set. Will add `reset` in the next.",
       "parentUuid": "ffd4b301_3c0fa3d9",
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d99574f_1e311158",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:48:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60eaecb0_816dc9de",
       "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47f87749_8749e383",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T08:01:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e963933_8a6f10dd",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "4b3323bc67cff2021df7ccb65e69f297d861d9f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ab47a6a_6ab3356f",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-27T07:42:11Z",
       "side": 1,
       "message": "nit: too long line",
+      "range": {
+        "startLine": 25,
+        "startChar": 50,
+        "endLine": 25,
+        "endChar": 79
+      },
+      "revId": "4b3323bc67cff2021df7ccb65e69f297d861d9f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f0d033c_acfdf20d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T08:01:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab47a6a_6ab3356f",
       "range": {
         "startLine": 25,
         "startChar": 50,
@@ -77,6 +125,30 @@
       "writtenOn": "2023-09-27T07:42:11Z",
       "side": 1,
       "message": "nit: it seems that GJF is missing for these lines",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 103,
+        "endChar": 3
+      },
+      "revId": "4b3323bc67cff2021df7ccb65e69f297d861d9f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e99d70b5_e2b21949",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T08:01:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "775f9ebf_546d73d7",
       "range": {
         "startLine": 95,
         "startChar": 2,

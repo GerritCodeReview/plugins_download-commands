@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b50578e4_a7a8e06d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7bcf22f_8b0fc9e3",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 15
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9742af34_d3f1560c",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-27T13:08:13Z",
       "side": 1,
       "message": "requires",
+      "range": {
+        "startLine": 11,
+        "startChar": 44,
+        "endLine": 11,
+        "endChar": 51
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1248766_94506545",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9742af34_d3f1560c",
       "range": {
         "startLine": 11,
         "startChar": 44,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c20f186_5516ddcc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58ff84b1_8af77369",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9b3a78c_ea3bbed9",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-09-27T13:08:13Z",
       "side": 1,
       "message": "a new plugin configuration",
+      "range": {
+        "startLine": 25,
+        "startChar": 17,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbe6ae12_b3053ad9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9b3a78c_ea3bbed9",
       "range": {
         "startLine": 25,
         "startChar": 17,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed8fc752_1ac8c4e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "yeah, makes sense. Will rename the property",
+      "parentUuid": "3d5ebabd_c3882125",
+      "range": {
+        "startLine": 26,
+        "startChar": 10,
+        "endLine": 26,
+        "endChar": 27
+      },
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ffd4b301_3c0fa3d9",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -129,6 +249,24 @@
       "writtenOn": "2023-09-27T13:08:13Z",
       "side": 1,
       "message": "why not also to \"pull\" and \"reset\" ?",
+      "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60eaecb0_816dc9de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-27T13:42:01Z",
+      "side": 1,
+      "message": "I\u0027ve forgotten that those two also support that flag, the `pull` is already covered in the latest patch set. Will add `reset` in the next.",
+      "parentUuid": "ffd4b301_3c0fa3d9",
       "revId": "1e546de58bc976f1a9fd2e5265664843cd7f39c7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

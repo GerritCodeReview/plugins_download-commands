@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7137ff07_2fb38da1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/GitDownloadCommand.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2023-09-28T07:50:21Z",
+      "side": 1,
+      "message": "nit: once created the flag keeps its value so there is no point in checking it each time when it is called so how about changing the `recurseSubmodules` to\n```java\nthis.recursSubmodules \u003d\n  cfg.getBoolean(DOWNLOAD, RECURSE_SUBMODULES, false) ? \"--recurse-submodules \" : \"\";\n```\nand just use it instead of `getRecurseSubmodulesFlag()` method?",
+      "range": {
+        "startLine": 103,
+        "startChar": 2,
+        "endLine": 105,
+        "endChar": 3
+      },
+      "revId": "54cc62dad8cf8e7e41505c3260a1a14b148225f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

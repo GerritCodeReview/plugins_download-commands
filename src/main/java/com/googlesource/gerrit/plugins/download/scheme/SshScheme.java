@@ -23,6 +23,7 @@ import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
+import com.google.gerrit.server.ssh.SshAdvertisedPushAddress;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import java.io.UnsupportedEncodingException;
@@ -35,6 +36,7 @@ import java.util.Optional;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
+  private final String sshdPushAddress;
   private final String sshdHost;
   private final int sshdPort;
   private final Provider<CurrentUser> userProvider;
@@ -45,6 +47,7 @@ public class SshScheme extends DownloadScheme {
   @VisibleForTesting
   public SshScheme(
       @SshAdvertisedAddresses List<String> sshAddresses,
+      @SshAdvertisedPushAddress String sshPushAddress,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,
       DownloadConfig downloadConfig) {
@@ -81,6 +84,17 @@ public class SshScheme extends DownloadScheme {
     this.sshdHost = host;
     this.sshdPort = port;
 
+    if (sshPushAddress != null
+        && (sshPushAddress.startsWith("*:") || "".equals(sshPushAddress))
+        && urlProvider != null) {
+      try {
+        sshPushAddress = new URL(urlProvider.get()).getHost() + sshPushAddress.substring(1);
+      } catch (MalformedURLException e) {
+        // ignore, then this scheme will be disabled
+      }
+    }
+    this.sshdPushAddress = sshPushAddress;
+
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
     this.schemeHidden = downloadConfig.getHiddenSchemes().contains(SSH);
@@ -89,6 +103,15 @@ public class SshScheme extends DownloadScheme {
   @Nullable
   @Override
   public String getUrl(String project) {
+    return buildSshUrl(sshdAddress, project);
+  }
+
+  @Nullable
+  public String getPushUrl(String project) {
+    return buildSshUrl(sshdPushAddress, project);
+  }
+
+  private String buildSshUrl(String address, String project) {
     if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {
       return null;
     }
@@ -106,7 +129,7 @@ public class SshScheme extends DownloadScheme {
       throw new IllegalStateException("No UTF-8 support", e);
     }
     r.append("@");
-    r.append(ensureSlash(sshdAddress));
+    r.append(ensureSlash(address));
     r.append(project);
     return r.toString();
   }

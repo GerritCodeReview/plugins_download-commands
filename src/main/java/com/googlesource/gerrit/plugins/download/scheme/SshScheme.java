@@ -22,6 +22,7 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.ssh.SshAdvertisedAddresses;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -32,9 +33,11 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
+import org.eclipse.jgit.lib.Config;
 
 public class SshScheme extends DownloadScheme {
   private final String sshdAddress;
+  private final String sshdPrimaryAddress;
   private final String sshdHost;
   private final int sshdPort;
   private final Provider<CurrentUser> userProvider;
@@ -45,6 +48,7 @@ public class SshScheme extends DownloadScheme {
   @VisibleForTesting
   public SshScheme(
       @SshAdvertisedAddresses List<String> sshAddresses,
+      @GerritServerConfig Config gerritConfig,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,
       DownloadConfig downloadConfig) {
@@ -81,6 +85,19 @@ public class SshScheme extends DownloadScheme {
     this.sshdHost = host;
     this.sshdPort = port;
 
+    String sshdPrimaryAddress =
+        gerritConfig.getString("plugin", "download-commands", "sshdadvertisedprimaryaddress");
+    if (sshdPrimaryAddress != null
+        && (sshdPrimaryAddress.startsWith("*:") || "".equals(sshdPrimaryAddress))
+        && urlProvider != null) {
+      try {
+        sshdPrimaryAddress = new URL(urlProvider.get()).getHost() + sshdPrimaryAddress.substring(1);
+      } catch (MalformedURLException e) {
+        // ignore, then this scheme will be disabled
+      }
+    }
+    this.sshdPrimaryAddress = sshdPrimaryAddress;
+
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(SSH);
     this.schemeHidden = downloadConfig.getHiddenSchemes().contains(SSH);
@@ -89,7 +106,17 @@ public class SshScheme extends DownloadScheme {
   @Nullable
   @Override
   public String getUrl(String project) {
-    if (!isEnabled() || !userProvider.get().isIdentifiedUser()) {
+    return buildSshUrl(sshdAddress, project);
+  }
+
+  @Nullable
+  public String getPushUrl(String project) {
+    return buildSshUrl(sshdPrimaryAddress, project);
+  }
+
+  @Nullable
+  private String buildSshUrl(String address, String project) {
+    if (!isEnabled() || address == null || !userProvider.get().isIdentifiedUser()) {
       return null;
     }
 
@@ -106,7 +133,7 @@ public class SshScheme extends DownloadScheme {
       throw new IllegalStateException("No UTF-8 support", e);
     }
     r.append("@");
-    r.append(ensureSlash(sshdAddress));
+    r.append(ensureSlash(address));
     r.append(project);
     return r.toString();
   }

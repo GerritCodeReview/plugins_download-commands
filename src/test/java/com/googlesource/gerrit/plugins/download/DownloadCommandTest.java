@@ -67,6 +67,7 @@ public class DownloadCommandTest {
     public final String projectName = "my/project";
     public final String userName = "john-doe@company.com";
     public final int sshPort = 29418;
+    public final int sshdAdvertisedPrimaryAddress = 39418;
 
     public String urlEncodedUserName() throws UnsupportedEncodingException {
       return URLEncoder.encode(userName, StandardCharsets.UTF_8.name());
@@ -98,6 +99,7 @@ public class DownloadCommandTest {
     sshScheme =
         new SshScheme(
             ImmutableList.of(String.format("%s:%d", ENV.fqdn, ENV.sshPort)),
+            new Config(),
             urlProvider,
             userProvider,
             downloadConfig);

@@ -18,6 +18,8 @@ import com.google.gerrit.entities.Account;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.GroupMembership;
 import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.PluginConfig;
+import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Provider;
 import com.google.inject.util.Providers;
 import com.googlesource.gerrit.plugins.download.scheme.HttpScheme;
@@ -29,6 +31,7 @@ import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.mockito.Mockito;
 
 @Ignore
 public class DownloadCommandTest {
@@ -67,6 +70,7 @@ public class DownloadCommandTest {
     public final String projectName = "my/project";
     public final String userName = "john-doe@company.com";
     public final int sshPort = 29418;
+    public final int sshdAdvertisedPrimaryAddress = 39418;
 
     public String urlEncodedUserName() throws UnsupportedEncodingException {
       return URLEncoder.encode(userName, StandardCharsets.UTF_8.name());
@@ -90,14 +94,25 @@ public class DownloadCommandTest {
 
   @Before
   public void setUp() {
-    Config cfg = new Config();
+    final String pluginName = "download-commands";
+
+    PluginConfigFactory configFactory = Mockito.mock(PluginConfigFactory.class);
+    Mockito.when(configFactory.getFromGerritConfig(pluginName))
+        .thenReturn(PluginConfig.createFromGerritConfig(pluginName, new Config()));
+
     urlProvider = Providers.of(ENV.canonicalUrl());
+
+    Config cfg = new Config();
     DownloadConfig downloadConfig = new DownloadConfig(cfg);
+
     userProvider = Providers.of(fakeUser());
+
     httpScheme = new HttpScheme(cfg, urlProvider, userProvider, downloadConfig);
     sshScheme =
         new SshScheme(
             ImmutableList.of(String.format("%s:%d", ENV.fqdn, ENV.sshPort)),
+            pluginName,
+            configFactory,
             urlProvider,
             userProvider,
             downloadConfig);

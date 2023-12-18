@@ -138,3 +138,29 @@ The download section configures the allowed download methods.
   Optional command to complete the commit-msg hook. For example:
   `git submodule update --init --recursive && git review -s`
   would initialize the submodules and setup git review.
+
+### <a id="plugin.@PLUGIN@">Section plugin.@PLUGIN@</a>
+
+```
+[plugin "@PLUGIN@"]
+	sshdAdvertisedPrimaryAddress = host:port
+```
+
+<a id="plugin.@PLUGIN@.sshdAdvertisedPrimaryAddress">plugin.@PLUGIN@.sshdAdvertisedPrimaryAddress</a>
+Specifies the address where clients can reach a Gerrit primary
+instance via ssh protocol.
+
+This may differ from sshd.listenAddress if fetch is served from
+another address. An example is a setup where upload-pack requests
+are served by a Gerrit replica and receive-pack by a Gerrit primary.
+Since ssh cannot be load balanced on layer 7 the addresses of the
+primary and replica need to be different.
+
+The following forms may be used to specify an address. In any
+form, `:'port'` may be omitted to use the default SSH port of 22.
+
+* `'hostname':'port'` (for example `review.example.com:22`)
+* `'IPv4':'port'` (for example `10.0.0.1:29418`)
+* `['IPv6']:'port'` (for example `[ff02::1]:29418`)
+
+By default unset.

@@ -91,6 +91,22 @@ public class CloneWithCommitMsgHook extends CloneCommand {
           .append(extraCommand)
           .append(")");
     }
+
+    if (scheme instanceof SshScheme) {
+      String sshPushAddress = ((SshScheme) scheme).getPushUrl(project);
+      if (sshPushAddress != null) {
+        command
+            .append(" && ")
+            .append("(cd ")
+            .append(QuoteUtil.quote(projectName))
+            .append(" && ")
+            .append(
+                "git remote set-url --push \"$(git config --default origin --get clone.defaultRemoteName)\"")
+            .append(" ")
+            .append(QuoteUtil.quote(sshPushAddress))
+            .append(")");
+      }
+    }
     return command != null ? command.toString() : null;
   }
 

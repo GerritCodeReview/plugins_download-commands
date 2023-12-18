@@ -18,15 +18,21 @@ import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMs
 import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.HOOKS_DIR;
 import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.HOOK_COMMAND_KEY;
 
+import com.google.common.collect.ImmutableList;
+import com.google.gerrit.server.config.DownloadConfig;
+import com.google.gerrit.server.config.PluginConfig;
+import com.google.gerrit.server.config.PluginConfigFactory;
 import com.googlesource.gerrit.plugins.download.DownloadCommandTest;
+import com.googlesource.gerrit.plugins.download.scheme.SshScheme;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
 
   @Test
   public void testSshNoConfiguredCommands() throws Exception {
-    String command = getCloneCommand(null, null).getCommand(sshScheme, ENV.projectName);
+    String command = getCloneCommand(null, null, null).getCommand(sshScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -37,7 +43,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
   @Test
   public void testSshConfiguredHookCommand() throws Exception {
     String hookCommand = "my hook command";
-    String command = getCloneCommand(hookCommand, null).getCommand(sshScheme, ENV.projectName);
+    String command =
+        getCloneCommand(hookCommand, null, null).getCommand(sshScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -46,9 +53,28 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
   }
 
   @Test
+  public void testSshConfiguredHookCommandAndPrimaryAddress() throws Exception {
+    String hookCommand = "my hook command";
+    String primaryAddress = getSshdAdvertisedPrimaryAddress();
+    String command =
+        getCloneCommand(hookCommand, null, primaryAddress).getCommand(sshScheme, ENV.projectName);
+    assertThat(command)
+        .isEqualTo(
+            String.format(
+                "git clone \"%s\" && (cd %s && %s) && (cd %s && git remote set-url --push "
+                    + "\"$(git config --default origin --get clone.defaultRemoteName)\" \"%s\")",
+                sshScheme.getUrl(ENV.projectName),
+                baseName(ENV.projectName),
+                hookCommand,
+                baseName(ENV.projectName),
+                sshScheme.getPushUrl(ENV.projectName)));
+  }
+
+  @Test
   public void testSshConfiguredExtraCommand() throws Exception {
     String extraCommand = "my extra command";
-    String command = getCloneCommand(extraCommand, null).getCommand(sshScheme, ENV.projectName);
+    String command =
+        getCloneCommand(extraCommand, null, null).getCommand(sshScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -61,7 +87,7 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     String hookCommand = "my hook command";
     String extraCommand = "my extra command";
     String command =
-        getCloneCommand(hookCommand, extraCommand).getCommand(sshScheme, ENV.projectName);
+        getCloneCommand(hookCommand, extraCommand, null).getCommand(sshScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -74,8 +100,30 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
   }
 
   @Test
+  public void testSshConfiguredHookExtraCommandAndAdvertisedPrimary() throws Exception {
+    String hookCommand = "my hook command";
+    String extraCommand = "my extra command";
+    String primaryAddress = getSshdAdvertisedPrimaryAddress();
+    String command =
+        getCloneCommand(hookCommand, extraCommand, primaryAddress)
+            .getCommand(sshScheme, ENV.projectName);
+    assertThat(command)
+        .isEqualTo(
+            String.format(
+                "git clone \"%s\" && (cd %s && %s) && (cd %s && %s) && (cd %s && git remote set-url --push "
+                    + "\"$(git config --default origin --get clone.defaultRemoteName)\" \"%s\")",
+                sshScheme.getUrl(ENV.projectName),
+                baseName(ENV.projectName),
+                hookCommand,
+                baseName(ENV.projectName),
+                extraCommand,
+                baseName(ENV.projectName),
+                sshScheme.getPushUrl(ENV.projectName)));
+  }
+
+  @Test
   public void testHttpNoConfiguredCommands() throws Exception {
-    String command = getCloneCommand(null, null).getCommand(httpScheme, ENV.projectName);
+    String command = getCloneCommand(null, null, null).getCommand(httpScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -86,7 +134,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
   @Test
   public void testHttpConfiguredExtraCommand() throws Exception {
     String extraCommand = "my extra command";
-    String command = getCloneCommand(extraCommand, null).getCommand(httpScheme, ENV.projectName);
+    String command =
+        getCloneCommand(extraCommand, null, null).getCommand(httpScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -99,7 +148,7 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     String hookCommand = "my hook command";
     String extraCommand = "my extra command";
     String command =
-        getCloneCommand(hookCommand, extraCommand).getCommand(httpScheme, ENV.projectName);
+        getCloneCommand(hookCommand, extraCommand, null).getCommand(httpScheme, ENV.projectName);
     assertThat(command)
         .isEqualTo(
             String.format(
@@ -121,10 +170,31 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
         baseName(ENV.projectName), HOOKS_DIR, HOOKS_DIR, ENV.fqdn, HOOKS_DIR);
   }
 
-  private CloneCommand getCloneCommand(String hookCommand, String extraCommand) {
+  private String getSshdAdvertisedPrimaryAddress() {
+    return String.format("%s:%d", ENV.fqdn, ENV.sshdAdvertisedPrimaryAddress);
+  }
+
+  private CloneCommand getCloneCommand(
+      String hookCommand, String extraCommand, String sshdAdvertisedPrimaryAddress) {
+    final String pluginName = "download-commands";
     Config cfg = new Config();
     cfg.setString("gerrit", null, HOOK_COMMAND_KEY, hookCommand);
     cfg.setString("gerrit", null, EXTRA_COMMAND_KEY, extraCommand);
+    cfg.setString(
+        "plugin", pluginName, "sshdadvertisedprimaryaddress", sshdAdvertisedPrimaryAddress);
+
+    PluginConfigFactory configFactory = Mockito.mock(PluginConfigFactory.class);
+    Mockito.when(configFactory.getFromGerritConfig(pluginName))
+        .thenReturn(PluginConfig.createFromGerritConfig(pluginName, cfg));
+
+    sshScheme =
+        new SshScheme(
+            ImmutableList.of(String.format("%s:%d", ENV.fqdn, ENV.sshPort)),
+            pluginName,
+            configFactory,
+            urlProvider,
+            userProvider,
+            new DownloadConfig(cfg));
     return new CloneWithCommitMsgHook(cfg, urlProvider);
   }
 }

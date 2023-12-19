@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0590dc47_094e8fea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-12-19T09:01:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66a89f24_d2fa623a",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 63
+      },
+      "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "884f6926_2a3ad835",
@@ -47,6 +71,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c84299a_fac0f9fc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-12-19T09:01:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "884f6926_2a3ad835",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 3
+      },
+      "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e4620b2_c2ffc1c9",
@@ -60,6 +108,24 @@
       "writtenOn": "2023-12-19T07:55:04Z",
       "side": 1,
       "message": "Add tests for the for permutations of push-url, hook-command and extra-command.",
+      "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71ea49fb_5f90605d",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-12-19T09:01:09Z",
+      "side": 1,
+      "message": "I will add tests",
+      "parentUuid": "2e4620b2_c2ffc1c9",
       "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

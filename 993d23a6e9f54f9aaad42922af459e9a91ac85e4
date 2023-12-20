@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2792eb3f_d9702408",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2023-12-20T06:50:59Z",
+      "side": 1,
+      "message": "I think you need to add that feature on the stable branches too, since as of Change Ie41500963d4, they all track the master branch of this plugin.",
+      "revId": "993d23a6e9f54f9aaad42922af459e9a91ac85e4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

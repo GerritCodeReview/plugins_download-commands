@@ -128,6 +128,24 @@
       "parentUuid": "2e4620b2_c2ffc1c9",
       "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8be2a6f4_09b97211",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-12-22T13:57:47Z",
+      "side": 1,
+      "message": "added tests",
+      "parentUuid": "71ea49fb_5f90605d",
+      "revId": "c075a0845ccd43e5ffbfd402824f4c11d68c357b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

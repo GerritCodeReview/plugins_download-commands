@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42c900f9_887e16a9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2024-01-03T10:10:45Z",
+      "side": 1,
+      "message": "Inject `@PluginName String pluginName` and `@Nullable PluginConfigFactory configFactory` and use `PluginConfig config \u003d configFactory.getFromGerritConfig(pluginName)` and `config.getString(\"sshdadvertisedprimaryaddress\")`\n?",
+      "range": {
+        "startLine": 51,
+        "startChar": 26,
+        "endLine": 51,
+        "endChar": 32
+      },
+      "revId": "4044f81ec7d32441ef1f27bea3478ded609dd0b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f86ca943_6eff1f4c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2024-01-03T10:10:45Z",
+      "side": 1,
+      "message": "Inject `@PluginName String pluginName`.",
+      "range": {
+        "startLine": 89,
+        "startChar": 42,
+        "endLine": 89,
+        "endChar": 59
+      },
+      "revId": "4044f81ec7d32441ef1f27bea3478ded609dd0b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

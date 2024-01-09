@@ -22,6 +22,92 @@
       },
       "revId": "ef3be47fe80a5a23e956899ef873567620f09b4c",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f103e9ab_37ba396e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-09T21:57:09Z",
+      "side": 1,
+      "message": "The injection place, line 53, says that `conigFactory` is `@Nullable`. If that is correct then we have here a possible NPE. If that is incorrect then remove the `@Nullable` annotation.",
+      "revId": "ef3be47fe80a5a23e956899ef873567620f09b4c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fe56129_bdadfb8f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-09T21:57:09Z",
+      "side": 1,
+      "message": "Why not use camelCase for better readability?",
+      "range": {
+        "startLine": 91,
+        "startChar": 50,
+        "endLine": 91,
+        "endChar": 78
+      },
+      "revId": "ef3be47fe80a5a23e956899ef873567620f09b4c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a549d2d7_d8d76e31",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-09T21:57:09Z",
+      "side": 1,
+      "message": "`sshdPrimaryAddress.isEmpty()`",
+      "range": {
+        "startLine": 93,
+        "startChar": 51,
+        "endLine": 93,
+        "endChar": 80
+      },
+      "revId": "ef3be47fe80a5a23e956899ef873567620f09b4c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c03d6e55_2adeeca4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-09T21:57:09Z",
+      "side": 1,
+      "message": "We can reach here also when `sshdPrimaryAddress` is an empty string, see the if condition. In that case we will have an `IndexOfBoundsException`",
+      "range": {
+        "startLine": 96,
+        "startChar": 87,
+        "endLine": 96,
+        "endChar": 99
+      },
+      "revId": "ef3be47fe80a5a23e956899ef873567620f09b4c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

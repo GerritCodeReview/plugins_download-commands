@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d330416c_25ac1ec7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2024-01-09T08:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42c900f9_887e16a9",
+      "range": {
+        "startLine": 51,
+        "startChar": 26,
+        "endLine": 51,
+        "endChar": 32
+      },
+      "revId": "4044f81ec7d32441ef1f27bea3478ded609dd0b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f86ca943_6eff1f4c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-01-03T10:10:45Z",
       "side": 1,
       "message": "Inject `@PluginName String pluginName`.",
+      "range": {
+        "startLine": 89,
+        "startChar": 42,
+        "endLine": 89,
+        "endChar": 59
+      },
+      "revId": "4044f81ec7d32441ef1f27bea3478ded609dd0b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69eb4283_1644665a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2024-01-09T08:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f86ca943_6eff1f4c",
       "range": {
         "startLine": 89,
         "startChar": 42,

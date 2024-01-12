@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5aacbdf0_17dce826",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHook.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-12T13:20:57Z",
+      "side": 1,
+      "message": "```suggestion\n            .append(\" \u0026\u0026 \")\n            .append(\"(cd \")\n            .append(QuoteUtil.quote(projectName))\n            .append(\" \u0026\u0026 \")\n            .append(\n                \"git remote set-url --push \\\"$(git config --default origin --get clone.defaultRemoteName)\\\"\")\n            .append(\" \")\n            .append(QuoteUtil.quote(sshPushAddress))\n            .append(\")\");\n```",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 25
+      },
+      "revId": "e0292d4e66f4d62a19f6df2e33659337c1b8d4b1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d1ff3ae_4dbee1ed",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/SshScheme.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2024-01-12T13:20:57Z",
+      "side": 1,
+      "message": "This is OK but we only really need a non-null check here. The condition in the next line ensures that the `sshdPrimaryAddress` is not an empty string.",
+      "range": {
+        "startLine": 93,
+        "startChar": 23,
+        "endLine": 93,
+        "endChar": 30
+      },
+      "revId": "e0292d4e66f4d62a19f6df2e33659337c1b8d4b1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

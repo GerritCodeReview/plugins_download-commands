@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6788b19c_df541d4f",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/scheme/HttpSchemeTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1012457
+      },
+      "writtenOn": "2024-02-13T22:04:17Z",
+      "side": 1,
+      "message": "HTTP and SSH scheme tests need not be split into separate classes?",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "5c03928cb2129fe0d8a33c09f1d6f7f4a5c93e4a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7919484_7f71a4f1",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/scheme/SshSchemeTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1012457
+      },
+      "writtenOn": "2024-02-13T22:04:17Z",
+      "side": 1,
+      "message": "Avoid one time use variables when possible.",
+      "range": {
+        "startLine": 47,
+        "startChar": 15,
+        "endLine": 47,
+        "endChar": 18
+      },
+      "revId": "5c03928cb2129fe0d8a33c09f1d6f7f4a5c93e4a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

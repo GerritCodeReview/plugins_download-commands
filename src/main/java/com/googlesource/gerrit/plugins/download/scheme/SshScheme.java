@@ -30,7 +30,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -60,7 +60,7 @@ public class SshScheme extends DownloadScheme {
         && (sshAddr.startsWith("*:") || "".equals(sshAddr))
         && urlProvider != null) {
       try {
-        sshAddr = new URL(urlProvider.get()).getHost() + sshAddr.substring(1);
+        sshAddr = URI.create(urlProvider.get()).toURL().getHost() + sshAddr.substring(1);
       } catch (MalformedURLException e) {
         // ignore, then this scheme will be disabled
       }
@@ -92,7 +92,8 @@ public class SshScheme extends DownloadScheme {
     String sshdPrimaryAddress = config.getString("sshdAdvertisedPrimaryAddress");
     if (sshdPrimaryAddress != null && sshdPrimaryAddress.startsWith("*:") && urlProvider != null) {
       try {
-        sshdPrimaryAddress = new URL(urlProvider.get()).getHost() + sshdPrimaryAddress.substring(1);
+        sshdPrimaryAddress =
+            URI.create(urlProvider.get()).toURL().getHost() + sshdPrimaryAddress.substring(1);
       } catch (MalformedURLException e) {
         // ignore, then this scheme will be disabled
       }

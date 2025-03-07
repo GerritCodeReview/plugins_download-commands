@@ -101,7 +101,8 @@ public class CloneWithCommitMsgHook extends CloneCommand {
             .append(QuoteUtil.quote(projectName))
             .append(" && ")
             .append(
-                "git remote set-url --push \"$(git config --default origin --get clone.defaultRemoteName)\"")
+                "git remote set-url --push \"$(git config --default origin --get"
+                    + " clone.defaultRemoteName)\"")
             .append(" ")
             .append(QuoteUtil.quote(sshPushAddress))
             .append(")");

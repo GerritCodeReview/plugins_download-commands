@@ -30,8 +30,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SchemeTest extends DownloadCommandTest {
-  @Mock
-  private PluginConfigFactory pluginConfigFactoryMock;
+  @Mock private PluginConfigFactory pluginConfigFactoryMock;
 
   @Test
   public void ensureHttpSchemeEncodedInUrl() throws Exception {

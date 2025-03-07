@@ -110,8 +110,9 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
     assertThat(command)
         .isEqualTo(
             String.format(
-                "git clone \"%s\" && (cd %s && %s) && (cd %s && %s) && (cd %s && git remote set-url --push "
-                    + "\"$(git config --default origin --get clone.defaultRemoteName)\" \"%s\")",
+                "git clone \"%s\" && (cd %s && %s) && (cd %s && %s) && (cd %s && git remote set-url"
+                    + " --push \"$(git config --default origin --get clone.defaultRemoteName)\""
+                    + " \"%s\")",
                 sshScheme.getUrl(ENV.projectName),
                 baseName(ENV.projectName),
                 hookCommand,
@@ -166,7 +167,8 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
 
   private String getDefaultHookCommand() {
     return String.format(
-        "(cd %s && mkdir -p %s && curl -Lo %scommit-msg https://%s/tools/hooks/commit-msg && chmod +x %scommit-msg)",
+        "(cd %s && mkdir -p %s && curl -Lo %scommit-msg https://%s/tools/hooks/commit-msg && chmod"
+            + " +x %scommit-msg)",
         baseName(ENV.projectName), HOOKS_DIR, HOOKS_DIR, ENV.fqdn, HOOKS_DIR);
   }
 

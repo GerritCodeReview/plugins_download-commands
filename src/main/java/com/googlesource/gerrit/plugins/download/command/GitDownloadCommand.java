@@ -24,6 +24,7 @@ import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.git.GitRepositoryManager;
+import com.googlesource.gerrit.plugins.download.scheme.DepotToolsScheme;
 import com.googlesource.gerrit.plugins.download.scheme.RepoScheme;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -80,6 +81,9 @@ abstract class GitDownloadCommand extends DownloadCommand {
 
       if (scheme instanceof RepoScheme) {
         return getRepoCommand(url, id);
+      }
+      if (scheme instanceof DepotToolsScheme) {
+        return getDepotToolsCommand(id);
       }
       if (isValidUrl(url)) {
         if (checkForHiddenChangeRefs) {
@@ -155,6 +159,15 @@ abstract class GitDownloadCommand extends DownloadCommand {
    */
   @Nullable
   String getRepoCommand(String url, String id) {
+    // Most commands don't support this, so default it to nothing.
+    return null;
+  }
+
+  /**
+   * @param id The change/PS numbers.
+   */
+  @Nullable
+  String getDepotToolsCommand(String id) {
     // Most commands don't support this, so default it to nothing.
     return null;
   }

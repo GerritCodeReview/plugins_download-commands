@@ -21,6 +21,7 @@ server.
   scheme = http
   scheme = anon_http
   scheme = anon_git
+  scheme = depot_tools
   scheme = repo
   hide = ssh
   recurseSubmodules = true
@@ -29,59 +30,64 @@ server.
 The download section configures the allowed download methods.
 
 <a id="download.command">download.command</a>
-:	Commands that should be offered to download changes.
+:   Commands that should be offered to download changes.
 
-	Multiple commands are supported:
+    Multiple commands are supported:
 
-	* `branch`: Command to fetch and create a new branch from the patch set.
+    *   `branch`: Command to fetch and create a new branch from the patch set.
 
-	* `checkout`: Command to fetch and checkout the patch set.
+    *   `checkout`: Command to fetch and checkout the patch set.
 
-	* `cherry_pick`: Command to fetch the patch set and cherry-pick
-	it onto the current commit.
+    *   `cherry_pick`: Command to fetch the patch set and cherry-pick it onto
+        the current commit.
 
-	* `pull`: Command to pull the patch set.
+    *   `pull`: Command to pull the patch set.
 
-	* `format_patch`: Command to fetch the patch set and feed it
-	into the `format-patch` command.
+    *   `format_patch`: Command to fetch the patch set and feed it into the
+        `format-patch` command.
 
-	* `reset`: Command to fetch the patch set and reset the current branch
-	(or HEAD) to it.
+    *   `reset`: Command to fetch the patch set and reset the current branch (or
+        HEAD) to it.
 
-	If `download.command` is not specified, all download commands are
-	offered.
+    If `download.command` is not specified, all download commands are offered.
 
 <a id="download.scheme">download.scheme</a>
-:	Schemes that should be used to download changes.
+:   Schemes that should be used to download changes.
 
-	Multiple schemes are supported:
+    Multiple schemes are supported:
 
-	* `http`: Authenticated HTTP download is allowed.
+    *   `http`: Authenticated HTTP download is allowed.
 
-	* `ssh`: Authenticated SSH download is allowed.
+    *   `ssh`: Authenticated SSH download is allowed.
 
-	* `anon_http`: Anonymous HTTP download is allowed.
+    *   `anon_http`: Anonymous HTTP download is allowed.
 
-	* `anon_git`: Anonymous Git download is allowed.  This is not
-	default, it is also necessary to set [gerrit.canonicalGitUrl]
-	(../../../Documentation/config-gerrit.html#gerrit.canonicalGitUrl)
-	variable.
+    *   `anon_git`: Anonymous Git download is allowed. This is not default, it
+        is also necessary to set
+        [gerrit.canonicalGitUrl](../../../Documentation/config-gerrit.html#gerrit.canonicalGitUrl)
+        variable.
 
-	* `repo`: Gerrit advertises patch set downloads with the `repo download`
-	command, assuming that all projects managed by this instance are generally
-	worked on with the
-	[repo multi-repository tool](https://gerrit.googlesource.com/git-repo)
-	tool.  This is not default, as not all instances will deploy repo.
+    *   `repo`: Gerrit advertises patch set downloads with the `repo download`
+        command, assuming that all projects managed by this instance are
+        generally worked on with the
+        [repo multi-repository tool](https://gerrit.googlesource.com/git-repo)
+        tool. This is not default, as not all instances will deploy repo.
 
-	If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP
-	downloads are allowed.
+    *   `depot_tools`: Gerrit advertises patch set downloads with the `git cl
+        patch` command, assuming that all projects managed by this instance are
+        generally worked on with the
+        [Depot Tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools.html).
+
+    If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP
+    downloads are allowed.
 
 <a id="download.hide">download.hide</a>
-:   Schemes that can be used to download changes, but will not be advertised
-    in the UI. This can be any scheme that can be configured in <<download.scheme>>.
+:   Schemes that can be used to download changes, but will not be advertised in
+    the UI. This can be any scheme that can be configured in
+    <<download.scheme>>.
 
-    This is mostly useful in a deprecation scenario during a time where using
-    a scheme is discouraged, but has to be supported until all clients have
+    This is mostly useful in a deprecation scenario during a time where using a
+    scheme is discouraged, but has to be supported until all clients have
     migrated to use a different scheme.
 
     By default, no scheme will be hidden in the UI.

@@ -9,17 +9,21 @@ The following download schemes are defined by this plugin. Please note
 that some download schemes must be enabled by
 [configuration](config.md#download.scheme).
 
-* `Anonymous Git`: Scheme for anonymous downloads via the Git protocol.
+*   `Anonymous Git`: Scheme for anonymous downloads via the Git protocol.
 
-* `Anonymous HTTP`: Scheme for anonymous downloads via the HTTP protocol.
+*   `Anonymous HTTP`: Scheme for anonymous downloads via the HTTP protocol.
 
-* `HTTP`: Scheme for authenticated downloads via the HTTP protocol.
+*   `HTTP`: Scheme for authenticated downloads via the HTTP protocol.
 
-* `SSH`: Scheme for authenticated downloads via the SSH protocol.
-<br />
-Requires that users have a username.
+*   `SSH`: Scheme for authenticated downloads via the SSH protocol.
+    <br />
+    Requires that users have a username.
 
-* `REPO`: Scheme for downloading with the Repo tool.
+*   `REPO`: Scheme for downloading with the Repo tool.
+
+*   `Depot Tools`: Scheme for downloading with the
+    [Depot Tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools.html)
+    tool.
 
 Download Commands
 -----------------
@@ -34,19 +38,16 @@ All Git commands are for the Git command line. The Git commands are
 available for the schemes `Anonymous Git`, `Anonymous HTTP`, `HTTP` and
 `SSH`.
 
-* `Checkout`:
-Command to fetch and checkout a patch set.
+*   `Checkout`: Command to fetch and checkout a patch set.
 
-* `Cherry-Pick`:
-Command to fetch a patch set and cherry-pick it onto the current
-commit.
+*   `Cherry-Pick`: Command to fetch a patch set and cherry-pick it onto the
+    current commit.
 
-* `Format-Patch`:
-Command to fetch a patch set and feed it into the `format-patch`
-command.
+*   `Format-Patch`: Command to fetch a patch set and feed it into the
+    `format-patch` command. For the `Depot Tools` scheme, this command uses `git
+    cl patch` to apply the change.
 
-* `Pull`:
-Command to pull a patch set.
+*   `Pull`: Command to pull a patch set.
 
 ### Repo Commands
 

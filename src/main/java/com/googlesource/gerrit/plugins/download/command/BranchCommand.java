@@ -52,4 +52,9 @@ class BranchCommand extends GitDownloadCommand {
         + " "
         + id;
   }
+
+  @Override
+  String getDepotToolsCommand(String id) {
+    return "git cl patch " + id;
+  }
 }

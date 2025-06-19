@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f984b15e_f79e5d4f",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-06-19T15:16:54Z",
+      "side": 1,
+      "message": "This also uses `git cl patch` with `Depot Tools`, correct?\n\n```suggestion\n    current commit. For the `Depot Tools` scheme, this command uses `git\n    cl patch` to apply the change.\n```",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3d340a6_6a65fa58",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-06-19T15:16:54Z",
+      "side": 1,
+      "message": "This isn\u0027t currently true. Did you intend to add this statement to the Cherry-Pick bullet or did you intend to also update `FormatPatchCommand.java` to have this behavior?",
+      "range": {
+        "startLine": 47,
+        "startChar": 28,
+        "endLine": 48,
+        "endChar": 34
+      },
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97b679a7_f9e4c17e",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-06-19T15:16:54Z",
+      "side": 1,
+      "message": "Hmm. This seems to be missing a few commands. I\u0027d like to keep that from being your problem, but the `Branch` command is also one with special behavior for `Depot Tools`, so it seems like that should be mentioned. Would you be willing to push a change that\u0027s a parent of this one that adds those missing commands and does the other doc reformatting you\u0027re doing here?",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a125176d_f3fc8db3",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-06-19T15:16:54Z",
+      "side": 1,
+      "message": "This reformatting should be in its own change.",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

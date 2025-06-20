@@ -40,4 +40,9 @@ class CherryPickCommand extends GitDownloadCommand {
   String getRepoCommand(String url, String id) {
     return "repo download -c " + QuoteUtil.quote(url) + " " + id;
   }
+
+  @Override
+  String getDepotToolsCommand(String id) {
+    return "git cl patch " + id;
+  }
 }

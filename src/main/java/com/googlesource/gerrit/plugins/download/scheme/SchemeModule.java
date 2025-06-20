@@ -29,6 +29,10 @@ public class SchemeModule extends AbstractModule {
 
     bind(DownloadScheme.class).annotatedWith(Exports.named("http")).to(HttpScheme.class);
 
+    bind(DownloadScheme.class)
+        .annotatedWith(Exports.named("depot_tools"))
+        .to(DepotToolsScheme.class);
+
     bind(DownloadScheme.class).annotatedWith(Exports.named("repo")).to(RepoScheme.class);
 
     bind(DownloadScheme.class).annotatedWith(Exports.named("ssh")).to(SshScheme.class);

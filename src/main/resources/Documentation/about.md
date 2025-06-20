@@ -21,6 +21,8 @@ Requires that users have a username.
 
 * `REPO`: Scheme for downloading with the Repo tool.
 
+* `Depot Tools`: Scheme for downloading with the [depot_tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools.html).
+
 Download Commands
 -----------------
 
@@ -32,7 +34,7 @@ that some download commands must be enabled by [configuration]
 
 All Git commands are for the Git command line. The Git commands are
 available for the schemes `Anonymous Git`, `Anonymous HTTP`, `HTTP` and
-`SSH`.
+`SSH`. Some Git commands are available for the `Depot Tools` scheme.
 
 * `Checkout`:
 Command to fetch and checkout a patch set.

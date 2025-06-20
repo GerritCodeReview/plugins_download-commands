@@ -21,6 +21,7 @@ server.
   scheme = http
   scheme = anon_http
   scheme = anon_git
+  scheme = depot_tools
   scheme = repo
   hide = ssh
   recurseSubmodules = true
@@ -72,6 +73,11 @@ The download section configures the allowed download methods.
 	worked on with the
 	[repo multi-repository tool](https://gerrit.googlesource.com/git-repo)
 	tool.  This is not default, as not all instances will deploy repo.
+
+	* `depot_tools`: Gerrit advertises patch set downloads with the `git cl patch`
+	command, assuming that all projects managed by this instance are generally
+	worked on with the
+	[Depot Tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools.html).
 
 	If `download.scheme` is not specified, SSH, HTTP and Anonymous HTTP
 	downloads are allowed.

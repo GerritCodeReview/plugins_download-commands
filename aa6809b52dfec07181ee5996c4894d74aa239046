@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5797a602_34ea6a58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2025-06-20T07:19:11Z",
+      "side": 1,
+      "message": "Please use google-java-format in version 1.24.0 to format the java files, see:\nhttps://gerrit-review.googlesource.com/Documentation/dev-crafting-changes.html#style",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb87ab1b_849505cb",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/DepotToolsScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2025-06-20T07:19:11Z",
+      "side": 1,
+      "message": "nit: please update to 2025",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f984b15e_f79e5d4f",
         "filename": "src/main/resources/Documentation/about.md",
         "patchSetId": 3

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2de74fda_c9b1be09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-06-20T17:30:47Z",
+      "side": 1,
+      "message": "Can you reformat this to fit the style guide? (you should be able to use the Edit button and then click Format)",
+      "revId": "8ac9e135e452cb532e9d502f0a1b35273a73bc5b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

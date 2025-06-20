@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43909607_c3d81d07",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/DepotToolsScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1169245
+      },
+      "writtenOn": "2025-06-20T16:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb87ab1b_849505cb",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f984b15e_f79e5d4f",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-06-19T15:16:54Z",
       "side": 1,
       "message": "This also uses `git cl patch` with `Depot Tools`, correct?\n\n```suggestion\n    current commit. For the `Depot Tools` scheme, this command uses `git\n    cl patch` to apply the change.\n```",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6a84101_95e6a38c",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1169245
+      },
+      "writtenOn": "2025-06-20T16:46:57Z",
+      "side": 1,
+      "message": "Removed command specific documentation, instead adding a sentence to the intro of the Git Commands section",
+      "parentUuid": "f984b15e_f79e5d4f",
       "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -81,6 +123,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ccc0343_b1589cb2",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1169245
+      },
+      "writtenOn": "2025-06-20T16:46:57Z",
+      "side": 1,
+      "message": "Oops I swiitched the implementation but forgot to update the docs. Fixed.",
+      "parentUuid": "f3d340a6_6a65fa58",
+      "range": {
+        "startLine": 47,
+        "startChar": 28,
+        "endLine": 48,
+        "endChar": 34
+      },
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97b679a7_f9e4c17e",
@@ -98,6 +164,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e43830d_0786d3da",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1169245
+      },
+      "writtenOn": "2025-06-20T16:46:57Z",
+      "side": 1,
+      "message": "I changed the documentation to mention that `\"Some Git commands are available for the \"Depot Tools\" scheme\"`. I can change it to mention `CherryPick` and `Branch` specifically if you think that\u0027s necessary, just let me know.",
+      "parentUuid": "97b679a7_f9e4c17e",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a125176d_f3fc8db3",
@@ -111,6 +195,24 @@
       "writtenOn": "2025-06-19T15:16:54Z",
       "side": 1,
       "message": "This reformatting should be in its own change.",
+      "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8830cbba_2a12de46",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1169245
+      },
+      "writtenOn": "2025-06-20T16:46:57Z",
+      "side": 1,
+      "message": "Removed all formatting changes.",
+      "parentUuid": "a125176d_f3fc8db3",
       "revId": "aa6809b52dfec07181ee5996c4894d74aa239046",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d232f403_2c9f5f28",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4187779
+      },
+      "writtenOn": "2025-06-28T18:25:19Z",
+      "side": 1,
+      "message": "Marked as resolved.",
+      "revId": "08d2092cb105b318f6345d4c29be3e861667aab4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67c76f2b_79fa3b93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4187779
+      },
+      "writtenOn": "2025-06-28T18:25:19Z",
+      "side": 1,
+      "message": "How do I remove malware?",
+      "revId": "08d2092cb105b318f6345d4c29be3e861667aab4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

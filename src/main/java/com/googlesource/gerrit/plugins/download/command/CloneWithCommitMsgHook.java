@@ -72,7 +72,7 @@ public class CloneWithCommitMsgHook extends CloneCommand {
               .append(QuoteUtil.quote(projectName))
               .append(" && mkdir -p ")
               .append(HOOKS_DIR)
-              .append(" && curl -Lo ")
+              .append(" && curl -fLo ")
               .append(HOOKS_DIR)
               .append(HOOK)
               .append(" ")

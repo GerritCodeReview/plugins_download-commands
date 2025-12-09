@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a7ad5e9_4f70e3b1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-12-09T22:15:09Z",
+      "side": 1,
+      "message": "This looks the refactoring of the previous block at L71-L81: would this be worth to be added as a separate change?\n\nWe typically separate refactoring from features or fixes.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 3
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaa1512f_fd705acf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-12-09T22:15:09Z",
+      "side": 1,
+      "message": "This comment would be best located at L118.\n\nThis isn\u0027t a public method and this comments are useful to understand the rationale of the implementation below. IMHO they make more sense if they are closer to the code.",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 18
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12b44ad1_2d71c01f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-12-09T22:15:09Z",
+      "side": 1,
+      "message": "Should we throw an exception if we find more than one username?\nReturning the first would not highlight the problem and leave the Gerrit admin wondering why the authentication isn\u0027t working.",
+      "range": {
+        "startLine": 126,
+        "startChar": 12,
+        "endLine": 126,
+        "endChar": 25
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f626a155_b865aa6f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-12-09T22:15:09Z",
+      "side": 1,
+      "message": "You can simplify by using the `Optional\u003c\u003e` construct to return the value or a default.\n\n\n\n```suggestion\n    return ldapUserName.or(() -\u003e gerritUserName);\n```",
+      "range": {
+        "startLine": 128,
+        "startChar": 11,
+        "endLine": 128,
+        "endChar": 68
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

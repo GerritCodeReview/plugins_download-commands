@@ -14,9 +14,13 @@
 package com.googlesource.gerrit.plugins.download;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.gerrit.entities.Account;
+import com.google.gerrit.extensions.client.GitBasicAuthPolicy;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.GroupMembership;
+import com.google.gerrit.server.account.externalids.ExternalId;
+import com.google.gerrit.server.config.AuthConfig;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
@@ -28,41 +32,56 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
+import java.util.Set;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 @Ignore
 public class DownloadCommandTest {
 
+  public static class TestUser extends CurrentUser {
+    private ImmutableSet<ExternalId.Key> externalIds = ImmutableSet.of();
+
+    public void setExternalIds(Set<ExternalId.Key> keys) {
+      this.externalIds = ImmutableSet.copyOf(keys);
+    }
+
+    @Override
+    public Optional<String> getUserName() {
+      return Optional.of(ENV.userName);
+    }
+
+    @Override
+    public GroupMembership getEffectiveGroups() {
+      throw new UnsupportedOperationException("not implemented");
+    }
+
+    @Override
+    public Object getCacheKey() {
+      return new Object();
+    }
+
+    @Override
+    public boolean isIdentifiedUser() {
+      return true;
+    }
+
+    @Override
+    public Account.Id getAccountId() {
+      return Account.id(1);
+    }
+
+    @Override
+    public ImmutableSet<ExternalId.Key> getExternalIdKeys() {
+      return externalIds;
+    }
+  }
+
   static CurrentUser fakeUser() {
-    return new CurrentUser() {
-      @Override
-      public Optional<String> getUserName() {
-        return Optional.of(ENV.userName);
-      }
-
-      @Override
-      public GroupMembership getEffectiveGroups() {
-        throw new UnsupportedOperationException("not implemented");
-      }
-
-      @Override
-      public Object getCacheKey() {
-        return new Object();
-      }
-
-      @Override
-      public boolean isIdentifiedUser() {
-        return true;
-      }
-
-      @Override
-      public Account.Id getAccountId() {
-        return Account.id(1);
-      }
-    };
+    return new TestUser();
   }
 
   public static class TestEnvironment {
@@ -88,6 +107,7 @@ public class DownloadCommandTest {
   protected SshScheme sshScheme;
   protected Provider<String> urlProvider;
   protected Provider<CurrentUser> userProvider;
+  protected @Mock AuthConfig authConfig;
 
   public DownloadCommandTest() {
     super();
@@ -106,7 +126,10 @@ public class DownloadCommandTest {
 
     userProvider = Providers.of(fakeUser());
 
-    httpScheme = new HttpScheme(cfg, urlProvider, userProvider, downloadConfig);
+    authConfig = Mockito.mock(AuthConfig.class);
+    Mockito.when(authConfig.getGitBasicAuthPolicy()).thenReturn(GitBasicAuthPolicy.HTTP);
+
+    httpScheme = new HttpScheme(cfg, urlProvider, userProvider, downloadConfig, authConfig);
     sshScheme =
         new SshScheme(
             ImmutableList.of(String.format("%s:%d", ENV.fqdn, ENV.sshPort)),

@@ -15,10 +15,16 @@
 package com.googlesource.gerrit.plugins.download.scheme;
 
 import static com.google.gerrit.entities.CoreDownloadSchemes.HTTP;
+import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_GERRIT;
+import static java.util.stream.Collectors.toList;
 
+import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.common.Nullable;
+import com.google.gerrit.extensions.client.GitBasicAuthPolicy;
 import com.google.gerrit.extensions.config.DownloadScheme;
 import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.account.externalids.ExternalId;
+import com.google.gerrit.server.config.AuthConfig;
 import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.GerritServerConfig;
@@ -27,27 +33,33 @@ import com.google.inject.Provider;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Optional;
 import org.eclipse.jgit.lib.Config;
 
 public class HttpScheme extends DownloadScheme {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
   private final String gitHttpUrl;
   private final String canonicalWebUrl;
   private final Provider<CurrentUser> userProvider;
   private final boolean schemeAllowed;
   private final boolean schemeHidden;
+  private final AuthConfig authConfig;
 
   @Inject
   public HttpScheme(
       @GerritServerConfig Config cfg,
       @CanonicalWebUrl @Nullable Provider<String> urlProvider,
       Provider<CurrentUser> userProvider,
-      DownloadConfig downloadConfig) {
+      DownloadConfig downloadConfig,
+      AuthConfig authConfig) {
     this.gitHttpUrl = ensureSlash(cfg.getString("gerrit", null, "gitHttpUrl"));
     this.canonicalWebUrl = urlProvider != null ? urlProvider.get() : null;
     this.userProvider = userProvider;
     this.schemeAllowed = downloadConfig.getDownloadSchemes().contains(HTTP);
     this.schemeHidden = downloadConfig.getHiddenSchemes().contains(HTTP);
+    this.authConfig = authConfig;
   }
 
   @Nullable
@@ -69,16 +81,16 @@ public class HttpScheme extends DownloadScheme {
       }
       String host = base.substring(p + 3, s);
       r.append(base.substring(0, p + 3));
-      if (userProvider.get().getUserName().isPresent()) {
-        try {
-          r.append(
-              URLEncoder.encode(
-                  userProvider.get().getUserName().get(), StandardCharsets.UTF_8.name()));
-        } catch (UnsupportedEncodingException e) {
-          throw new IllegalStateException("No UTF-8 support", e);
-        }
-        r.append("@");
-      }
+      getHttpUserName()
+          .ifPresent(
+              u -> {
+                try {
+                  r.append(URLEncoder.encode(u, StandardCharsets.UTF_8.name()));
+                } catch (UnsupportedEncodingException e) {
+                  throw new IllegalStateException("No UTF-8 support", e);
+                }
+                r.append("@");
+              });
       r.append(host);
       r.append(base.substring(s));
       r.append("a/");
@@ -87,6 +99,39 @@ public class HttpScheme extends DownloadScheme {
     }
     r.append(project);
     return r.toString();
+  }
+
+  /**
+   * Returns the username to embed in HTTP URLs.
+   *
+   * <p>If {@code gitBasicAuthPolicy == LDAP}, always prefer the LDAP login name (the {@code
+   * gerrit:} external ID) when available, since this is the username guaranteed to authenticate
+   * against LDAP.
+   *
+   * <p>If no such LDAP username exists, or if the policy is not LDAP, fall back to the Gerrit
+   * username.
+   */
+  private Optional<String> getHttpUserName() {
+    CurrentUser user = userProvider.get();
+    Optional<String> gerritUserName = user.getUserName();
+
+    if (authConfig.getGitBasicAuthPolicy() != GitBasicAuthPolicy.LDAP) {
+      return gerritUserName;
+    }
+
+    List<String> ldapUserNames =
+        user.getExternalIdKeys().stream()
+            .filter(k -> k.isScheme(SCHEME_GERRIT))
+            .map(ExternalId.Key::id)
+            .collect(toList());
+
+    if (ldapUserNames.size() > 1) {
+      logger.atWarning().log(
+          "Found %d LDAP identities for user %s. Exactly one was expected.",
+          ldapUserNames.size(), user.getLoggableName());
+    }
+
+    return ldapUserNames.stream().findFirst().or(() -> gerritUserName);
   }
 
   @Override

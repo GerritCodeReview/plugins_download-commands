@@ -19,6 +19,9 @@ import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMs
 import static com.googlesource.gerrit.plugins.download.command.CloneWithCommitMsgHook.HOOK_COMMAND_KEY;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
+import com.google.gerrit.extensions.client.GitBasicAuthPolicy;
+import com.google.gerrit.server.account.externalids.ExternalId;
 import com.google.gerrit.server.config.DownloadConfig;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
@@ -159,6 +162,20 @@ public class CloneWithCommitMsgHookTest extends DownloadCommandTest {
                 hookCommand,
                 baseName(ENV.projectName),
                 extraCommand));
+  }
+
+  @Test
+  public void testHttpUsesLdapUsernameWhenGitBasicAuthPolicyIsLdap() throws Exception {
+    DownloadCommandTest.TestUser user = (DownloadCommandTest.TestUser) userProvider.get();
+
+    String ldapUserName = "ldap_username";
+    ExternalId.Key ldapKey = ExternalId.Key.create(ExternalId.SCHEME_GERRIT, ldapUserName, true);
+    user.setExternalIds(ImmutableSet.of(ldapKey));
+    Mockito.when(authConfig.getGitBasicAuthPolicy()).thenReturn(GitBasicAuthPolicy.LDAP);
+
+    String url = httpScheme.getUrl(ENV.projectName);
+
+    assertThat(url).contains(ldapUserName + "@");
   }
 
   private String baseName(String projectName) {

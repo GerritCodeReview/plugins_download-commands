@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c10799c_2a1440c7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-09T14:44:39Z",
+      "side": 1,
+      "message": "yeah good point.\nThis is however is used in many places and it is arguably confusing in all of them, we should probablt rename it.\nAdding a comment everywhere this is used doesn\u0027t scale, so let\u0027s leave it for now.",
+      "parentUuid": "95f5e52a_1dcad955",
+      "range": {
+        "startLine": 124,
+        "startChar": 36,
+        "endLine": 124,
+        "endChar": 49
+      },
+      "revId": "9aff9bfa942f152dbb91b1d7526b65ebd6d28cc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac86ef12_395a0960",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-12-09T13:57:45Z",
       "side": 1,
       "message": "Might be worth adding a test for the other auth types (`HTTP`, `HTTP_LDAP`, `OAUTH`).\n\nAlso we are not covering this case of the `getHttpUserName` method:\n\n```\nreturn ldapUserName.isPresent() ? ldapUserName : gerritUserName;\n```",
+      "revId": "9aff9bfa942f152dbb91b1d7526b65ebd6d28cc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1402b26_73f87c08",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/download/command/CloneWithCommitMsgHookTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-09T14:44:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac86ef12_395a0960",
       "revId": "9aff9bfa942f152dbb91b1d7526b65ebd6d28cc6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }

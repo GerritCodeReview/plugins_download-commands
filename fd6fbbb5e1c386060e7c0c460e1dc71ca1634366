@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2bb1a27a_d5e13aba",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-10T06:41:37Z",
+      "side": 1,
+      "message": "nit: variable `username` isn\u0027t needed:\n\n\n```suggestion\n    getHttpUserName().ifPresent(\n        u -\u003e {\n          try {\n            r.append(URLEncoder.encode(u, StandardCharsets.UTF_8.name()));\n          } catch (UnsupportedEncodingException e) {\n            throw new IllegalStateException(\"No UTF-8 support\", e);\n          }\n          r.append(\"@\");\n        });\n```",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 11
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9a7ad5e9_4f70e3b1",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
         "patchSetId": 3
@@ -37,6 +60,30 @@
       "writtenOn": "2025-12-09T22:15:09Z",
       "side": 1,
       "message": "This comment would be best located at L118.\n\nThis isn\u0027t a public method and this comments are useful to understand the rationale of the implementation below. IMHO they make more sense if they are closer to the code.",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 18
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10c637ac_8693f5b4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-10T06:41:37Z",
+      "side": 1,
+      "message": "Having the comment as Javadoc makes it visible in and IDE for `getHttpUserName()` calls.\nPersonally I prefer Javadoc comment to explain method behavior.",
+      "parentUuid": "eaa1512f_fd705acf",
       "range": {
         "startLine": 107,
         "startChar": 0,

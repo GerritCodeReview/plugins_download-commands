@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27726da0_c09fcfca",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-10T14:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2bb1a27a_d5e13aba",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 11
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a7ad5e9_4f70e3b1",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-12-09T22:15:09Z",
       "side": 1,
       "message": "This looks the refactoring of the previous block at L71-L81: would this be worth to be added as a separate change?\n\nWe typically separate refactoring from features or fixes.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 3
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b3d2c01_a461fad6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-10T14:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a7ad5e9_4f70e3b1",
       "range": {
         "startLine": 91,
         "startChar": 0,
@@ -94,6 +142,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba50a4b3_f59823c8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-10T14:45:02Z",
+      "side": 1,
+      "message": "Thanks for the suggestions.\nI\u0027d like to keep this as Javadoc because the method has some non-obvious behaviour regarding LDAP vs. Gerrit usernames, and having that information displayed directly in the IDE at call sites is genuinely helpful.\n\nSince this logic affects how callers use the method, the Javadoc feels like the right place to explain the _why_ behind it.",
+      "parentUuid": "10c637ac_8693f5b4",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 18
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12b44ad1_2d71c01f",
@@ -119,6 +191,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0fe4d2eb_30c38f22",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-10T14:45:02Z",
+      "side": 1,
+      "message": "This pattern is not unique to this change.\nIn Gerrit, there are quite a few places that get LDAP identities in a similar way.\nFor example\n[LDAPGroupBackend](https://gerrit.googlesource.com/gerrit/+/refs/heads/master/java/com/google/gerrit/auth/ldap/LdapGroupBackend.java#184) or [AccountManager](https://gerrit.googlesource.com/gerrit/+/refs/heads/master/java/com/google/gerrit/server/account/AccountManager.java#333)\n\nWe are not blowing up in any of those places, and throwing a runtime exception is a pretty strong reaction for a plugin that participates in rendering download commands.\n\nHaving said that, logging the unexpected number of LDAP identities seems useful here.",
+      "parentUuid": "12b44ad1_2d71c01f",
+      "range": {
+        "startLine": 126,
+        "startChar": 12,
+        "endLine": 126,
+        "endChar": 25
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f626a155_b865aa6f",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
         "patchSetId": 3
@@ -130,6 +226,30 @@
       "writtenOn": "2025-12-09T22:15:09Z",
       "side": 1,
       "message": "You can simplify by using the `Optional\u003c\u003e` construct to return the value or a default.\n\n\n\n```suggestion\n    return ldapUserName.or(() -\u003e gerritUserName);\n```",
+      "range": {
+        "startLine": 128,
+        "startChar": 11,
+        "endLine": 128,
+        "endChar": 68
+      },
+      "revId": "fd6fbbb5e1c386060e7c0c460e1dc71ca1634366",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49f10051_c50e3777",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/download/scheme/HttpScheme.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2025-12-10T14:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f626a155_b865aa6f",
       "range": {
         "startLine": 128,
         "startChar": 11,

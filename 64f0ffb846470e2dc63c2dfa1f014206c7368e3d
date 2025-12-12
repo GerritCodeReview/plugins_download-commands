@@ -16,6 +16,24 @@
       "message": "I don\u0027t quite get the relationship between [gerrit:tools/bzl/junit.bzl](https://gerrit.googlesource.com/gerrit/+/refs/heads/master/tools/bzl/junit.bzl) and [bazlets:tools/junit.bzl](https://gerrit.googlesource.com/bazlets/+/refs/heads/master/tools/junit.bzl).\nI.e. what is the reasoning behind using the file from bazlets? To me it seems like `gerrit:tools/bzl/junit.bzl` was updated more recently.\nThere\u0027s still a dependency to \"in-tree\" `tools/bzl:plugin.bzl` that isn\u0027t available in bazlets (AFAICT).",
       "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "667c6718_6d561cf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2025-12-12T07:53:37Z",
+      "side": 1,
+      "message": "I should have set a topic.\nI am currently working on the Gerrit build. Mostly on the transition to use bazel modules. As part of that, I had to also introduce the bazel module for bazlets to make plugin standalone builds work. While doing that, I noticed, that we have a lot of bazel scripts/rules that are mostly duplicated between Gerrit and bazlets. This does not work well for maintenance. It makes much more sense to have those scripts/rules once in a bazel library and reuse them everywhere. That is what I started working on. While doing that, I create changes in bazlets that updates the rules to the state in Gerrit, which is usually more up-to-date.",
+      "parentUuid": "dd970983_7661713a",
+      "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

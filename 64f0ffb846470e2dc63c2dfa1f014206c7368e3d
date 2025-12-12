@@ -52,6 +52,24 @@
       "parentUuid": "667c6718_6d561cf9",
       "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "914914fb_a3ad8049",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2025-12-12T09:05:51Z",
+      "side": 1,
+      "message": "`tools/bzl/plugins.bzl` will not be migrated, because it is very specific for Gerrit core. I will go through each `*.bzl` file in the next weeks and migrate one after the other.",
+      "parentUuid": "988ee78d_435b9709",
+      "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

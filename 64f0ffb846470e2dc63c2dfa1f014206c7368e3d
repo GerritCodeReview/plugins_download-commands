@@ -34,6 +34,24 @@
       "parentUuid": "dd970983_7661713a",
       "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "988ee78d_435b9709",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-12T07:56:38Z",
+      "side": 1,
+      "message": "👍\nDo you plan to move f.i. `tools/bzl/plugins.bzl` into bazlets as well?",
+      "parentUuid": "667c6718_6d561cf9",
+      "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

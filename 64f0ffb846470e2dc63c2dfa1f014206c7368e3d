@@ -88,6 +88,24 @@
       "parentUuid": "914914fb_a3ad8049",
       "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "411a8804_7227ae73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2025-12-12T10:54:03Z",
+      "side": 1,
+      "message": "Yes. I actually already have one example: https://gerrit-review.googlesource.com/c/plugins/oauth/+/526562/5/BUILD",
+      "parentUuid": "f72f3f06_389bae52",
+      "revId": "64f0ffb846470e2dc63c2dfa1f014206c7368e3d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

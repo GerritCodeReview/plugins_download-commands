@@ -122,6 +122,30 @@
       "parentUuid": "d42b5b4b_4ee56fa6",
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95dc97bf_311642d2",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2025-12-16T13:30:20Z",
+      "side": 1,
+      "message": "\u003e Ah so @gerrit_api_version//:version.bzl references a \"local\" (?) bazel repository that is available for in-tree builds?\n\nYes, `@` marks a repository in bazel, i.e. `@gerrit_api_version` is a repository that is created by a repository rule, which in this case just writes the version from a constant into a file into that repository. The reason for that is, that bazel doesn\u0027t have rules that can output values in memory, i.e. you always have to create some file-based artifact and that we want to have the constant where we define the version available in the MODULE.bazel file, since we need it there. In MODULE.bazel we can\u0027t however load other files or define rules. We can only create repositories. Thus, we use that way to provide a version that we only define once in source for all other build rules that need it.\n\n\u003e Am I understanding correctly that: ...\n\nYes and no. The version here will only influence what is written into the manifest, it doesn\u0027t influence which API will be used [1].\n\nFor the actual API, the build checks whether it is an in-tree or a standalone build. In the former case, it will load the API from Gerrit core (i.e. the current working tree), otherwise it will use the published version referenced in bazlets [2]. This is basically the same behaviour as before.\n\n[1] https://gerrit.googlesource.com/bazlets/+/refs/changes/01/535901/2/gerrit_plugin.bzl#76\n\n[2] https://gerrit.googlesource.com/bazlets/+/refs/changes/01/535901/2/gerrit_plugin.bzl#54",
+      "parentUuid": "352b83f0_098ef41c",
+      "range": {
+        "startLine": 1,
+        "startChar": 43,
+        "endLine": 1,
+        "endChar": 61
+      },
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

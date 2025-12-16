@@ -104,6 +104,24 @@
       },
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24808bdf_40ca9735",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-16T13:04:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d42b5b4b_4ee56fa6",
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

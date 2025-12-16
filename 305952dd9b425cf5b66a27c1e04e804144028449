@@ -80,6 +80,30 @@
       },
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "352b83f0_098ef41c",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-16T13:04:08Z",
+      "side": 1,
+      "message": "Ah so `@gerrit_api_version//:version.bzl` references a \"local\" (?) bazel repository that is available for in-tree builds?\nAm I understanding correctly that:\n* If you don\u0027t maintain release-branches for your plugin it makes sense to have this setup, at least for the master branch, always build in-tree and let the \"plugin-version\" be dependent on the api-version of the \"surrounding\" tree.\n\n* But if you cut a release-branch, and/or want to use standalone builds, for the plugin it makes sense to hard-code `GERRIT_API_VERSION`, e.g. `branch\u003dstable-3.12, GERRIT_API_VERSION\u003d3.12.0`, branch\u003dstable-3.13, GERRIT_API_VERSION\u003d3.13.0`\n\n?",
+      "parentUuid": "2111ec32_78e728ae",
+      "range": {
+        "startLine": 1,
+        "startChar": 43,
+        "endLine": 1,
+        "endChar": 61
+      },
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

@@ -56,6 +56,30 @@
       "message": "Unrelated change.\nCommit message speaks only of `gerrit_plugin.bzl`",
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2111ec32_78e728ae",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2025-12-16T12:09:52Z",
+      "side": 1,
+      "message": "The gerrit_plugin rule also generates the manifest contained in the plugin\u0027s jar. Part of that manifest is the Gerrit API version used during the build. There are now two cases:\n\n- standalone build: The build uses the published `gerrit-plugin-api`, which is provided by the `bazlets` library. Thus, in this case, the version in the manifest has to match the version of `gerrit-plugin-api` provided by `bazlets`\n- in-tree build: The build uses the Gerrit API as provided in the checked out Gerrit version. In this case we can\u0027t use the version-String as provided by `bazlets`, but have to get the version from the Gerrit core project.\n\nPreviously, the `gerrit_plugin` rule in `gerrit` an `bazlets` were slightly different with the major difference being how the Gerrit API version was accessed. Now, that both versions of the rule were merged, this is not as easy anymore. Thus, I added an additional parameter to the rule: `gerrit_api_version`. Thus, since this change transitions to the rule provided by `bazlets`, I added this parameter and set it to the version provided by Gerrit, which it does using a bazel repository. This is required, since the default would be the version set in `bazlets`, which is currently `3.11.0`, which is not correct for an in-tree build as used for this plugin.",
+      "parentUuid": "66ea1782_9d4d3091",
+      "range": {
+        "startLine": 1,
+        "startChar": 43,
+        "endLine": 1,
+        "endChar": 61
+      },
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

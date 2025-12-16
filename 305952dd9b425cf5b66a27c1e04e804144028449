@@ -146,6 +146,30 @@
       },
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "737a7d92_7018999d",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-16T14:17:42Z",
+      "side": 1,
+      "message": "Sorry for 1000 questions but:\nWhen building in-tree gerrit-plugin-api is built from the Gerrit tree and is consequently used when building the plugin?\nIf so this means that you can decide which api to use when compiling the plugin either by adding the plugin repo to `plugins/` manually and adding the plugin to `tools/bzl/plugins.bzl:CUSTOM_PLUGINS` or by forking Gerrit and add your plugin as a submodule and to `tools/bzl/plugins.bzl:CUSTOM_PLUGINS.\n\nWith this new approach, how can I control the version of the gerrit-plugin-api that is used to something other than the version referenced in bazlets?\nFor me it would make sense to be able to configure this as I described above. Or am I continuously restricted to in-tree build if I want to have control over which gerrit-plugin-api version is used?",
+      "parentUuid": "95dc97bf_311642d2",
+      "range": {
+        "startLine": 1,
+        "startChar": 43,
+        "endLine": 1,
+        "endChar": 61
+      },
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

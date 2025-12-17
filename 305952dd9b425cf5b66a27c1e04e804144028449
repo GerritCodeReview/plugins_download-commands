@@ -194,6 +194,30 @@
       },
       "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56c88b95_e30e0374",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2025-12-17T06:58:38Z",
+      "side": 1,
+      "message": "\u003e The only possibility to support that would be to add another parameter to gerrit_plugin where you can provide a label pointing to a different version of the API that you would then have to install in the plugin\u0027s module.\n\nIn my folly I thought that `gerrit_api_version` was such a parameter 😊.\n\nJust a personal reflection (and I\u0027m not blaming you 😋): if you cannot influence the gerrit-plugin-api being used it seems like the usefulness of standalone builds are currently limited.\nMy confusion stems from the fact that I thought that the change was about enabling standalone builds but the changes seems mainly about consolidating bazel-stuff into bazlets (which I\u0027m all for).\n\nThanks for the explanation.",
+      "parentUuid": "5745cb93_5d8aa366",
+      "range": {
+        "startLine": 1,
+        "startChar": 43,
+        "endLine": 1,
+        "endChar": 61
+      },
+      "revId": "305952dd9b425cf5b66a27c1e04e804144028449",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

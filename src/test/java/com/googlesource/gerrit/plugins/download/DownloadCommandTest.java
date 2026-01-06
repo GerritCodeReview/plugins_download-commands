@@ -36,7 +36,6 @@ import java.util.Set;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Before;
 import org.junit.Ignore;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 @Ignore
@@ -107,7 +106,7 @@ public class DownloadCommandTest {
   protected SshScheme sshScheme;
   protected Provider<String> urlProvider;
   protected Provider<CurrentUser> userProvider;
-  protected @Mock AuthConfig authConfig;
+  protected AuthConfig authConfig;
 
   public DownloadCommandTest() {
     super();

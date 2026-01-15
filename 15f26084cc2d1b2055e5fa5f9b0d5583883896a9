@@ -16,6 +16,42 @@
       "message": "https://gerrit.googlesource.com/plugins/download-commands",
       "revId": "15f26084cc2d1b2055e5fa5f9b0d5583883896a9",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "478f054c_fa8aa3c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4588343
+      },
+      "writtenOn": "2026-01-15T22:20:34Z",
+      "side": 1,
+      "message": "git clone \"https://gerrit.googlesource.com/plugins/download-commands\"",
+      "parentUuid": "628fcbda_c0344017",
+      "revId": "15f26084cc2d1b2055e5fa5f9b0d5583883896a9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "680339b6_55e595bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4588343
+      },
+      "writtenOn": "2026-01-15T22:20:34Z",
+      "side": 1,
+      "message": "\u003e https://gerrit.googlesource.com/plugins/download-commands\nhttps://gerrit-review.googlesource.com/c/plugins/download-commands/+/540061/comments/628fcbda_c0344017",
+      "parentUuid": "628fcbda_c0344017",
+      "revId": "15f26084cc2d1b2055e5fa5f9b0d5583883896a9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
